@@ -8,7 +8,12 @@ block content
       </fieldset>
       <div class="inner-form">
         <div class="input-field first-wrap">
-          <input id="search" name="postal_code" type="text" placeholder="Enter Postal Code" />
+          <input id="search" name="postal_code" type="text" required placeholder="Enter Postal Code" />
+        </div>
+        <div class="input-field second-wrap">
+          <select class="custom-select" name="country_list" required id="countries">
+            <option>Choose Country</option>
+          </select> 
         </div>
         
         <div class="input-field third-wrap">
@@ -20,74 +25,69 @@ block content
   if isSearch
     <div class="container">
     
-    if isExist
+      if isExist
 
-      <div class="row ">
-      <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
-                
-      <div class="col-lg-6">
-      <div class="row border">
-      <div class="col-lg-5 ">
-      <img src="/images/download.jpg", alt="" >
-      
-      </div>
-      <div class="col-lg-5 ">
-        
-        <div class="">
-        <div class="col-icon">
-        <i class="fas fa-map-marker-alt"></i>
+        <div class="row ">
+          <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
+          each val in data        
+            <div class="col-lg-6">
+              <div class="row border">
+                <div class="col-lg-5 ">
+                  img(src=val.store_logo, alt="")   
+                </div>
+                <div class="col-lg-5 ">
+            
+                  <div class="">
+                    <div class="col-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="row-icon">
+                      <div class="backwoods">
+                        h3.omahah3= val.store_name
+                        p.omahap= val.postal_code
+                        p.omahap= val.address1 , val.country
+                        <br>
+                        <ul>
+                          <li class="omahali">
+                            a(href=val.store_link)= val.store_link
+                          </li> 
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          //- <div class="col-lg-6">
+          //-   <div class="row border">
+          //-     <div class="col-lg-5 ">
+          //-       <img src="/images/download.jpg", alt="" >
+          //-     </div>
+          //-     <div class="col-lg-5 ">
+          
+          //-       <div class="">
+          //-         <div class="col-icon">
+          //-         <i class="fas fa-map-marker-alt"></i>
+          //-         </div>
+          //-         <div class="row-icon">
+          //-           <div class="backwoods">
+          //-             <h3 class="omahah3">Backwoods-Omaha</h3>
+          //-             <p class="omahap">55180</p>
+          //-             <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
+          //-             <br>
+          //-             <ul>
+          //-               <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
+          //-             </ul>
+          //-           </div>
+          //-         </div>
+          //-       </div>
+          //-     </div>
+          //-   </div>
+          //- </div>
         </div>
-        <div class="row-icon">
-        <div class="backwoods">
-        <h3 class="omahah3">Backwoods-Omaha</h3>
-        <p class="omahap">55180</p>
-        <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
-        <br>
-        <ul>
-        <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
-        </ul>
+      else
+        <div class="row ">
+        <p class="description">*No Store Found.</p>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-      <div class="row border">
-      <div class="col-lg-5 ">
-      <img src="/images/download.jpg", alt="" >
-      
-      </div>
-      <div class="col-lg-5 ">
-        
-        <div class="">
-        <div class="col-icon">
-        <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div class="row-icon">
-        <div class="backwoods">
-        <h3 class="omahah3">Backwoods-Omaha</h3>
-        <p class="omahap">55180</p>
-        <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
-        <br>
-        <ul>
-        <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      </div>
-      
-      </div>
-    else
-      <div class="row ">
-      <p class="description">*No Store Found.</p>
-      </div>
-  
-    
     </div>
   

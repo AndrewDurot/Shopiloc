@@ -31,6 +31,7 @@ const storeValidation = data =>{
         address1: Joi.string().required(),
         address2: Joi.string().min(0),
         city: Joi.string().required(),
+        store_logo: Joi.string(),
         country: Joi.string().required(),
         state: Joi.string().required(),
         postal_code: Joi.string().required(),

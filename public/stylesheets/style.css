@@ -780,5 +780,9 @@ nav {
   margin-top: 10px;
   margin-right: 4px !important;
 }
-
+select#countries {
+  padding: 10px 32px;
+  font-size: 20px;
+  height: 70px;
+}
 
