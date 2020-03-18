@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    background-color:#f0f0f0;
+    height: 150px;
+}
+.table-head {
+    padding-top: 30px;
+    font-family: 'oswald' , sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-right: 600px;
+    font-weight: 200;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+.table-p {
+    background-color: #f0f0f0;
+    font-family: 'oswald' , sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 270px;
+    font-weight: 200;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 50px;
+}

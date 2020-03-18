@@ -1,4 +1,69 @@
 extends layout
 
 block content
-    h2 hi
+    link(rel='stylesheet', href='/stylesheets/table.css')
+    
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-4">
+                <div style="padding:  50px 20px;">
+                    <h3 >STORE DETAILS</h3>
+                    <p>Store List</p>
+                    <div style="margin-top: 50px;" class="menu">
+                    <h5>Actions</h5>
+                    <div class="card" style="width: 18rem;">
+                
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
+                            <li class="list-group-item"><a href="/admin/create"><i class="fas fa-plus"></i>  Create Store</li></a>
+                            <li class="list-group-item"><i class="fas fa-minus"></i>  Delete All Stores</li>
+                        </ul>
+                    </div>
+                    <div class="form-group" style="width: 18rem; margin-top: 30px; display:none">
+                        <h5>View Options</h5>
+                        <select id="inputState" class="form-control">
+                            <option selected>View All</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f4f4f4; padding:  50px 20px;" class="col-md-8">
+            <div class="table-wrapper">
+                <div class="table-title" style="overflow:scroll">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Url</th>
+                                <th>Pro/State</th>
+                                <th>City</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Country</th>
+                                <th>Detail</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            each val in store
+                                <tr>
+                                    td= val.store_name
+                                    td= val.store_url
+                                    td= val.city
+                                    td= val.address1
+                                    td= val.phone_number
+                                    td= val.country
+                                    <td><i class="fas fa-info-circle"></i></td>
+                                    <td><i class="far fa-edit"></i></td>
+                                    <td><i class="fas fa-trash-alt"></i></td>
+                                </tr>
+                                                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
