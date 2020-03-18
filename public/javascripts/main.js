@@ -36,4 +36,10 @@ $(document).ready(function(){
             }
         });
     }
+    $(document).on("click", ".row.border", function(e){
+        
+        var url = $(this.children[0]).attr("href");
+        window.open("https://"+url, 'name'); 
+        
+    })
 });

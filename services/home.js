@@ -17753,7 +17753,7 @@ exports.create_store = async (req, res) =>{
 exports.get_Search = async (req, res)=>{
     try{
         console.log(req.body);
-        var store = await Store.find({postal_code: req.body.postal_code, country : req.body.country_list});
+        var store = await Store.find({postal_code: req.body.postal_code, country : req.body.country_list, status : "true"});
         
         let isExist = false;
         if(store.length > 0)

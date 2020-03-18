@@ -33,7 +33,9 @@ block content
           <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
           each val in data        
             <div class="col-lg-6">
+              
               <div class="row border">
+                a(href=val.store_url, class="store_url") 
                 <div class="col-lg-5 ">
                   img(src=val.store_logo, alt="")   
                 </div>
@@ -51,7 +53,7 @@ block content
                         <br>
                         <ul>
                           <li class="omahali">
-                            a(href=val.store_link)= val.store_link
+                            a(href=val.store_url, class="store_url")= val.store_url
                           </li> 
                         </ul>
                       </div>

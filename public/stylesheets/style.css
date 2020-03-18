@@ -791,4 +791,10 @@ a.btn-search.btn.btn-primary {
   right: 30px;
   color: white
 }
+i.fas.fa-map-marker-alt {
+  display: none;
+}
+.row.border {
+  cursor: pointer;
+}
 
