@@ -5,6 +5,7 @@ var user_services = require('../services/user');
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+router.get('/signin', user_services.get_sign_in);
 //SignIn Route
 router.post('/signin', user_services.sign_in);
 //Register Route

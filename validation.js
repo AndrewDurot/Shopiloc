@@ -34,7 +34,7 @@ const storeValidation = data =>{
         store_logo: Joi.string(),
         country: Joi.string().required(),
         state: Joi.string().required(),
-        postal_code: Joi.string().required(),
+        postal_code: Joi.required(),
         phone_number: Joi.string().required(),
         store_description: Joi.string().required()
     });

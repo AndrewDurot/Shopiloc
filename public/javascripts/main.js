@@ -4,10 +4,36 @@ $(document).ready(function(){
         if(country_List.length > 0){
             country_List.forEach(element => {
                 $("#countries").append($('<option>', {
-                    value: country_List,
-                    text: country_List
+                    value: element,
+                    text: element
                 }));
             });
         }
     });
+    
+    if(window.location.href.includes("admin/create")){
+        $.get("/country", function(data, status){
+            var country_List = data.country;
+            if(country_List.length > 0){
+                country_List.forEach(element => {
+                    $("#countries_list").append($('<option>', {
+                        value: element.name,
+                        text: element.name
+                    }));
+                });
+            }
+        });
+        $.get("/state", function(data, status){
+           
+            var country_List = data.country;
+            if(country_List.length > 0){
+                country_List.forEach(element => {
+                    $("#states_list").append($('<option>', {
+                        value: element.name,
+                        text: element.name
+                    }));
+                });
+            }
+        });
+    }
 });

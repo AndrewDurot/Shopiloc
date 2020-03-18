@@ -4,8 +4,10 @@ var user_Route = require('./users');
 var store_Route = require('./store');
 //var search_Route = require('./search');
 var search_Route = require('./search');
+var admin_Route = require('./admin');
 const mongoose = require('mongoose');
 var Store = require('../models/store');
+
 var home_services = require('../services/home');
 
 /* GET home page. */
@@ -15,6 +17,8 @@ router.get('/', home_services.get_store);
 /* Post home page. */
 router.post('/', home_services.get_Search);
 
+//admon User 
+router.use('/admin', admin_Route);
 //Basic User 
 router.use('/user', user_Route);
 router.use('/store', store_Route);
@@ -22,7 +26,10 @@ router.use('/store', store_Route);
 router.use('/search', search_Route);
 //Country List
 router.get('/country_List', home_services.get_country);
-
+//All country List
+router.get('/country', home_services.get_all_country);
+//All state List
+router.get('/state', home_services.get_all_state);
 mongoose.connect(
   'mongodb+srv://Farukh:110581F.A@rest-6ss50.mongodb.net/test?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },

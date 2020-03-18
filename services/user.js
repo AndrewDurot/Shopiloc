@@ -6,6 +6,14 @@ const jwt = require('jsonwebtoken');
 //router.use(cors);
 
 
+//Login Get Method
+exports.get_sign_in = async (req, res)=>{
+    var token = req.cookies.auth;
+    if(token) return res.redirect('/admin');
+    res.render('signin', {success : true});
+}
+
+
 //Login Post Method
 exports.sign_in = async (req, res)=>{
     const { error } = loginValidation(req.body);
@@ -15,16 +23,17 @@ exports.sign_in = async (req, res)=>{
         return;
     }
     const user = await User.findOne({email: req.body.email});
-    if(!user) return res.status(400).send({success : false, message: 'Email is not found'});
+    if(!user) return res.render('signin',{'message': "Invalid details", success : false});//res.status(400).send({success : false, message: 'Email is not found'});
     //Password is correct
     const validPass = await bcrypt.compare(req.body.password, user.password);
-    if(!validPass) return res.status(400).send({success: false, message : 'Invalid password'});
+    if(!validPass) return res.render('signin',{'message': "Invalid details" , success : false});//res.status(400).send({success: false, message : 'Invalid password'});
   //Create and assign a token.
     const token = jwt.sign({_id: user._id}, "configtestingtoken");
     res.cookie('auth',token);
-    res.header('auth-token',token).send({ success:true,message:"Successfully Login",
-        token
-    });
+    res.header('auth-token', token).redirect('/admin');
+    // res.header('auth-token',token).send({ success:true,message:"Successfully Login",
+    //     token
+    // });
 
     //res.send('NOT IMPLEMENTED: Genre list');
 }
