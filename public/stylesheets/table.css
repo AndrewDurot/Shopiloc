@@ -27,3 +27,12 @@ header {
     border-bottom: 1px solid darkgray;
     padding-bottom: 50px;
 }
+@media (min-width: 1200px){
+    .container {
+        max-width: 1307px;
+    }
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    white-space: nowrap;
+}

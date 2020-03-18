@@ -7,7 +7,8 @@ var search_Route = require('./search');
 var admin_Route = require('./admin');
 const mongoose = require('mongoose');
 var Store = require('../models/store');
-
+var cookieParser = require('cookie-parser');
+router.use(cookieParser());
 var home_services = require('../services/home');
 
 /* GET home page. */

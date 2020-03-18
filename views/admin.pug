@@ -36,10 +36,11 @@ block content
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                 <th>Address</th>
                                 <th>Url</th>
                                 <th>Pro/State</th>
                                 <th>City</th>
-                                <th>Address</th>
+                               
                                 <th>Phone Number</th>
                                 <th>Country</th>
                                 <th>Detail</th>
@@ -51,9 +52,11 @@ block content
                             each val in store
                                 <tr>
                                     td= val.store_name
-                                    td= val.store_url
-                                    td= val.city
                                     td= val.address1
+                                    td= val.store_url
+                                    td= val.state
+                                    td= val.city
+                                    
                                     td= val.phone_number
                                     td= val.country
                                     <td><i class="fas fa-info-circle"></i></td>
