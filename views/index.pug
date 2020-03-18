@@ -2,7 +2,7 @@ extends layout
 
 block content
   <div class="s01">
-    <form action="/search" method="post">
+    <form action="/" method="post">
       <fieldset>
         <legend>Discover the Near Store</legend>
       </fieldset>
@@ -17,72 +17,77 @@ block content
       </div>
     </form>
   </div>
-  
-  <div class="container" style="display:none;">
-  
-  <div class="row ">
-  <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
-             
-  <div class="col-lg-6">
-  <div class="row border">
-   <div class="col-lg-5 ">
-  <img src="/images/download.jpg", alt="" >
-  
-  </div>
-  <div class="col-lg-5 ">
+  if isSearch
+    <div class="container">
     
-    <div class="">
-    <div class="col-icon">
-    <i class="fas fa-map-marker-alt"></i>
-    </div>
-    <div class="row-icon">
-    <div class="backwoods">
-    <h3 class="omahah3">Backwoods-Omaha</h3>
-    <p class="omahap">55180</p>
-    <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
-    <br>
-    <ul>
-    <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </div>
-  <div class="col-lg-6">
-  <div class="row border">
-   <div class="col-lg-5 ">
-  <img src="/images/download.jpg", alt="" >
-  
-  </div>
-  <div class="col-lg-5 ">
-    
-    <div class="">
-    <div class="col-icon">
-    <i class="fas fa-map-marker-alt"></i>
-    </div>
-    <div class="row-icon">
-    <div class="backwoods">
-    <h3 class="omahah3">Backwoods-Omaha</h3>
-    <p class="omahap">55180</p>
-    <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
-    <br>
-    <ul>
-    <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  
-  </div>
+    if isExist
 
- 
+      <div class="row ">
+      <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
+                
+      <div class="col-lg-6">
+      <div class="row border">
+      <div class="col-lg-5 ">
+      <img src="/images/download.jpg", alt="" >
+      
+      </div>
+      <div class="col-lg-5 ">
+        
+        <div class="">
+        <div class="col-icon">
+        <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="row-icon">
+        <div class="backwoods">
+        <h3 class="omahah3">Backwoods-Omaha</h3>
+        <p class="omahap">55180</p>
+        <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
+        <br>
+        <ul>
+        <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+      <div class="row border">
+      <div class="col-lg-5 ">
+      <img src="/images/download.jpg", alt="" >
+      
+      </div>
+      <div class="col-lg-5 ">
+        
+        <div class="">
+        <div class="col-icon">
+        <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="row-icon">
+        <div class="backwoods">
+        <h3 class="omahah3">Backwoods-Omaha</h3>
+        <p class="omahap">55180</p>
+        <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
+        <br>
+        <ul>
+        <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      </div>
+    else
+      <div class="row ">
+      <p class="description">*No Store Found.</p>
+      </div>
   
-  </div>
+    
+    </div>
   
