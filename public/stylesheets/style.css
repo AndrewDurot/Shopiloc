@@ -809,8 +809,16 @@ a.btn-search.btn.btn-primary.btn-secondry {
   margin-bottom: 60px;
 }
 @media only screen and (max-width: 600px) {
-  .s01 {
+  /* .s01 {
     min-height: 50vh;
+  } */
+  div#results {
+    overflow: hidden;
+  }
+  select#countries {
+    padding: 10px 32px;
+    font-size: 20px;
+    height: 50px;
   }
 }
 li.list-group-item.button {
