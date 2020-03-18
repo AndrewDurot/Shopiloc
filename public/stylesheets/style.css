@@ -797,4 +797,23 @@ i.fas.fa-map-marker-alt {
 .row.border {
   cursor: pointer;
 }
+a.btn-search.btn.btn-primary.btn-secondry {
+  position: absolute;
+  bottom: 0;
+  top: unset;
+}
+.s01 form legend {
+  font-size: 60px;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 600px) {
+  .s01 {
+    min-height: 50vh;
+  }
+}
+li.list-group-item.button {
+  text-align: center;
+}
 

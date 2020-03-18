@@ -41,5 +41,18 @@ $(document).ready(function(){
         var url = $(this.children[0]).attr("href");
         window.open("https://"+url, 'name'); 
         
-    })
+    });
+    function goToByScroll(id){
+        // Reove "link" from the ID
+        id = id.replace("link", "");
+        // Scroll
+        $('html,body').animate({
+        scrollTop: $("#"+id).offset().top},
+        'slow');
+    }
+    if($("#results").length > 0)
+    {
+        goToByScroll("results");
+    }
+    //debugger;
 });

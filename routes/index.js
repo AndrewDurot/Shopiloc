@@ -19,7 +19,10 @@ router.get('/', home_services.get_store);
 router.post('/', home_services.get_Search);
 /* Store create Form */
 router.get('/create', home_services.create_store);
-
+//about page
+router.get('/about', (req, res)=>{
+  res.render('about');
+})
 //admon User 
 router.use('/admin', admin_Route);
 //Basic User 

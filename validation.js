@@ -28,14 +28,9 @@ const storeValidation = data =>{
         //name: Joi.string().min(6).required(),
         store_name: Joi.string().min(2).required(),
         store_url: Joi.string().required(),
-        address1: Joi.string().required(),
-        address2: Joi.string().allow(null, ''),
-        city: Joi.string().required(),
-        store_logo: Joi.string().allow(null, ''),
         country: Joi.string().required(),
-        state: Joi.string().required(),
+        store_logo: Joi.string().allow(null, ''),
         postal_code: Joi.required(),
-        phone_number: Joi.string().required(),
         status: Joi.string(),
         store_description: Joi.string().required()
     });
