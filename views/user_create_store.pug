@@ -1,0 +1,95 @@
+extends layout
+
+block content
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-5">
+                <div style="padding:  50px 20px;">
+                    <h3 >STORE DETAILS</h3>
+                    <p>Create New Store</p>
+                    <div style="margin-top: 50px;" class="menu" style="display:none">
+                        <h5 style="display:none">Actions</h5>
+                    <div class="card" style="width: 18rem; display:none">
+                
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href=""><i class="fas fa-search"></i>  Search</li></a>
+                            <li class="list-group-item"><a href=""><i class="fas fa-box"></i>  Store List</li></a>
+                            <li class="list-group-item"><i class="fas fa-minus"></i>  Delete All Stores</li>
+                        </ul>
+                    </div>
+                    <div class="form-group" style="width: 18rem; margin-top: 30px; display:none">
+                        <h5>View Options</h5>
+                        <select id="inputState" class="form-control">
+                            <option selected>View All</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f4f4f4;" class="col-md-7">
+            <form method="post" action="/store" enctype="multipart/form-data" style="padding:  50px 20px;">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="name">Store Name</label>
+                        <input type="hidden" name="status" value="false">
+                        <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="Store Name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">Store Url</label>
+                        <input type="text" class="form-control" required name="store_url" id="inputEmail4" placeholder="Store Url">
+                    </div>
+        
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" required name="address1" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" name="address2" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" required name="city" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputState">Country</label>
+                        <select id="countries_list" name="country" required class="form-control">
+                            <option>Choose Country</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputState">State</label>
+                        <select id="states_list" name="state" required class="form-control">
+                            <option>Choose State</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" name="postal_code" required class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">Phone No.</label>
+                        <input type="text" name="phone_number" required class="form-control" >
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">Description.</label>
+                        textarea(name="store_description", required, cols="82", rows="10")
+                        
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="exampleFormControlFile1">Upload Image</label>
+                        <input type="file" name="store_logo" required class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <div class="form-group col-md-12">
+                       <button class="form-control" type="submit"> Create Store</button>
+                    
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </div>

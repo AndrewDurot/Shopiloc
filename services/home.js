@@ -17746,6 +17746,10 @@ exports.get_all_state = async (req, res) =>{
     res.send({country : state});
 }
 
+exports.create_store = async (req, res) =>{
+    console.log("user_create")
+    res.render('user_create_store');
+}
 exports.get_Search = async (req, res)=>{
     try{
         console.log(req.body);

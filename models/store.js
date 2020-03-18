@@ -9,6 +9,9 @@ const storeSchema = new mongoose.Schema({
         type: String
        
     },
+    status:{
+        type: String
+    },
     store_description:{
         type: String
        

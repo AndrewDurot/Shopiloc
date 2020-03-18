@@ -11,7 +11,7 @@ $(document).ready(function(){
         }
     });
     
-    if(window.location.href.includes("admin/create")){
+    if(window.location.href.includes("create")){
         $.get("/country", function(data, status){
             var country_List = data.country;
             if(country_List.length > 0){

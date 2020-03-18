@@ -17,6 +17,8 @@ router.get('/', home_services.get_store);
 
 /* Post home page. */
 router.post('/', home_services.get_Search);
+/* Store create Form */
+router.get('/create', home_services.create_store);
 
 //admon User 
 router.use('/admin', admin_Route);

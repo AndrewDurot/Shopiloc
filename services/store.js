@@ -4,7 +4,7 @@ const { storeValidation, recordValidation } = require("../validation");
 //Post Store 
 exports.create_store = async(req, res)=>
 {
-    console.log(req.body);
+   
     const { error } = storeValidation(req.body);
     if( error )
     {
@@ -14,13 +14,16 @@ exports.create_store = async(req, res)=>
     const store = new Store(req.body);
     try{
         const savedStore = await store.save();
-        res.redirect('/admin')
+        if(savedStore.status == "false")
+        {
+            res.redirect('/');
+        }
+        res.redirect('/admin');
         //res.send(savedStore);
     }
     catch(err){
         res.status(400).send(err);
     }
-    res.status(200).send(store);
 }
 
 //Edit Store

@@ -36,6 +36,7 @@ const storeValidation = data =>{
         state: Joi.string().required(),
         postal_code: Joi.required(),
         phone_number: Joi.string().required(),
+        status: Joi.string(),
         store_description: Joi.string().required()
     });
     return schema.validate(data);
