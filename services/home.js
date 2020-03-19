@@ -32,6 +32,7 @@ exports.get_Search = async (req, res)=>{
     try{
         console.log(req.body);
         var code = req.body.postal_code.toLowerCase();
+        console.log(code);
         var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
         
         let isExist = false;
