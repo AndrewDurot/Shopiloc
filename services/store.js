@@ -20,7 +20,8 @@ exports.create_store = async(req, res)=>
         postal_code = req.body.postal_code.split(",");
         postal_code.forEach(element => {
             if(element != " "){
-                array.push(element.trim().split(/\s*,\s*/));
+                var elements = element.trim().split(/\s*,\s*/);
+                array.push(elements[0]);
             }
             
         });
