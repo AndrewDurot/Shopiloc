@@ -863,3 +863,7 @@ div.container {
   margin-top: 25px;
   margin-bottom: 20px;
 }
+legend h6 {
+  padding-top: 10px;
+  font-size: 26px;
+}

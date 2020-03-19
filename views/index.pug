@@ -6,11 +6,14 @@ block content
     <a href="/create" class="btn-search btn btn-primary"> Add my Store</a>
     <form action="/" method="post">
       <fieldset>
-        <legend>Find independent shops that deliver to you!</legend>
+        <legend>Find independent shops that deliver to you!
+        <h6>Worldwide open source project to save local stores!</h6>
+        </legend>
+        
       </fieldset>
       <div class="inner-form">
         <div class="input-field first-wrap">
-          <input id="search" name="postal_code" type="text" required placeholder="Enter Postal Code" />
+          <input id="search" name="postal_code" type="text" required placeholder="Enter Postal Code ---- no spacing" />
         </div>
         <div class="input-field second-wrap">
           <select class="custom-select" name="country_list" id="countries" required>
@@ -31,7 +34,7 @@ block content
       if isExist
 
         <div class="row ">
-          <p class="description">Here are all store <span>(
+          <p class="description">Here are all stores <span>(
            span= result_count 
           <span> shops) delivering to </span>
             span= postal_code 
@@ -98,7 +101,7 @@ block content
         </div>
       else
         <div class="row ">
-        <p class="description">*No stores have signed up to deliver in your area yet! Please help us spread the work and get local stores and shoppers online asap! Share share share!</p>
+        <p class="description">*No stores have signed up to deliver in your area yet! Please help us spread the word and get local stores and shoppers online asap! Share share share!</p>
         </div>
     </div>
   
