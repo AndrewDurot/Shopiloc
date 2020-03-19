@@ -1,240 +1,154 @@
-extends layout
 
 block content
-    <div class="container">
-        <div class="row">
-            <div  class="col-md-5">
-                <div style="padding:  50px 20px;">
-                    <h3 >STORE DETAILS</h3>
-                    <p>Create New Store</p>
-                    <div style="margin-top: 50px;" class="menu">
-                    <h5>Actions</h5>
-                    <div class="card" style="width: 18rem;">
-                
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
-                            <li class="list-group-item"><a href="/admin"><i class="fas fa-box"></i>  Store List</li></a>
-                            <li class="list-group-item"><i class="fas fa-minus"></i>  Delete All Stores</li>
-                        </ul>
-                    </div>
-                    - var success = isSuccess
-                    if(success)
-                        <div class="form-group success" style="width: 18rem; margin-top: 30px; display:none">
-                            <h5>View Options</h5>
-                            <select id="inputState" class="form-control">
-                                <option selected>View All</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div style="background: #f4f4f4;" class="col-md-12">
-            
-            <p> Shopiloc is a open-source project with the simple goal of shoppers finding local independent stores that can deliver to their house in these times of crisis. </p>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
 
-            <h3>How you can help </h3>
-            <ul>
-                <li> USE IT!
-                
-                </li>
-                <li> Share it
-                </li>
-                <li> Get storeowners to add their stores
-                </li>
-                <li> If you are a marketer - copywriter - developer - designer or have any skill that can help save local businesses, let us know - we have a trello-board here where you can comment suggestions  - <a href="https://trello.com/b/2sJcvyaw/shopiloccom"> Trello Board</a> 
-                </li>
-                <li> Donations are welcome - we don't need much - just enough to run the server - any extra donations will be used on adspend!
-
-                </li>
-            </ul>
-            <h3> Urgently looking for:</h3>
-            <ul>
-                <li> - Designers</li>
-                <span>(all other pls refer to point 4!)</span>
-            </ul>
-            <h3>List of volunteers</h3>
-            <ul>
-                <li>Mamadou Koné - Dev-Ops
-                </li>
-                <li>Lukas - Developer
-                </li>
-                <li>EcomExperts.io team - Project management, developers
-                </li>
-            </ul>
-            <h3>FAQ</h3>
-            <ul>
-                <li> Why should't I shop on Amazon
-                <br>- Amazon is great, but small independent shops in your area suddenly stopped getting traffic. This means unless we do an extra effort they will shut down. Your "main" street will be filled with bankrupt shops. </li>
-                <li>What's the difference between this and Google?
-                <br>The shops you see are limited to the ones that can actually deliver personally in your area. Each shop on the list can only add a limited amount of postal codes as their delivery zone - this means you are really getting your local shops instead of the big e-com players that dominate Google
-                </li>
-                <li>I own a shop - but don't have a site, HELP!
-                <br>We got you - click here - to have a step by step video tutorial on how to set up a Shopify store at the lowest price possible. 
-                </li>
-                <li>Why is your "set up a store" tutorial just for Shopify?
-                <br> We don't think this is the time to debate which platform is better. We made the videos for Shopify because that's what we are fluent in - we are more then open to add tutorials on other platforms as well! The goal is to get as many independent shop owners online asap
-                </li>
-                <li>I added my store but I don't see it!
-                <br>We manually accept new store entries - this might take a moment - we do this to limit the amount of span and because we kept the product basic
-                </li>
-                <li>Why isn't my country featured in the search list?
-                <br>This means we don't have any stores in your country yet - and that's sad news :( - You need to help us get the word out!
-                </li>
-                <li>When I add my store - I can't add more then 6 postal codes as delivery zones
-                <br> Yes we know - reason is that we want to keep it local. Amazon delivers everywhere, so does zara.com. This site is to give a lifeline to your local  corner-store that never did any web marketing before and that stands no chance in ranking on google. That's why delivery-zones are limited.
-                </li>
-                <li>I made a mistake in my store listing - how do I change it?
-                <br>Ow lord - we're not fancy enough yet! You need to send us an email andrew@ecomexperts.io
-                </li>
-                <li>Are you affiliated with someone?
-                <br>We are in talks with multiple government organizations of different countries (3) and e-commerce platforms(2) but govs & multinationals take time so no official affiliation yet! :(
-                </li>
-            </ul>
-        </div>
-    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <div class="container">
         <br />
         <br />
         <br />
 
         <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>This section contains a wealth of information, related to <strong>PrepBootstrap</strong> and its store. If you cannot find an answer to your question, make sure to contact us. 
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>SHOPILOC IS A OPEN-SOURCE PROJECT WITH THE SIMPLE GOAL OF SHOPPERS FINDING LOCAL INDEPENDENT STORES THAT CAN DELIVER TO THEIR HOUSE IN THESE TIMES OF CRISIS.
         </div>
 
         <br />
+        <h3 class="faq">How you can help </h3>
+        <ul class="info">
+            <li> USE IT!
+            
+            </li>
+            <li> Share it
+            </li>
+            <li> Get storeowners to add their stores
+            </li>
+            <li> If you are a marketer - copywriter - developer - designer or have any skill that can help save local businesses, let us know - we have a trello-board here where you can comment suggestions  - <a  target="_blank" href="https://trello.com/b/2sJcvyaw/shopiloccom"> Trello Board</a> 
+            </li>
+            <li> Donations are welcome - we don't need much - just enough to run the server - any extra donations will be used on adspend!
 
+            </li>
+        </ul>
+        <h3 class="faq"> Urgently looking for:</h3>
+        <ul class="info">
+            <li> - Designers</li>
+            <span>(all other pls refer to point 4!)</span>
+        </ul>
+        <h3>List of volunteers</h3>
+        <ul>
+            <li>Mamadou Koné - Dev-Ops
+            </li>
+            <li>Lukas - Developer
+            </li>
+            <li>EcomExperts.io team - Project management, developers
+            </li>
+        </ul>
         <div class="panel-group" id="accordion">
-            <div class="faqHeader">General questions</div>
+            <div class="faqHeader">FAQ</div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is account registration required?</a>
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why should't I shop on Amazon</a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">Account registration at <strong>PrepBootstrap</strong> is only required if you will be selling or buying themes. This ensures a valid communication channel for all parties involved in any transactions. 
+                    <div class="panel-body">Amazon is great, but small independent shops in your area suddenly stopped getting traffic. This means unless we do an extra effort they will shut down.Your "main" street will be filled with bankrupt shops.
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Can I submit my own Bootstrap templates or themes?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">What's the difference between this and Google?
+                        </a>
                     </h4>
                 </div>
                 <div id="collapseTen" class="panel-collapse collapse">
-                    <div class="panel-body">A lot of the content of the site has been submitted by the community. Whether it is a commercial element/template/theme or a free one, you are encouraged to contribute. All credits are published along with the resources. 
+                    <div class="panel-body">The shops you see are limited to the ones that can actually deliver personally in your area. Each shop on the list can only add a limited amount of postal codes as their delivery zone - this means you are really getting your local shops instead of the big e-com players that dominate Google
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">What is the currency used for all transactions?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">I own a shop - but don't have a site, HELP!</a>
                     </h4>
                 </div>
                 <div id="collapseEleven" class="panel-collapse collapse">
-                    <div class="panel-body">All prices for themes, templates and other items, including each seller's or buyer's account balance are in <strong>USD</strong>
+                    <div class="panel-body">We got you - click here - to have a step by step video tutorial on how to set up a Shopify store at the lowest price possible.
                     </div>
                 </div>
             </div>
-
-            <div class="faqHeader">Sellers</div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Who cen sell items?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Why is your "set up a store" tutorial just for Shopify?</a>
                     </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse">
-                    <div class="panel-body">Any registed user, who presents a work, which is genuine and appealing, can post it on <strong>PrepBootstrap</strong>.
+                    <div class="panel-body">We don't think this is the time to debate which platform is better. We made the videos for Shopify because that's what we are fluent in - we are more then open to add tutorials on other platforms as well! The goal is to get as many independent shop owners online asap
+
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">I want to sell my items - what are the steps?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">I added my store but I don't see it!</a>
                     </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        The steps involved in this process are really simple. All you need to do is:
-                        <ul>
-                            <li>Register an account</li>
-                            <li>Activate your account</li>
-                            <li>Go to the <strong>Themes</strong> section and upload your theme</li>
-                            <li>The next step is the approval step, which usually takes about 72 hours.</li>
-                        </ul>
+                    <div class="panel-body">We manually accept new store entries - this might take a moment - we do this to limit the amount of span and because we kept the product basic
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How much do I get from each sale?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Why isn't my country featured in the search list?</a>
                     </h4>
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse">
-                    <div class="panel-body">Here, at <strong>PrepBootstrap</strong>, we offer a great, 70% rate for each seller, regardless of any restrictions, such as volume, date of entry, etc.
-                        <br />
+                    <div class="panel-body">This means we don't have any stores in your country yet - and that's sad news :( - You need to help us get the word out!
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Why sell my items here?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">When I add my store - I can't add more then 6 postal codes as delivery zones</a>
                     </h4>
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        There are a number of reasons why you should join us:
-                        <ul>
-                            <li>A great 70% flat rate for your items.</li>
-                            <li>Fast response/approval times. Many sites take weeks to process a theme or template. And if it gets rejected, there is another iteration. We have aliminated this, and made the process very fast. It only takes up to 72 hours for a template/theme to get reviewed.</li>
-                            <li>We are not an exclusive marketplace. This means that you can sell your items on <strong>PrepBootstrap</strong>, as well as on any other marketplate, and thus increase your earning potential.</li>
-                        </ul>
+                    <div class="panel-body">Yes we know - reason is that we want to keep it local. Amazon delivers everywhere, so does zara.com. This site is to give a lifeline to your local corner-store that never did any web marketing before and that stands no chance in ranking on google. That's why delivery-zones are limited.
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What are the payment options?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">I made a mistake in my store listing - how do I change it?</a>
                     </h4>
                 </div>
                 <div id="collapseEight" class="panel-collapse collapse">
-                    <div class="panel-body">The best way to transfer funds is via Paypal. This secure platform ensures timely payments and a secure environment. 
+                    <div class="panel-body">Ow lord - we're not fancy enough yet! You need to send us an email andrew@ecomexperts.io
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">When do I get paid?</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Are you affiliated with someone?</a>
                     </h4>
                 </div>
                 <div id="collapseNine" class="panel-collapse collapse">
-                    <div class="panel-body">Our standard payment plan provides for monthly payments. At the end of each month, all accumulated funds are transfered to your account. The minimum amount of your balance should be at least 70 USD. 
+                    <div class="panel-body">We are in talks with multiple government organizations of different countries (3) and e-commerce platforms(2) but govs & multinationals take time so no official affiliation yet! :(
                     </div>
                 </div>
             </div>
 
-            <div class="faqHeader">Buyers</div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">I want to buy a theme - what are the steps?</a>
-                    </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse">
-                    <div class="panel-body">Buying a theme on <strong>PrepBootstrap</strong> is really simple. Each theme has a live preview. Once you have selected a theme or template, which is to your liking, you can quickly and securely pay via Paypal.
-                        <br />Once the transaction is complete, you gain full access to the purchased product. 
-                    </div>
-                </div>
-            </div>
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">

@@ -3,18 +3,21 @@ extends layout
 block content
   
   <div class="s01">
-    <a href="/create" class="btn-search btn btn-primary"> Create Store</a>
+    <a href="/create" class="btn-search btn btn-primary"> Add my Store</a>
     <form action="/" method="post">
       <fieldset>
-        <legend>Find independent shops that deliver to you!</legend>
+        <legend>Find independent shops that deliver to you!
+        <h6>Worldwide open source project to save local stores!</h6>
+        </legend>
+        
       </fieldset>
       <div class="inner-form">
         <div class="input-field first-wrap">
-          <input id="search" name="postal_code" type="text" required placeholder="Enter Postal Code" />
+          <input id="search" name="postal_code" type="text" required placeholder="Enter Postal Code ---- no spacing" />
         </div>
         <div class="input-field second-wrap">
-          <select class="custom-select" name="country_list" required id="countries">
-            <option>Choose Country</option>
+          <select class="custom-select" name="country_list" id="countries" required>
+            <option value="">Choose Country</option>
           </select> 
         </div>
         
@@ -23,7 +26,7 @@ block content
         </div>
       </div>
     </form>
-    <a href="/about" class="btn-search btn btn-primary btn-secondry"> About Shopifloc</a>
+    <a href="/about" class="btn-search btn btn-primary btn-secondry"> About / Help Shopiloc</a>
   </div>
   if isSearch
     <div class="container" id="results">
@@ -31,7 +34,12 @@ block content
       if isExist
 
         <div class="row ">
-          <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
+          <p class="description">Here are all stores <span>(
+           span= result_count 
+          <span> shops) delivering to </span>
+            span= postal_code 
+            <span>- Please tell as many shop owners and shoppers about this service so more stores can survive!</span>
+          </p>
           each val in data        
             <div class="col-lg-6">
               
@@ -40,7 +48,7 @@ block content
                 <div class="col-md-4 ">
                   img(src=val.store_logo,class="store_logo", alt="")   
                 </div>
-                <div class="col-md-6 ">
+                <div class="col-md-8 ">
             
                   <div class="">
                     <div class="col-icon">
@@ -93,7 +101,7 @@ block content
         </div>
       else
         <div class="row ">
-        <p class="description">*No Store Found.</p>
+        <p class="description">*No stores have signed up to deliver in your area yet! Please help us spread the word and get local stores and shoppers online asap! Share share share!</p>
         </div>
     </div>
   
