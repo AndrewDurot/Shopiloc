@@ -38,7 +38,7 @@ block content
               <div class="row border">
                 a(href=val.store_url, class="store_url") 
                 <div class="col-lg-5 ">
-                  img(src=val.store_logo, alt="")   
+                  img(src=val.store_logo,class="store_logo", alt="")   
                 </div>
                 <div class="col-lg-5 ">
             
@@ -50,7 +50,8 @@ block content
                       <div class="backwoods">
                         h3.omahah3= val.store_name
                         p.omahap= val.postal_code
-                        p.omahap= val.address1 , val.country
+                        p.omahap= val.country
+                        p.omahap= val.store_description
                         <br>
                         <ul>
                           <li class="omahali">

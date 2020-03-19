@@ -11,20 +11,31 @@ exports.create_store = async(req, res)=>
         res.status(400).send(error.details[0].message);
         return;
     }
-    const store = new Store(req.body);
-    // try{
-    //     const savedStore = await store.save();
-    //     if(savedStore.status == "false")
-    //     {
-    //         res.redirect('/');
-    //     }
-    //     res.redirect('/admin');
-    //     //res.send(savedStore);
-    // }
-    // catch(err){
-    //     res.status(400).send(err);
-    // }
-    res.send(store);
+    var path_img = req.file.path;
+    var res_path = path_img.replace("uploads", "");
+    
+    const store = new Store({
+        store_name : req.body.store_name,
+        store_url : req.body.store_url,
+        status : req.body.status,
+        store_description : req.body.store_description,
+        country : req.body.country,
+        postal_code : req.body.postal_code,
+        store_logo : res_path
+    });
+    try{
+        const savedStore = await store.save();
+        if(savedStore.status == "false")
+        {
+            res.redirect('/');
+        }
+        res.redirect('/admin');
+        //res.send(savedStore);
+    }
+    catch(err){
+        res.status(400).send(err);
+    }
+    //res.send(store);
 }
 
 //Edit Store

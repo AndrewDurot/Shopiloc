@@ -5,15 +5,29 @@ var multer  = require('multer');
 var path = require('path')
 
 router.use(express.static(__dirname));
-const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, path.join(__dirname, '/uploads/'));
+var storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+      callback(null, './uploads')
     },
-    filename: (req, file, cb)=>{
-        cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
+    filename: function(req, file, callback) {
+      console.log(file)
+      callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 });
-var upload = multer({ storage: storage });
+const fileFilter = (req, file, cb)=>{
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+        cb(null, true);
+    }else{
+        cb(null, false);
+    }
+};
+var upload = multer({ 
+    storage: storage,
+    limits:{
+      fileSize:  1024 * 1024 * 5
+    },
+    fileFilter: fileFilter 
+});
 
 //Create Store 
 router.post('/', upload.single('store_logo'), store_services.create_store);

@@ -815,13 +815,21 @@ a.btn-search.btn.btn-primary.btn-secondry {
   div#results {
     overflow: hidden;
   }
+  div.container {
+    overflow: hidden;
+  }
   select#countries {
     padding: 10px 32px;
     font-size: 20px;
     height: 50px;
   }
+  .store_logo{
+    width: 280px;
+  }
 }
 li.list-group-item.button {
   text-align: center;
 }
-
+.store_logo{
+  width: 216px;
+}
