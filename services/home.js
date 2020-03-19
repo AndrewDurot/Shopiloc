@@ -22,6 +22,47 @@ exports.get_country = async (req, res) =>{
     country_List = removeDups(country_List);
     res.send({country : country_List});
 }
+
+
+exports.create_store = async (req, res) =>{
+    console.log("user_create")
+    res.render('user_create_store');
+}
+exports.get_Search = async (req, res)=>{
+    try{
+        console.log(req.body);
+        var code = req.body.postal_code.toLowerCase();
+        var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
+        
+        let isExist = false;
+        if(store.length > 0)
+        {
+            isExist = true;
+
+        }
+        console.log("Here");
+        console.log(store);
+        //res.status(200).send(store);
+        //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
+        res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "" });
+    //res.redirect('/');
+    }
+    catch(err){
+        res.status(500).send(err);
+    }
+}
+exports.Check_Url = async(req, res)=>{
+    var req_url = req.query;
+    var store_url = await Store.find({"store_url" : req.query.url});
+    if(store_url.length > 0){
+        res.status(200).send({isExist : true});
+    }
+    else{
+        res.status(200).send({isExist : false});
+    }
+
+    console.log(store_url);
+}
 exports.get_all_country = async (req, res) =>{
     var country_List = [];
     var country = 
@@ -17744,43 +17785,4 @@ exports.get_all_state = async (req, res) =>{
     // });
     //country_List = removeDups(country_List);
     res.send({country : state});
-}
-
-exports.create_store = async (req, res) =>{
-    console.log("user_create")
-    res.render('user_create_store');
-}
-exports.get_Search = async (req, res)=>{
-    try{
-        console.log(req.body);
-        var store = await Store.find({postal_code: req.body.postal_code, country : req.body.country_list, status : "true"});
-        
-        let isExist = false;
-        if(store.length > 0)
-        {
-            isExist = true;
-
-        }
-        console.log("Here");
-        console.log(store);
-        //res.status(200).send(store);
-        //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
-        res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : "" });
-    //res.redirect('/');
-    }
-    catch(err){
-        res.status(500).send(err);
-    }
-}
-exports.Check_Url = async(req, res)=>{
-    var req_url = req.query;
-    var store_url = await Store.find({"store_url" : req.query.url});
-    if(store_url.length > 0){
-        res.status(200).send({isExist : true});
-    }
-    else{
-        res.status(200).send({isExist : false});
-    }
-
-    console.log(store_url);
 }

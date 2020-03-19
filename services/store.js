@@ -16,11 +16,20 @@ exports.create_store = async(req, res)=>
     var postal_code;
     if(req.body.postal_code.includes(","))
     {
+        let array = [];
         postal_code = req.body.postal_code.split(",");
+        postal_code.forEach(element => {
+            if(element != " "){
+                array.push(element.trim().split(/\s*,\s*/));
+            }
+            
+        });
+        console.log(array);
+        postal_code = array;
     }
     else
     {
-        postal_code = req.body.postal_code;
+        postal_code = req.body.postal_code.toLowerCase();
     }
     const store = new Store({
         store_name : req.body.store_name,
