@@ -36,8 +36,9 @@ block content
                         <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="Store Name">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="name">Store Url</label>
-                        <input type="text" class="form-control" required name="store_url" id="inputEmail4" placeholder="Store Url">
+                        <label for="url">Store Url</label>
+                        <input type="text" class="form-control" required name="store_url" id="store_url" placeholder="Store Url">
+                        <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
                     </div>
         
                     <div class="form-group col-md-12">
@@ -63,7 +64,7 @@ block content
                         <input type="file" name="store_logo" required class="form-control-file" id="exampleFormControlFile1">
                     </div>
                     <div class="form-group col-md-12">
-                       <button class="form-control" type="submit"> Create Store</button>
+                       <button class="form-control submit" type="submit" > Create Store</button>
                     
                     </div>
                 </div>

@@ -36,6 +36,8 @@ router.get('/country_List', home_services.get_country);
 router.get('/country', home_services.get_all_country);
 //All state List
 router.get('/state', home_services.get_all_state);
+//Url List
+router.get('/Check_Url', home_services.Check_Url);
 mongoose.connect(
   'mongodb+srv://Farukh:110581F.A@rest-6ss50.mongodb.net/test?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },

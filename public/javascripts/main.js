@@ -23,18 +23,18 @@ $(document).ready(function(){
                 });
             }
         });
-        $.get("/state", function(data, status){
+        // $.get("/state", function(data, status){
            
-            var country_List = data.country;
-            if(country_List.length > 0){
-                country_List.forEach(element => {
-                    $("#states_list").append($('<option>', {
-                        value: element.name,
-                        text: element.name
-                    }));
-                });
-            }
-        });
+        //     var country_List = data.country;
+        //     if(country_List.length > 0){
+        //         country_List.forEach(element => {
+        //             $("#states_list").append($('<option>', {
+        //                 value: element.name,
+        //                 text: element.name
+        //             }));
+        //         });
+        //     }
+        // });
     }
     $(document).on("click", ".row.border", function(e){
         
@@ -54,5 +54,56 @@ $(document).ready(function(){
     {
         goToByScroll("results");
     }
+    function isUrlValid(url) {
+        return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+    }
+    $('#store_url').on('focusout', function() {
+       
+        if(this.value.includes("https:") || this.value.includes("http:"))
+        {
+            var valid = isUrlValid(this.value);
+            if(valid){
+                $.get("/Check_Url?url="+this.value, function(data, status){
+                    debugger;
+                    if(data.isExist){
+                        $("#url-error").text("This Url already Exist");
+                        $("#url-error").css("display", "block");
+                        $(".submit").attr("disabled","disabled");
+                    }
+                    else{
+                        $(".submit").removeAttr("disabled");
+                        $("#url-error").css("display", "none");
+                    }
+                    
+                });
+            }
+            else{
+                $("#url-error").text("Invalid Url");
+                $("#url-error").css("display", "block");
+            }
+        }
+        else{
+            var valid = isUrlValid("https://"+this.value);
+            if(valid){
+                $.get("/Check_Url?url="+this.value, function(data, status){
+                    if(data.isExist){
+                        $("#url-error").text("This Url already Exist");
+                        $("#url-error").css("display", "block");
+                        $(".submit").attr("disabled","disabled");
+                    }
+                    else{
+                        $(".submit").removeAttr("disabled");
+                        $("#url-error").css("display", "none");
+                    }
+                    
+                });
+            }
+            else{
+                $("#url-error").text("Invalid Url");
+                $("#url-error").css("display", "block");
+            }
+        }
+        
+    });
     //debugger;
 });

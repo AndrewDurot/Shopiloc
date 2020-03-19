@@ -17772,3 +17772,15 @@ exports.get_Search = async (req, res)=>{
         res.status(500).send(err);
     }
 }
+exports.Check_Url = async(req, res)=>{
+    var req_url = req.query;
+    var store_url = await Store.find({"store_url" : req.query.url});
+    if(store_url.length > 0){
+        res.status(200).send({isExist : true});
+    }
+    else{
+        res.status(200).send({isExist : false});
+    }
+
+    console.log(store_url);
+}

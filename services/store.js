@@ -12,18 +12,19 @@ exports.create_store = async(req, res)=>
         return;
     }
     const store = new Store(req.body);
-    try{
-        const savedStore = await store.save();
-        if(savedStore.status == "false")
-        {
-            res.redirect('/');
-        }
-        res.redirect('/admin');
-        //res.send(savedStore);
-    }
-    catch(err){
-        res.status(400).send(err);
-    }
+    // try{
+    //     const savedStore = await store.save();
+    //     if(savedStore.status == "false")
+    //     {
+    //         res.redirect('/');
+    //     }
+    //     res.redirect('/admin');
+    //     //res.send(savedStore);
+    // }
+    // catch(err){
+    //     res.status(400).send(err);
+    // }
+    res.send(store);
 }
 
 //Edit Store
