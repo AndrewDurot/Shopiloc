@@ -29,6 +29,11 @@ exports.create_store = async(req, res)=>
         store_description : req.body.store_description,
         country : req.body.country,
         postal_code : postal_code,
+        city : req.body.city,
+        address1: req.body.address1,
+        address2: req.body.address2,
+        state: req.body.state,
+        phone_number: req.body.phone_number,
         store_logo : res_path
     });
     try{

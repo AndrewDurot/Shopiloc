@@ -14,7 +14,18 @@ const storeSchema = new mongoose.Schema({
     },
     store_description:{
         type: String
-       
+    },
+    address1:{
+        type: String
+    },
+    address2:{
+        type: String
+    },
+    phone_number:{
+        type: String
+    },
+    state:{
+        type: String
     },
     store_logo:{
         type: String

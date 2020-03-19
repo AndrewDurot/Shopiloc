@@ -23,18 +23,18 @@ $(document).ready(function(){
                 });
             }
         });
-        // $.get("/state", function(data, status){
+        $.get("/state", function(data, status){
            
-        //     var country_List = data.country;
-        //     if(country_List.length > 0){
-        //         country_List.forEach(element => {
-        //             $("#states_list").append($('<option>', {
-        //                 value: element.name,
-        //                 text: element.name
-        //             }));
-        //         });
-        //     }
-        // });
+            var country_List = data.country;
+            if(country_List.length > 0){
+                country_List.forEach(element => {
+                    $("#states_list").append($('<option>', {
+                        value: element.name,
+                        text: element.name
+                    }));
+                });
+            }
+        });
     }
     $(document).on("click", ".row.border", function(e){
         
