@@ -808,7 +808,8 @@ a.btn-search.btn.btn-primary.btn-secondry {
   color: #fff;
   margin-bottom: 60px;
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 500px) {
   /* .s01 {
     min-height: 50vh;
   } */
@@ -825,6 +826,11 @@ a.btn-search.btn.btn-primary.btn-secondry {
   }
   .store_logo{
     width: 280px;
+  }
+  select#countries {
+    padding: 10px 32px;
+    font-size: 20px;
+    height: 50px;
   }
 }
 li.list-group-item.button {
