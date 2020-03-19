@@ -105,5 +105,39 @@ $(document).ready(function(){
         }
         
     });
-    //debugger;
+    $("#inputZip").on('click', function(){
+        if(this.value.includes(","))
+        {
+            if(this.value.split(",").length == 11)
+            {
+                $(this).removeAttr("readonly")
+                
+            }
+
+        }
+    })
+    $('#inputZip').on('keyup', function() {
+       
+        if(this.value.includes(","))
+        {
+            if(this.value.split(",").length == 11)
+            {
+                $(this).attr("readonly", "readonly")
+
+            }
+
+        }
+    });
+    
+    if(window.location.href.includes("?success=true")){
+        sweetAlert({
+            title: "Success!",
+            text: "Your store is submitted and will be online once passed review.",
+            type: "success",
+            showCancelButton: false,
+            showConfirmButton: false,
+            timer: 3000
+        })
+    }
+    
 });

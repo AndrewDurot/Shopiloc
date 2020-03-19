@@ -36,7 +36,9 @@ router.get('/', store_services.get_store);
 //Get one Store 
 router.get('/Details', store_services.get_single_store);
 //Update Store
-router.put('/', store_services.create_store);
+//router.put('/', store_services.create_store);
+//Patch Store
+router.post('/update', store_services.patch_store);
 //Delete Store
-router.delete('/', store_services.create_store);
+//router.delete('/', store_services.create_store);
 module.exports = router;

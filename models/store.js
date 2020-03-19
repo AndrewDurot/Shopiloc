@@ -24,9 +24,8 @@ const storeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-   
     postal_code:{
-        type: String,
+        type: [],
         required: true
     },
 

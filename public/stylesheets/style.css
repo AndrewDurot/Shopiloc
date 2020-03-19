@@ -831,5 +831,14 @@ li.list-group-item.button {
   text-align: center;
 }
 .store_logo{
-  width: 216px;
+  width: 175px;
+}
+span.help {
+  font-size: 12px;
+}
+.row-icon {
+  padding-left: 0px;
+}
+div.container {
+  padding-bottom: 10px;
 }

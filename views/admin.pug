@@ -36,32 +36,32 @@ block content
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                 <th>Address</th>
                                 <th>Url</th>
-                                <th>Pro/State</th>
-                                <th>City</th>
-                               
-                                <th>Phone Number</th>
                                 <th>Country</th>
-                                <th>Detail</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                                //- <th>Edit</th>
+                                //- <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             each val in store
                                 <tr>
                                     td= val.store_name
-                                    td= val.address1
+                                   
                                     td= val.store_url
-                                    td= val.state
-                                    td= val.city
-                                    
-                                    td= val.phone_number
                                     td= val.country
-                                    <td><i class="fas fa-info-circle"></i></td>
-                                    <td><i class="far fa-edit"></i></td>
-                                    <td><i class="fas fa-trash-alt"></i></td>
+                                    if(val.status == "true")
+                                        td Active
+                                    else
+                                        td Inactive  
+                                    td
+                                      form(action="/store/update", method="post")
+                                        input(type="hidden", name="_id", value=val._id)
+                                        input(type="hidden", name="status", value=val.status)
+                                        button(type="submit").btn.btn-primary Update Status   
+                                    //- <td><i class="far fa-edit"></i></td>
+                                    //- <td><i class="fas fa-trash-alt"></i></td>
                                 </tr>
                                                         
                         </tbody>
