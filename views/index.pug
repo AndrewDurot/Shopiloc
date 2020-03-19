@@ -3,7 +3,7 @@ extends layout
 block content
   
   <div class="s01">
-    <a href="/create" class="btn-search btn btn-primary"> Create Store</a>
+    <a href="/create" class="btn-search btn btn-primary"> Add a my Store</a>
     <form action="/" method="post">
       <fieldset>
         <legend>Find independent shops that deliver to you!</legend>
@@ -31,7 +31,7 @@ block content
       if isExist
 
         <div class="row ">
-          <p class="description">*if nothing is found in your selected range it will show you the nearest stores even if they are out of your choosen range.</p>
+          <p class="description"></p>
           each val in data        
             <div class="col-lg-6">
               
