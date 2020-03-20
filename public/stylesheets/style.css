@@ -867,3 +867,52 @@ legend h6 {
   padding-top: 10px;
   font-size: 26px;
 }
+@media screen and (max-width: 767px){
+  .store_logo {
+    margin-left: 25%;
+    width: 200px !important;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: unset !important;
+  }
+  .s01 form .inner-form .input-field.second-wrap {
+    width: calc(100% - 0px);
+    min-width: auto;
+  }
+  textarea {
+    width: 328px;
+  }
+  .menu h5 {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .menu .card {
+    width: 100% !important;
+  }
+  .row.border {
+    cursor: pointer;
+    margin-right: unset !important;
+    padding-right: unset;
+    margin-left: 0px;
+  }
+  .row-icon {
+    padding-left: 0px;
+    margin-left: unset;
+    margin-right: unset;
+    margin-bottom: unset;
+  }
+  select#countries {
+
+    height: 52px;
+  }
+  .s01 form .inner-form .input-field.third-wrap {
+    width: calc(50% - 10px);
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .s01 form legend {
+    font-size: 44px;
+  }
+}
