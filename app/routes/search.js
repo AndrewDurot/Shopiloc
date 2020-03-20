@@ -1,5 +1,5 @@
-var search_services = require('../services/search');
+const searchServices = require('../services/search');
 
-export default function routes(router) {
-    router.get('/', search_services.get_store);
+export default function routes(app) {
+    app.get('/', searchServices.get_store);
 }

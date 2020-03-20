@@ -1,16 +1,16 @@
-var store_services = require('../services/store');
-var multer = require('multer');
-var path = require('path');
-
+import * as express from "express";
+const storeServices = require('../services/store');
+const multer = require('multer');
+const path = require('path');
 
 export default function routes(router) {
     router.use(express.static(__dirname));
-    var storage = multer.diskStorage({
+    const storage = multer.diskStorage({
         destination: function (req, file, callback) {
             callback(null, './uploads')
         },
         filename: function (req, file, callback) {
-            console.log(file)
+            console.log(file);
             callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
         }
     });
@@ -21,7 +21,7 @@ export default function routes(router) {
             cb(null, false);
         }
     };
-    var upload = multer({
+    const upload = multer({
         storage: storage,
         limits: {
             fileSize: 1024 * 1024 * 5
@@ -29,16 +29,10 @@ export default function routes(router) {
         fileFilter: fileFilter
     });
 
-//Create Store 
-    router.post('/', upload.single('store_logo'), store_services.create_store);
-//Get All Store
-    router.get('/', store_services.get_store);
-//Get one Store 
-    router.get('/Details', store_services.get_single_store);
-//Update Store
-//router.put('/', store_services.create_store);
-//Patch Store
-    router.post('/update', store_services.patch_store);
-//Delete Store
-//router.delete('/', store_services.create_store);
+    router.post('/', upload.single('store_logo'), storeServices.create_store);
+    router.get('/', storeServices.get_store);
+    router.get('/Details', storeServices.get_single_store);
+    //  router.put('/', storeServices.create_store);
+    router.post('/update', storeServices.patch_store);
+    //  router.delete('/', storeServices.create_store);
 }

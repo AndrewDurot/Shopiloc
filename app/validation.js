@@ -1,6 +1,5 @@
 const Joi = require('@hapi/joi');
 
-//Register Model Validation 
 const registerValidation = data =>{
     const schema = Joi.object({
         first_name: Joi.string().min(6).required(),
@@ -9,10 +8,8 @@ const registerValidation = data =>{
         password: Joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required()
     });
     return schema.validate(data);
-    
 };
 
-//Login Model Validation 
 const loginValidation = data =>{
     const schema = Joi.object({
         //name: Joi.string().min(6).required(),
@@ -48,7 +45,7 @@ const recordValidation = data => {
         _id: Joi.string().required()
     });
     return schema.validate(data);
-}
+};
 
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
