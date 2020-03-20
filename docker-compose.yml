@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  shopiloc:
+    restart: always
+    build: .
+    init: true
+    env_file:
+      - .env
+    environment:
+      - "MONGO_URI=mongodb://mongodb/backupapp"
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    restart: always
+    expose:
+      - 27017
+    volumes:
+      - ./mongodb:/data/db
