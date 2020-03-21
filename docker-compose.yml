@@ -1,13 +1,12 @@
 version: '3.7'
 services:
+
   shopiloc:
+    image: registry.gitlab.com/ecom_experts.io/shopiloc
+    container_name: shopiloc
     restart: always
-    build: .
-    init: true
     env_file:
       - .env
-    environment:
-      - "MONGO_URI=mongodb://mongodb/backupapp"
     ports:
       - 3000:3000
     depends_on:
@@ -15,8 +14,12 @@ services:
 
   mongodb:
     image: mongo:latest
+    container_name: mongodb
     restart: always
     expose:
       - 27017
     volumes:
-      - ./mongodb:/data/db
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
