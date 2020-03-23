@@ -1,0 +1,16 @@
+{
+	"Hello": "Hallo",
+	"home": {
+		"legend": "Zoek kleine handelaars dat bij u thuis leveren!",
+		"legend_placeholder": "Wereldwijd 'open-source' project om de kleine lokale handelaars te redden",
+		"placeholder": {
+			"postal": "Voer u postcode in",
+			"country_list": "Kies uw land"
+		},
+		"button":{
+			"create_store" : "Voeg mijn winkel toe",
+			"about_button" : "Over Shopiloc/Help"
+		}
+	}
+	
+}
