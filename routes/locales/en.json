@@ -1,0 +1,16 @@
+{
+	"Hello": "Hello",
+	"home": {
+		"legend": "Find independent shops that deliver to you!",
+		"legend_placeholder": "Worldwide open source project to save local stores!",
+		"placeholder": {
+			"postal": "Enter Postal Code ---- no spacing",
+			"country_list": "Choose Country"
+		},
+		"button":{
+			"create_store" : "Add My Store",
+			"about_button" : "About / Help Shopiloc"
+		}
+	}
+	
+}

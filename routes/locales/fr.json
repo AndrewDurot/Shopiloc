@@ -1,0 +1,16 @@
+{
+	"Hello": "Hello",
+	"home": {
+		"legend": "Trouvez des magasins indépendants qui vous livrent!",
+		"legend_placeholder": "Projet open source mondial pour sauver les magasins locaux!",
+		"placeholder": {
+			"postal": "Entrez le code postal ---- sans espacement",
+			"country_list": "Choisissez un pays"
+		},
+		"button":{
+			"create_store" : "Ajouter ma boutique",
+			"about_button" : "Sur / Help Shopiloc"
+		}
+	}
+	
+}

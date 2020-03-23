@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    <div class="s01">
+
+        <form action="/user/signin" method="post">
+        <fieldset>
+            <legend>Admin Login</legend>
+        </fieldset>
+        <div class="error">
+            - var success = success;
+            if success != true
+            p= message
+        </div>
+        <div class="inner-form">
+            
+            <div class="input-field first-wrap">
+                <input id="search" name="email" type="text" required placeholder="Email" />
+            </div>
+            <div class="input-field second-wrap">
+                <input id="password" name="password" type="password" required placeholder="Password" />
+            </div>
+            
+            <div class="input-field third-wrap">
+            <button class="btn-search" type="submit">Login</button>
+            </div>
+        </div>
+        </form>
+    </div>
