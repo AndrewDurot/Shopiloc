@@ -1,0 +1,97 @@
+extends layout
+
+block content
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-5">
+                <div style="padding:  50px 20px;">
+                    <h3 >STORE DETAILS</h3>
+                    <p>Create New Store</p>
+                    <div style="margin-top: 50px;" class="menu">
+                    <h5>Actions</h5>
+                    <div class="card" style="width: 18rem;">
+                
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
+                            <li class="list-group-item"><a href="/admin"><i class="fas fa-box"></i>  Store List</li></a>
+                            <li class="list-group-item"><i class="fas fa-minus"></i>  Delete All Stores</li>
+                        </ul>
+                    </div>
+                    - var success = isSuccess
+                    if(success)
+                        <div class="form-group success" style="width: 18rem; margin-top: 30px; display:none">
+                            <h5>View Options</h5>
+                            <select id="inputState" class="form-control">
+                                <option selected>View All</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f4f4f4;" class="col-md-7">
+            <form method="post" action="/store" enctype="multipart/form-data" style="padding:  50px 20px;">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="name">Store Name</label>
+                        <input type="hidden" name="status" value="true">
+                        <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="Store Name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="url">Store Url</label>
+                        <input type="text" class="form-control" required name="store_url" id="store_url" placeholder="Store Url">
+                        <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" required name="address1" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+                    </div>
+        
+                    <div class="form-group col-md-12">
+                        <label for="inputState">Country</label>
+                        <select id="countries_list" name="country" required class="form-control">
+                            <option value="">Choose Country</option>
+                            
+                        </select>
+                    </div>
+                   
+                    <div class="form-group col-md-12">
+                        <label for="inputState">State</label>
+                        <input type="text" class="form-control" name="state" id="inputState">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" name="city" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">Phone No.</label>
+                        <input type="text" name="phone_number" class="form-control" >
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputZip">Which postal codes can you deliver to?</label>
+                        <input type="text" name="postal_code" required class="form-control" id="inputZip">
+                        <span class="help"> Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ","</span>
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                        <label for="phone">Description.</label>
+                        textarea(name="store_description", required, rows="10", maxlength="570")
+                        
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="exampleFormControlFile1">Upload Image</label>
+                        <input type="file" name="store_logo" required class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <div class="form-group col-md-12">
+                       <button class="form-control submit" type="submit" > Create Store</button>
+                    
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </div>

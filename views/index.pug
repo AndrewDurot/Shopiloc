@@ -1,0 +1,112 @@
+extends layout
+
+block content
+  
+  <div class="s01">
+    <a href="/create" class="btn-search btn btn-primary"> #{language.button.create_store} </a>
+    <select class="custom-select language-select" name="Language" id="language" required>
+    <option value="">Select Language</option>
+      <option value="en">English</option>
+      <option value="fr">French</option>
+    </select> 
+    <form action="/" method="post">
+      <fieldset>
+        <legend> #{language.legend}  <h6> #{language.legend_placeholder} </h6>
+          
+        </legend>
+        
+      </fieldset>
+      <div class="inner-form">
+        <div class="input-field first-wrap">
+          <input id="search" name="postal_code" type="text" required placeholder='#{language.placeholder.postal}' />
+        </div>
+        <div class="input-field second-wrap">
+          <select class="custom-select" name="country_list" id="countries" required>
+            <option value="">#{language.placeholder.country_list}</option>
+          </select> 
+        </div>
+        
+        <div class="input-field third-wrap">
+          <button class="btn-search" type="submit">Search</button>
+        </div>
+      </div>
+    </form>
+    <a href="/about" class="btn-search btn btn-primary btn-secondry"> #{language.button.about_button}</a>
+  </div>
+  if isSearch
+    <div class="container" id="results">
+    
+      if isExist
+
+        <div class="row ">
+          <p class="description">Here are all stores <span>(
+           span= result_count 
+          <span> shops) delivering to </span>
+            span= postal_code 
+            <span>- Please tell as many shop owners and shoppers about this service so more stores can survive!</span>
+          </p>
+          each val in data        
+            <div class="col-lg-6">
+              
+              <div class="row border">
+                a(href=val.store_url, class="store_url") 
+                <div class="col-md-4 ">
+                  img(src=val.store_logo,class="store_logo", alt="")   
+                </div>
+                <div class="col-md-8 ">
+            
+                  <div class="">
+                    <div class="col-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="row-icon">
+                      <div class="backwoods">
+                        h3.omahah3= val.store_name
+                        p.omahap= val.postal_code
+                        p.omahap= val.country
+                        p.omahap= val.store_description
+                        <br>
+                        <ul>
+                          <li class="omahali">
+                            a(href=val.store_url, class="store_url")= val.store_url
+                          </li> 
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          //- <div class="col-lg-6">
+          //-   <div class="row border">
+          //-     <div class="col-lg-5 ">
+          //-       <img src="/images/download.jpg", alt="" >
+          //-     </div>
+          //-     <div class="col-lg-5 ">
+          
+          //-       <div class="">
+          //-         <div class="col-icon">
+          //-         <i class="fas fa-map-marker-alt"></i>
+          //-         </div>
+          //-         <div class="row-icon">
+          //-           <div class="backwoods">
+          //-             <h3 class="omahah3">Backwoods-Omaha</h3>
+          //-             <p class="omahap">55180</p>
+          //-             <p class="omahap">Omaha,Nebraska 55180 ,United States</p>
+          //-             <br>
+          //-             <ul>
+          //-               <li class="omahali"><a href="https://backwoodspaddlesports.com/">backwoodspaddlesports.com/</a></li> 
+          //-             </ul>
+          //-           </div>
+          //-         </div>
+          //-       </div>
+          //-     </div>
+          //-   </div>
+          //- </div>
+        </div>
+      else
+        <div class="row ">
+        <p class="description">*No stores have signed up to deliver in your area yet! Please help us spread the word and get local stores and shoppers online asap! Share share share!</p>
+        </div>
+    </div>
+  
