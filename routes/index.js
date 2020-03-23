@@ -37,7 +37,34 @@ router.post('/lang' , (req, res, next) =>{
   res.send({language: lang});
 });
 /* Post home page. */
-router.post('/', home_services.get_Search);
+router.post('/', async(req, res, next) =>{
+  
+  try{
+    var lang = req.cookies.lang;
+    if(lang) i18n.setLocale(lang);
+    var lang = i18n.__('home');
+    console.log(req.body);
+    var code = req.body.postal_code.toLowerCase();
+    console.log(code);
+    var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
+    
+    let isExist = false;
+    if(store.length > 0)
+    {
+        isExist = true;
+
+    }
+    console.log("Here");
+    console.log(store);
+    //res.status(200).send(store);
+    //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
+    res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang });
+  //res.redirect('/');
+  }
+  catch(err){
+    res.status(500).send(err);
+  }
+});
 /* Store create Form */
 router.get('/create', home_services.create_store);
 //about page
