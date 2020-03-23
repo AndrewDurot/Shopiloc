@@ -1,0 +1,15 @@
+{
+     "Hello": "Pozdrav"
+     "home" {
+        "legend": "Pronađi nezavisne prodavnice koje dostavljaju na tvoja vrata"
+        "legend_placeholder": "Open source projekat za spas malih prodavnica"
+        "placeholder": {
+            "postal": Unesi svoj poštanski broj ---- bez razmaka".
+            "country_list": "Izaberi zemlju"
+        },
+        "button": {
+            "Create_store" : "Dodaj prodavnicu"
+            "about_button" : "pomoć i informacije o Shopiloc"
+        }
+     }
+}
