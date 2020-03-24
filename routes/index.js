@@ -34,9 +34,9 @@ router.get('/', async(req, res, next)=>{
   //var ip = ip_module.cidr();
   //console.log(ip.toString());
 
-  // var geo = geoip.lookup(ip.toString());
+  var geo = geoip.lookup(ip.toString());
   
-  // console.log(geo);
+  console.log(geo);
   //console.log(geoip.lookup("172.18.171.66"));
   var lang = req.cookies.lang;
   if(lang) i18n.setLocale(lang);
