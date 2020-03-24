@@ -1,5 +1,5 @@
 {
-	"Hello": "Hallo",
+	"Hello": "Allo",
 	"home": {
 		"legend": "Trouvez les magasins locaux qui livrent chez vous!",
 		"legend_placeholder": "Projet mondial 'open-source' pour sauver les magasins locaux!",
@@ -32,36 +32,36 @@
 			"store_post_button" : "Ajouter ma boutique"
 		},
 		"label" :{
-			"email": "Email",
+			"email": "Adresse courriel",
 			"first_name" : "Prénom",
 			"last_name" : "Nom",
 			"store_name" : "Nom de la boutique",
-			"store_url" : "Url",
+			"store_url" : "URL",
 			"address" : "Adresse",
 			"address2" : "Adresse 2",
 			"country" : "Pays",
 			"state" : "Province",
 			"city" : "Ville",
 			"phone" : "Num de téléphone",
-			"postal" : "Code postals ou vous livrez",
+			"postal" : "Vore code postal",
 			"description" : "Description",
-			"upload_image" : "Ajoutez une image",
+			"upload_image" : "Ajouter une image",
 			"industry" : "Dans quelle industrie êtes vous?",
-			"checkbox" : "Quelle option s'appilque?"
+			"checkbox" : "Quelle option s'applique?"
 		},
 		"placeholder" :{
-			"email": "Email",
+			"email": "Adresse courriel",
 			"first_name" : "Prénom",
 			"last_name" : "Nom",
 			"store_name" : "Nom de la boutique",
 			"store_url" : "Url",
-			"address" : "1234 Main St",
-			"address2" : "Apartment, studio...",
+			"address" : "1234 Rue principale",
+			"address2" : "Appartment, studio...",
 			"country" : "Pays",
 			"state" : "Province",
 			"city" : "Ville",
-			"phone" : "Num de Tel",
-			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','"
+			"phone" : "Numéro de téléphone",
+			"postal" : "Ajoutez jusqu'à 8 codes postaux où vous livrez - séparer les codes postaux avec une virgule','"
 		},
 		"checkbox1" : "Commerce indépendant",
 		"checkbox2" : "Boutique en-ligne locale",
@@ -73,14 +73,14 @@
 			"heading" : "Comment Aider?",
 			"item1" : "Utilisez le!",
 			"item2" : "Partagez le",
-			"item3" : "Aidez les proprios de commerce a s'inscrire",
-			"item4" : "Si vous etes un(e) desiner(euse), Developeur(/euse) ou si vous avez une idée comment sauver les commercans- faites nous savoir!",
-			"item5" : "Des dons financiers sont toujours bienvenu  car nous en avons besoins pour les servers!"
+			"item3" : ""Aidez les propriétaires de commerces à s'inscrire",
+			"item4" : "Si vous êtes un(e) dessinateur(euse), Développeur(/euse) ou si vous avez une idée de comment sauver les commerçants, faites nous savoir!",
+			"item5" : "Des dons financiers sont toujours bienvenus,  car nous en avons besoin pour les serveurs!"
 		},
 		"section2" :{
 			"heading" : "On recherche",
-			"item1" : "Des Disigner(euse)",
-			"label" : "(Pour toues autres référez vers le point 4)"
+			"item1" : "Des designers(euses) graphique",
+			"label" : "Pour toute autre forme d’aide, référez-vous vers le point 4)"
 		},
 		"section3" : {
 			"heading" : "Liste des volontaires",
@@ -91,24 +91,25 @@
 		"section4" :{
 			"heading" : "QFP",
 			"question" :{
-				"question1" : "Pourqoi devrais je pas utiliser Amazon.ca",
-				"answer1" : " Amazon est fanastique, mais les petis commercants n'ont plus de traffic dans leurs commerce à cause du Covid-19. Si on ne prends pas de mesures au plus vite nous perderons beacoup de commerces!",
-				"question2" : "Quelle es la difference entre Shopiloc et Google?",
-				"answer2" : "Les commerce qu'on vous montre sont vraiment des boutiques locaux. Chaque boutique a une zone de livraison limitée, Ceci vous permets de découvrir les vrais bouique locale et non pas les gros jouers en ligne.",
-				"question3" : "J'ai un commerce mais je n'ai pas de boutique en ligne! A l'Aide!",
-				"answer3" : "Pas de problème! Cliquez ici pour toruver un uorial de comment commencer sa propre boutique en ligne en quelques clicks!",
-				"question4" : "Pourqoi es-ce que vore tutorial est just pour Shopify?",
-				"answer4" : "C'est la plafomre que nous conaisson le mieux",
-				"question5" : "J;ai rajouté ma boutique mais je ne la vois pas?",
-				"answer5" : "Nous acceptons manuellement chaque summision pour assurez qu'il n'y a pas de fausse sumissions - ce processus prend max. 24 heures.",
+				"question1" : "Pourquoi je ne devrais pas utiliser Amazon.ca",
+				"answer1" : "Amazon est fantastique, mais les petits commerçants n'ont plus de traffic dans leurs commerces à cause du Covid-19. Si nous ne prenons pas de mesures au plus vite nous perderons beacoup de commerces",
+				"question2" : "Quelle est la différence entre Shopiloc et Google?",
+				"answer2" : "Les commerces que nous vous montrons ",
+				"question3" : "J'ai un commerce mais je n'ai pas de boutique en ligne!  À l'aide",
+				"answer3" : "Pas de problème! Cliquez ici pour trouver un tutoriel qui vous explique comment commencer sa propre boutique en ligne en quelques cliques",
+				"question4" : "Pourquoi est-ce que votre tutoriel est juste pour Shopify?"",
+				"answer4" : "C'est la plateforme que nous connaissons le mieux",
+				"question5" : "J’ai ajouté ma boutique, mais je ne la vois pas",
+				"answer5" : "Nous acceptons manuellement chaque soumission pour assurer qu'il n'y ait pas de fausse soumission - ce processus prend maximum 24 heures.",
 				"question6" : "Mon pays n'est pas dans la liste",
-				"answer6" : "Cela veu dire que nous n'avons recu aucunne sumission de bouique dans votre pays - c'est triste! - paragez le service!",
-				"question7" : "Quand je rajoute mon commerce je ne peux pas rajouter plus de 7 code posal - pourqoi?",
-				"answer7" : "Oui- effectivement! C'est fait pour s'assurer que tout resulats restent des resultats locaux",
-				"question8" : "J'ai fais une faute dans ma summision comment je change?",
-				"answer8" : "Ow! Il faut nous envoyer un couriel! andrew@ecomexperts.io",
-				"question9" : "Etes vous affiliez avec quelqu'uns?",
-				"answer9" : "Nous sommes en discussions avec deux platformes e-commerces et deux gouvernemen mais encore rien de concret"
+				"answer6" : "
+				"answer6" : "Cela veut dire que nous n'avons reçu aucune soumission de boutique dans votre pays - c'est triste! - partagez le service",
+				"question7" : "Quand j’ajoute mon commerce, je ne peux pas ajouter plus de 7 codes postaux - pourquoi?",
+				"answer7" : "Oui- effectivement! C'est pour s'assurer du périmètre de livraison local",
+				"question8" : "'ai fait une faute dans ma soumission. Comment je peux le corriger?",
+				"answer8" : "Il faut nous envoyer un courriel à l’adresse suivante: andrew@ecomexperts.io",
+				"question9" : "Êtes-vous affilié avec des organizations?"",
+				"answer9" : "Nous sommes en discussion avec deux plateformes de boutiques en ligne et deux organizations gouvernementales, mais il n’y a encore rien de concret."
 				
 			}
 		}
