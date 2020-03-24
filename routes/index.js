@@ -70,9 +70,16 @@ router.post('/', async(req, res, next) =>{
     console.log(req.body);
     var code;
     if(req.body.country_list.toLowerCase() == "canada"){
-      code = req.body.postal_code.split(" ");
-      code = code[0].toLowerCase();
-      
+      if(req.body.postal_code.includes(" ")){
+        code = req.body.postal_code.split(" ");
+        code = code[0].toLowerCase();
+      }
+      else{
+        code = req.body.postal_code.substr(0, 3);
+        code = code.toLowerCase();
+        
+      }
+      console.log(code);
     }
     else{
       code = req.body.postal_code.toLowerCase();
