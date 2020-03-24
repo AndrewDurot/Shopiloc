@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 var Store = require('../models/store');
 var cookieParser = require('cookie-parser');
 var i18n = require('i18n');
-//router.use(cookieParser());
+router.use(cookieParser());
 var home_services = require('../services/home');
 
 i18n.configure({

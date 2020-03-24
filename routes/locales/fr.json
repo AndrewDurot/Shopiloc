@@ -10,7 +10,48 @@
 		"button":{
 			"create_store" : "Ajouter ma boutique",
 			"about_button" : "Sur / Help Shopiloc"
+		},
+		"result_success":{
+			"description1": "Voici tous les magasins ",
+			"description2": " shops) livrer à ",
+			"description3": "Veuillez informer autant de propriétaires de magasins et d'acheteurs de ce service afin que plus de magasins puissent survivre!"
+		},
+		"result_fail": "*Aucun magasin ne s'est encore inscrit pour livrer dans votre région! Aidez-nous à passer le mot et à mettre en ligne les magasins et les acheteurs locaux dès que possible! Partager Partager Partager!"
+
+	},
+	"create_store" :{
+		"heading" : "STORE DETAILS French",
+		"subHeading" : "Create New Store",
+		"action" : "Action",
+		"button" : {
+			"Home" : "Home",
+			"Create_Label_Action" : "Build an online store asap",
+			"About" : "About Shopiloc",
+			"store_post_button" : "Create Store"
+		},
+		"label" :{
+			"store_name" : "Store Name",
+			"store_url" : "Store Url",
+			"address" : "Address",
+			"address2" : "Address2",
+			"country" : "Country",
+			"state" : "State",
+			"city" : "City",
+			"phone" : "Phone No",
+			"postal" : "Which postal codes can you deliver to?",
+			"description" : "Description.",
+			"upload_image" : "Upload Image"
+		},
+		"placeholder" :{
+			"store_name" : "Store Name",
+			"store_url" : "Store Url",
+			"address" : "1234 Main St",
+			"address2" : "Apartment, studio, or floor",
+			"country" : "Chose Country",
+			"state" : "State",
+			"city" : "City",
+			"phone" : "Phone No",
+			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','"
 		}
 	}
-	
 }

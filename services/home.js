@@ -1,4 +1,6 @@
 var Store = require('../models/store');
+var i18n = require('i18n');
+var cookieParser = require('cookie-parser');
 
 exports.get_store = async (req, res)=>{
     res.render('index', { title: 'Express'});
@@ -25,8 +27,11 @@ exports.get_country = async (req, res) =>{
 
 
 exports.create_store = async (req, res) =>{
-    console.log("user_create")
-    res.render('user_create_store');
+    var lang = req.cookies.lang;
+    if(lang) i18n.setLocale(lang);
+    var lang = i18n.__('create_store');
+    console.log(lang.heading);
+    res.render('user_create_store', { language : lang});
 }
 exports.get_Search = async (req, res)=>{
     try{

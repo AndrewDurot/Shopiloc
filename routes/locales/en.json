@@ -10,6 +10,47 @@
 		"button":{
 			"create_store" : "Add My Store",
 			"about_button" : "About / Help Shopiloc"
+		},
+		"result_success":{
+			"description1": "Here are all stores",
+			"description2": " shops) delivering to",
+			"description3": "Please tell as many shop owners and shoppers about this service so more stores can survive!"
+		},
+		"result_fail": "*No stores have signed up to deliver in your area yet! Please help us spread the word and get local stores and shoppers online asap! Share share share!"
+	},
+	"create_store" :{
+		"heading" : "STORE DETAILS",
+		"subHeading" : "Create New Store",
+		"action" : "Action",
+		"button" : {
+			"Home" : "Home",
+			"Create_Label_Action" : "Build an online store asap",
+			"About" : "About Shopiloc",
+			"store_post_button" : "Create Store"
+		},
+		"label" :{
+			"store_name" : "Store Name",
+			"store_url" : "Store Url",
+			"address" : "Address",
+			"address2" : "Address2",
+			"country" : "Country",
+			"state" : "State",
+			"city" : "City",
+			"phone" : "Phone No",
+			"postal" : "Which postal codes can you deliver to?",
+			"description" : "Description.",
+			"upload_image" : "Upload Image"
+		},
+		"placeholder" :{
+			"store_name" : "Store Name",
+			"store_url" : "Store Url",
+			"address" : "1234 Main St",
+			"address2" : "Apartment, studio, or floor",
+			"country" : "Chose Country",
+			"state" : "State",
+			"city" : "City",
+			"phone" : "Phone No",
+			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','"
 		}
 	}
 	
