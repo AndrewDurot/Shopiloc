@@ -41,7 +41,7 @@ const storeValidation = data =>{
         postal_code: Joi.required(),
         status: Joi.string(),
         industry : Joi.string(),
-        example1 : Joi.string(),
+        example1 : Joi.string().allow(null, ''),
         store_description: Joi.string().required()
     });
     return schema.validate(data);
