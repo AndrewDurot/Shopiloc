@@ -789,8 +789,21 @@ a.btn-search.btn.btn-primary {
   position: absolute;
   top: 10px;
   right: 30px;
-  color: white
+  background: #D79E6D;
+  border-color: #D79E6D;
+  border-radius: 5px;
 }
+a.btn-search.btn.btn-primary:hover {
+  
+  background: #D7A371;
+  
+}
+a.btn-search.btn.btn-primary:active {
+  
+  background: #D7A371;
+  
+}
+
 i.fas.fa-map-marker-alt {
   display: none;
 }
@@ -870,7 +883,7 @@ legend h6 {
 select#language {
   position: absolute;
   width: 15%;
-  right: 220px;
+  left: 30px;
   top: 12px;
 }
 @media screen and (max-width: 767px){

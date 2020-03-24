@@ -69,7 +69,10 @@ router.post('/', async(req, res, next) =>{
 router.get('/create', home_services.create_store);
 //about page
 router.get('/about', (req, res)=>{
-  res.render('about');
+  var lang = req.cookies.lang;
+  if(lang) i18n.setLocale(lang);
+  var lang = i18n.__('about');
+  res.render('about',{ language : lang});
 })
 //admon User 
 router.use('/admin', admin_Route);
