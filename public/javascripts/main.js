@@ -1,4 +1,35 @@
 $(document).ready(function(){
+    $.getJSON('https://ipapi.co/json/', function(data) {
+        debugger;
+        if(data.country.toLocaleLowerCase() == "ca")
+        {
+            if(localStorage.getItem("language") == undefined && localStorage.getItem("language") == "")
+            {
+                $.ajax({
+                    url: '/lang',
+                    data: {lang:"fr"},
+                    type: "post",
+                    success : function(data)
+                    {
+                        localStorage.clear();
+                        localStorage.setItem("language",data.language);
+                        location.reload();
+                        
+                    },
+                    error : function(jqXHR, textStatus, errorThrown)
+                    {
+                        console.log(textStatus);
+                    }
+                });
+                
+            }
+            
+            
+            
+        }
+        
+        
+    });
     $(document).on("click","#menu, fa",function(){
         
         var x = document.getElementById("myLinks");

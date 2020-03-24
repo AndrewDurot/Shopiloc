@@ -25,19 +25,6 @@ router.use(i18n.init);
 
 /* GET home page. */
 router.get('/', async(req, res, next)=>{
-  var ip = await publicIp.v4();
-  console.log(ip);
-  
-
- 
-  //console.log(ip_module.address());
-  //var ip = ip_module.cidr();
-  //console.log(ip.toString());
-
-  var geo = geoip.lookup(ip.toString());
-  
-  console.log(geo);
-  //console.log(geoip.lookup("172.18.171.66"));
   var lang = req.cookies.lang;
   if(lang) i18n.setLocale(lang);
   var lang = i18n.__('home');
