@@ -33,7 +33,7 @@ router.get('/',(req, res, next)=>{
   var ip = ip_module.address();
   console.log(ip);
 
-  var geo = geoip.lookup(ip);
+  var geo = geoip.lookup(ip.toString());
   
   console.log(geo);
   var lang = req.cookies.lang;
