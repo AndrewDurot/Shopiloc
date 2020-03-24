@@ -44,21 +44,26 @@ exports.create_store = async (req, res) =>{
 exports.get_Search = async (req, res)=>{
     try{
         console.log(req.body);
-        var code = req.body.postal_code.toLowerCase();
+        var code = req.body.postal_code;
+        // code = code.trim().split(/\s*,\s*/);
+        code = code.replace(/\s/g, "")  
+        code = code.replace(/ /g,'');
         console.log(code);
-        var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
+        //code = code.toLowerCase();
+       
+        // var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
         
-        let isExist = false;
-        if(store.length > 0)
-        {
-            isExist = true;
+        // let isExist = false;
+        // if(store.length > 0)
+        // {
+        //     isExist = true;
 
-        }
-        console.log("Here");
-        console.log(store);
-        //res.status(200).send(store);
-        //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
-        res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "" });
+        // }
+       
+        // console.log(store);
+        // //res.status(200).send(store);
+        // //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
+        // res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "" });
     //res.redirect('/');
     }
     catch(err){

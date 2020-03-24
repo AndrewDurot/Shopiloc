@@ -26,6 +26,9 @@ const loginValidation = data =>{
 const storeValidation = data =>{
     const schema = Joi.object({
         //name: Joi.string().min(6).required(),
+        first_name: Joi.string(),
+        last_name: Joi.string(),
+        email : Joi.string(),
         store_name: Joi.string().min(2).required(),
         store_url: Joi.string().required(),
         country: Joi.string().required(),
@@ -37,6 +40,8 @@ const storeValidation = data =>{
         store_logo: Joi.string().allow(null, ''),
         postal_code: Joi.required(),
         status: Joi.string(),
+        industry : Joi.string(),
+        example1 : Joi.string(),
         store_description: Joi.string().required()
     });
     return schema.validate(data);

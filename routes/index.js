@@ -69,8 +69,10 @@ router.post('/', async(req, res, next) =>{
     var lang_ = i18n.__('home');
     console.log(req.body);
     var code = req.body.postal_code.toLowerCase();
-    console.log(code);
-    var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true", language : lang_ });
+    code = code.replace(/\s/g, "")  
+    code = code.replace(/ /g,'');
+    
+    var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true" });
     
     let isExist = false;
     if(store.length > 0)
