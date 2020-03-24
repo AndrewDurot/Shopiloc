@@ -12,6 +12,7 @@ var i18n = require('i18n');
 var ip_module = require('ip');
 var geoip = require('geoip-lite');
 router.use(cookieParser());
+const publicIp = require('public-ip');
 var home_services = require('../services/home');
 
 i18n.configure({
@@ -21,22 +22,22 @@ i18n.configure({
   directory: __dirname+'/locales'
 });
 router.use(i18n.init);
-// router.use('/', (req, res)=>{
-  
-//   //var ip = ip.address();
-//   //var geo = geoip.lookup(ip);
-  
-// })
-/* GET home page. */
-router.get('/',(req, res, next)=>{
-  //console.log(ip_module.address());
-  var ip = ip_module.address();
-  console.log(ip.toString());
 
-  var geo = geoip.lookup(ip.toString());
+/* GET home page. */
+router.get('/', async(req, res, next)=>{
+  var ip = await publicIp.v4();
+  console.log(ip);
   
-  console.log(geo);
-  console.log(geoip.lookup("172.18.171.66"));
+
+ 
+  //console.log(ip_module.address());
+  //var ip = ip_module.cidr();
+  //console.log(ip.toString());
+
+  // var geo = geoip.lookup(ip.toString());
+  
+  // console.log(geo);
+  //console.log(geoip.lookup("172.18.171.66"));
   var lang = req.cookies.lang;
   if(lang) i18n.setLocale(lang);
   var lang = i18n.__('home');
