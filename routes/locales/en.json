@@ -46,7 +46,7 @@
 			"upload_image" : "Upload Image",
 			"industry" : "Which industry are you in?",
 			"checkbox" : "Which one applies to you?",
-			"postal_ca" : ""
+			"postal_ca" : "What is the postal code of your store's address?"
 
 		},
 		"placeholder" :{
@@ -63,7 +63,7 @@
 			"phone" : "Phone No",
 			
 			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','",
-			"postal_ca" : ""
+			"postal_ca" : "Your store will show up for all searches made with in a 10km radius"
 		},
 		"checkbox1" : "Independent Store",
 		"checkbox2" : "Local e-commerce site",
