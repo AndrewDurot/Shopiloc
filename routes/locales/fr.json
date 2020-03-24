@@ -48,7 +48,7 @@
 			"upload_image" : "Ajouter une image",
 			"industry" : "Dans quelle industrie êtes vous?",
 			"checkbox" : "Quelle option s'applique?",
-			"postal_ca" : ""
+			"postal_ca" : "Votre code postal"
 		},
 		"placeholder" :{
 			"email": "Adresse courriel",
@@ -64,7 +64,7 @@
 			"phone" : "Num de Tel",
 
 			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','",
-			"postal_ca" : ""
+			"postal_ca" : "Votre boutique apparaîtra dans toue recherche dans un rayon de 5km"
 		},
 		"checkbox1" : "Commerce indépendant",
 		"checkbox2" : "Boutique en-ligne locale",
