@@ -18,8 +18,8 @@ const storeSchema = new mongoose.Schema({
         required: true
     },
     store_type:{
-        type: String,
-        required: true
+        type: String
+        //required: true
     },
     store_name:{
         type: String,
