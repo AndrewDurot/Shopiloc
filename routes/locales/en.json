@@ -9,7 +9,8 @@
 		},
 		"button":{
 			"create_store" : "Add My Store",
-			"about_button" : "About / Help Shopiloc"
+			"about_button" : "About / Help Shopiloc",
+			"search_button" : "Search"
 		},
 		"result_success":{
 			"description1": "Here are all stores",

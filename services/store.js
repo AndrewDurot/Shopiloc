@@ -21,7 +21,13 @@ exports.create_store = async(req, res)=>
         postal_code.forEach(element => {
             if(element != " "){
                 var elements = element.trim().split(/\s*,\s*/);
-                array.push(elements[0]);
+                
+                elements = elements[0].replace(/ /g,'');
+                elements = elements.toLowerCase();
+                if(elements != ""){
+                    array.push(elements);
+                }
+                
             }
             
         });
@@ -33,6 +39,11 @@ exports.create_store = async(req, res)=>
         postal_code = req.body.postal_code.toLowerCase();
     }
     const store = new Store({
+        first_name : req.body.first_name,
+        last_name : req.body.last_name,
+        email : req.body.email,
+        industry : req.body.industry,
+        store_type: req.body.example1,
         store_name : req.body.store_name,
         store_url : req.body.store_url,
         status : req.body.status,
@@ -46,19 +57,19 @@ exports.create_store = async(req, res)=>
         phone_number: req.body.phone_number,
         store_logo : res_path
     });
-    // try{
-    //     const savedStore = await store.save();
-    //     if(savedStore.status == "false")
-    //     {
-    //         res.redirect('/create?success=true');
-    //     }
-    //     res.redirect('/admin');
-    //     //res.send(savedStore);
-    // }
-    // catch(err){
-    //     res.status(400).send(err);
-    // }
-    res.send(store);
+    try{
+        const savedStore = await store.save();
+        if(savedStore.status == "false")
+        {
+            res.redirect('/create?success=true');
+        }
+        res.redirect('/admin');
+        //res.send(savedStore);
+    }
+    catch(err){
+        res.status(400).send(err);
+    }
+    //res.send(store);
 }
 
 //Edit Store
