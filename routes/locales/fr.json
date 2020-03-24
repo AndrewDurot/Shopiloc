@@ -1,5 +1,5 @@
 {
-	"Hello": "Hello",
+	"Hello": "Hallo",
 	"home": {
 		"legend": "Trouvez les magasins locaux qui livrent chez vous!",
 		"legend_placeholder": "Projet mondial 'open-source' pour sauver les magasins locaux!",
@@ -13,8 +13,8 @@
 		},
 		"result_success":{
 			"description1": "Voici toutes les boutiques! ",
-			"description2": "livre à ",
-			"description3": "Veuillez informer aussi biens les commercants que les cliens de ce service pour que plus de monde l'utilise!"
+			"description2": "livrer à ",
+			"description3": "Veuillez partager ce service pour que plus de gens l'utilisent!"
 		},
 
 		"result_fail": "*Aucun magasin ne s'est encore inscrit pour livrer dans votre région! Aidez-nous à passer le mot et à mettre en ligne les magasins et les acheteurs locaux dès que possible! Partagez Partagez Partagez!"
@@ -32,39 +32,39 @@
 		},
 		"label" :{
 			"email": "Email",
-			"first_name" : "First Name",
-			"last_name" : "Last Name",
-			"store_name" : "Store Name",
-			"store_url" : "Store Url",
-			"address" : "Address",
-			"address2" : "Address2",
-			"country" : "Country",
-			"state" : "State",
-			"city" : "City",
-			"phone" : "Phone No",
-			"postal" : "Which postal codes can you deliver to?",
-			"description" : "Description.",
-			"upload_image" : "Upload Image",
-			"industry" : "Which industry are you in?",
-			"checkbox" : "Which one applies to you?"
+			"first_name" : "Prénom",
+			"last_name" : "Nom",
+			"store_name" : "Nom de la boutique",
+			"store_url" : "Url",
+			"address" : "Adresse",
+			"address2" : "Adresse 2",
+			"country" : "Pays",
+			"state" : "Province",
+			"city" : "Ville",
+			"phone" : "Num de téléphone",
+			"postal" : "Code postals ou vous livrez",
+			"description" : "Description",
+			"upload_image" : "Ajoutez une image",
+			"industry" : "Dans quelle industrie êtes vous?",
+			"checkbox" : "Quelle option s'appilque?"
 		},
 		"placeholder" :{
 			"email": "Email",
-			"first_name" : "First Name",
-			"last_name" : "Last Name",
-			"store_name" : "Store Name",
-			"store_url" : "Store Url",
+			"first_name" : "Prénom",
+			"last_name" : "Nom",
+			"store_name" : "Nom de la boutique",
+			"store_url" : "Url",
 			"address" : "1234 Main St",
-			"address2" : "Apartment, studio, or floor",
-			"country" : "Chose Country",
-			"state" : "State",
-			"city" : "City",
-			"phone" : "Phone No",
-			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','"
+			"address2" : "Apartment, studio...",
+			"country" : "Pays",
+			"state" : "Province",
+			"city" : "Ville",
+			"phone" : "Num de Tel",
+			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','"
 		},
-		"checkbox1" : "Independent Store",
-		"checkbox2" : "Local e-commerce site",
-		"checkbox3" : "Local Franchise"
+		"checkbox1" : "Commerce indépendant",
+		"checkbox2" : "Boutique en-ligne locale",
+		"checkbox3" : "Franchise locale"
 	},
 	"about":{
 		"heading" : "SHOPILOC EST UN PROJET COLLABORATIF POUR SAUVER LES MAGASINS LOCAUX EN CE TEMPS DE CRISE.",
