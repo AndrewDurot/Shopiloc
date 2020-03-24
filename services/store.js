@@ -26,6 +26,14 @@ exports.create_store = async(req, res)=>
         console.log(req.body.postal_code);
         var rad = zipcodes.radius(req.body.postal_code, 5);
         var post_Address = [];
+        if(req.body.postal_code.includes(" ")){
+            var code_ = req.body.postal_code.split(" ");
+            code_ = code_[0].toLowerCase();
+            post_Address.push(code_);
+        }
+        else{
+            post_Address.push(req.body.postal_code.toLowerCase());
+        }
         rad.forEach(element => {
             let ele = element.toLowerCase()
             post_Address.push(ele)
