@@ -12,8 +12,14 @@ exports.create_store = async(req, res)=>
         res.status(400).send(error.details[0].message);
         return;
     }
-    var path_img = req.file.path;
-    var res_path = path_img.replace("uploads", "");
+    var path_img = "";
+    var res_path = "";
+    if(path_img){
+        path_img = req.file.path;
+        res_path = path_img.replace("uploads", "");
+    }
+    
+    
     var postal_code;
     if(req.body.country.toLowerCase() == "canada" || req.body.country.toLowerCase() == "united states"){
         
