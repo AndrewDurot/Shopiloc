@@ -29,6 +29,9 @@
 			"store_post_button" : "Create Store"
 		},
 		"label" :{
+			"email": "Email",
+			"first_name" : "First Name",
+			"last_name" : "Last Name",
 			"store_name" : "Store Name",
 			"store_url" : "Store Url",
 			"address" : "Address",
@@ -39,9 +42,14 @@
 			"phone" : "Phone No",
 			"postal" : "Which postal codes can you deliver to?",
 			"description" : "Description.",
-			"upload_image" : "Upload Image"
+			"upload_image" : "Upload Image",
+			"industry" : "Which industry are you in?",
+			"checkbox" : "Which one applies to you?"
 		},
 		"placeholder" :{
+			"email": "Email",
+			"first_name" : "First Name",
+			"last_name" : "Last Name",
 			"store_name" : "Store Name",
 			"store_url" : "Store Url",
 			"address" : "1234 Main St",
@@ -51,7 +59,10 @@
 			"city" : "City",
 			"phone" : "Phone No",
 			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','"
-		}
+		},
+		"checkbox1" : "Independent Store",
+		"checkbox2" : "Local e-commerce site",
+		"checkbox3" : "Local Franchise"
 	},
 	"about":{
 		"heading" : "SHOPILOC IS A OPEN-SOURCE PROJECT WITH THE SIMPLE GOAL OF SHOPPERS FINDING LOCAL INDEPENDENT STORES THAT CAN DELIVER TO THEIR HOUSE IN THESE TIMES OF CRISIS.",

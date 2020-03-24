@@ -9,11 +9,14 @@ block content
       </a>
       <div id="myLinks">
         <a href="/create" class="btn-search btn btn-primary menu"> #{language.button.create_store} </a>
+        <a href="/about" class="btn-search btn btn-primary btn-secondry menu"> #{language.button.about_button}</a>
+      
         <select class="custom-select language-select menu-select" style="display:block; position: relative" name="Language" id="language_mobile" required>
           <option value="">Select Language</option>
           <option value="en">English</option>
           <option value="fr">French</option>
         </select> 
+        
       </div>
       
     </div>
@@ -23,6 +26,9 @@ block content
       <option value="en">English</option>
       <option value="fr">French</option>
     </select> 
+    <div class="form-group flag">
+        <div id="basic" data-input-name="country"></div>
+    </div>
     <form action="/" method="post">
       <fieldset>
         <legend> #{language.legend}  <h6> #{language.legend_placeholder} </h6>
@@ -45,7 +51,7 @@ block content
         </div>
       </div>
     </form>
-    <a href="/about" class="btn-search btn btn-primary btn-secondry"> #{language.button.about_button}</a>
+    <a href="/about" class="btn-search btn btn-primary btn-secondry hiden-mobile"> #{language.button.about_button}</a>
   </div>
   if isSearch
     <div class="container" id="results">

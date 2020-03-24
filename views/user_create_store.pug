@@ -38,6 +38,21 @@ block content
             <form method="post" action="/store" enctype="multipart/form-data" style="padding:  50px 20px;">
                 <div class="form-row">
                     <div class="form-group col-md-12">
+                        <label for="name">#{language.label.first_name}</label>
+                        <input type="hidden" name="status" value="false">
+                        <input type="text" class="form-control" required name="first_name" id="inputname4" placeholder="#{language.placeholder.first_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.last_name}</label>
+                        <input type="hidden" name="status" value="false">
+                        <input type="text" class="form-control" required name="last_name" id="inputname4" placeholder="#{language.placeholder.last_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.email}</label>
+                        <input type="hidden" name="status" value="false">
+                        <input type="email" class="form-control" required name="email" id="inputname4" placeholder="#{language.placeholder.email}">
+                    </div>
+                    <div class="form-group col-md-12">
                         <label for="name">#{language.label.store_name}</label>
                         <input type="hidden" name="status" value="false">
                         <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="#{language.placeholder.store_name}">
@@ -60,22 +75,22 @@ block content
                     <div class="form-group col-md-12">
                         <label for="inputState">#{language.label.country}</label>
                         <select id="countries_list" name="country" required class="form-control">
-                            <option value="">#{language.placeholder.address2}</option>
+                            <option value="">#{language.placeholder.country}</option>
                             
                         </select>
                     </div>
                    
                     <div class="form-group col-md-12">
                         <label for="inputState">#{language.label.state}</label>
-                        <input type="text" class="form-control" name="state" id="inputState">
+                        <input type="text" class="form-control" required name="state" id="inputState">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="inputCity">#{language.label.city}</label>
-                        <input type="text" class="form-control" name="city" id="inputCity">
+                        <input type="text" class="form-control"  requiredname="city" id="inputCity">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="phone">#{language.label.phone}</label>
-                        <input type="text" name="phone_number" class="form-control" >
+                        <input type="text" name="phone_number" required class="form-control" >
                     </div>
                    
                     <div class="form-group col-md-12">
@@ -89,9 +104,35 @@ block content
                         textarea(name="store_description", required, maxlength=570, cols="82", rows="10")
                         
                     </div>
+                    
                     <div class="form-group col-md-12">
                         <label for="exampleFormControlFile1">#{language.label.upload_image}</label>
-                        <input type="file" name="store_logo" required class="form-control-file" id="exampleFormControlFile1">
+                        <input type="file" name="store_logo" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <div class="form-group col-md-12">
+                        
+                        <label for="inputZip">#{language.label.industry}</label>
+                        <input type="text" name="industry" required class="form-control" id="inputZip">
+
+                    </div>
+                    <label for="inputZip"> #{language.label.checkbox}:</label>
+                   
+                    <div class="custom-control custom-checkbox col-md-12">
+                        <input type="checkbox" class="custom-control-input" id="customChecks" name="example1">
+                        <label class="custom-control-label" for="customChecks">#{language.checkbox1}</label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox col-md-12">
+                        <input type="checkbox" class="custom-control-input" id="customChecks1" name="example1">
+                        <label class="custom-control-label" for="customChecks1">#{language.checkbox2}</label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox col-md-12">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" name="example1">
+                        <label class="custom-control-label" for="customCheck2">#{language.checkbox3}</label>
+                    </div>
+                    <div class="form-group col-md-12">
+                        
                     </div>
                     <div class="form-group col-md-12">
                        <button class="form-control submit" type="submit">#{language.button.store_post_button}</button>

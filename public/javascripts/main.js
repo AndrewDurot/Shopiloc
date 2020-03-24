@@ -1,11 +1,40 @@
 $(document).ready(function(){
-    $.getJSON('https://ipapi.co/json/', function(data) {
-        if(data.region.toLocaleLowerCase() == "quebec")
-        {
-            localStorage.setItem("ip",data.ip);
-            if(localStorage.getItem("language") == undefined && localStorage.getItem("language") == "")
+    if(localStorage.getItem("language") != "fr"){
+        $('#basic').flagStrap({
+            countries: {
+                
+                "GB": "English",
+                "FR": "French",
+            }
+        });
+    }
+    else{
+       
+        $('#basic').flagStrap({
+            countries: {
+                
+                "FR": "French",
+                "GB": "English",
+            }
+        });
+    }
+   
+    $('.custom-control-input').change(function(e) {
+        e.preventDefault();
+        $('.custom-control-input').not(this).prop('checked', false);
+        $(this).prop('checked', true);
+    });
+    $("button.btn.btn-default.btn-md.dropdown-toggle").on("click", function(){
+        //debugger;
+        $(".dropdown-menu").toggle();
+    })
+    if(localStorage.getItem("language") == null ){
+        $.getJSON('https://ipapi.co/json/', function(data) {
+        
+            if(data.region.toLocaleLowerCase() == "quebec")
             {
-               
+                
+                localStorage.setItem("ip",data.ip);
                 $.ajax({
                     url: '/lang',
                     data: {lang:"fr",ip: localStorage.getItem("ip")},
@@ -14,7 +43,7 @@ $(document).ready(function(){
                     {
                         //localStorage.setItem("ip",)
                         localStorage.clear();
-                        localStorage.setItem("language",data.language);
+                        localStorage.setItem("language","fr");
                         location.reload();
                         
                     },
@@ -23,23 +52,47 @@ $(document).ready(function(){
                         console.log(textStatus);
                     }
                 });
+                // if(localStorage.getItem("language") == undefined && localStorage.getItem("language") == "" || localStorage.getItem("language") == "en" )
+                // {
+                
+                    
+                    
+                // }
+                
                 
             }
             
             
-        }
+        });
+    }
+    let isActive = false;
+    $(document).on("click","#menu, .fa,.icon",function(e){
         
-        
-    });
-    $(document).on("click","#menu, fa",function(){
-        
+        //$("myLinks").toggle();
         var x = document.getElementById("myLinks");
         if (x.style.display === "block") {
           x.style.display = "none";
         } else {
           x.style.display = "block";
         }
+    });
+    $(document).on("click",".topnav, #myLinks",function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        
+        //$("myLinks").toggle();
+        // var x = document.getElementById("myLinks");
+        // if (x.style.display === "block") {
+        //   x.style.display = "none";
+        // } else {
+        //   x.style.display = "block";
+        // }
+    });
+    $(document).on("click", function(e){
+       
+        $("#myLinks").hide();
     })
+    
     function myFunction() {
         var x = document.getElementById("myLinks");
         if (x.style.display === "block") {
@@ -63,15 +116,42 @@ $(document).ready(function(){
     //debugger;
     if(localStorage.getItem("language") != undefined && localStorage.getItem("language") != "")
     {
+        
         $("#language").val(localStorage.getItem("language"));
     } 
     else
     {
         $("#language").val("en"); 
     }  
-    $("#language").on("change", function(){
+    $(".dropdown-menu li a").on("click", function(){
        
-        var value = $(this).val();
+        var value = $(this).attr("data-val");
+        value = value.toLowerCase();
+        if(value == "gb"){
+            value = "en";
+        }
+        
+        $.ajax({
+            url: '/lang',
+            data: {lang:value,ip: localStorage.getItem("ip")},
+            type: "post",
+            success : function(data)
+            {
+                //localStorage.setItem("ip",)
+                localStorage.clear();
+                localStorage.setItem("language",data.language);
+                location.reload();
+                
+            },
+            error : function(jqXHR, textStatus, errorThrown)
+            {
+                console.log(textStatus);
+            }
+        });
+        
+    })
+    $("#language, #language_mobile").on("change", function(){
+       var value = $(this).val();
        
         $.ajax({
             url: '/lang',
