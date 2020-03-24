@@ -1,16 +1,18 @@
 $(document).ready(function(){
     $.getJSON('https://ipapi.co/json/', function(data) {
-        debugger;
-        if(data.country.toLocaleLowerCase() == "ca")
+        if(data.region.toLocaleLowerCase() == "quebec")
         {
+            localStorage.setItem("ip",data.ip);
             if(localStorage.getItem("language") == undefined && localStorage.getItem("language") == "")
             {
+               
                 $.ajax({
                     url: '/lang',
-                    data: {lang:"fr"},
+                    data: {lang:"fr",ip: localStorage.getItem("ip")},
                     type: "post",
                     success : function(data)
                     {
+                        //localStorage.setItem("ip",)
                         localStorage.clear();
                         localStorage.setItem("language",data.language);
                         location.reload();
@@ -23,7 +25,6 @@ $(document).ready(function(){
                 });
                 
             }
-            
             
             
         }
@@ -74,7 +75,7 @@ $(document).ready(function(){
        
         $.ajax({
             url: '/lang',
-            data: {lang:value},
+            data: {lang:value,ip: localStorage.getItem("ip")},
             type: "post",
             success : function(data)
             {

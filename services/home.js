@@ -1,7 +1,7 @@
 var Store = require('../models/store');
 var i18n = require('i18n');
 var cookieParser = require('cookie-parser');
-
+var requestIp = require('request-ip');
 exports.get_store = async (req, res)=>{
     res.render('index', { title: 'Express'});
 }
@@ -27,11 +27,19 @@ exports.get_country = async (req, res) =>{
 
 
 exports.create_store = async (req, res) =>{
-    var lang = req.cookies.lang;
-    if(lang) i18n.setLocale(lang);
-    var lang = i18n.__('create_store');
+    var ip = requestIp.getClientIp(req);
+    var cookie_name = "lang"+ip;
+    var lang = req.cookies[cookie_name];
+    if(lang){
+      i18n.setLocale(lang);
+    } 
+    else{
+      i18n.setLocale("en");
+    }
+   
+    var lang_ = i18n.__('create_store');
     console.log(lang.heading);
-    res.render('user_create_store', { language : lang});
+    res.render('user_create_store', { language : lang_});
 }
 exports.get_Search = async (req, res)=>{
     try{

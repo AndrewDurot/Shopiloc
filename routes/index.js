@@ -11,6 +11,7 @@ var cookieParser = require('cookie-parser');
 var i18n = require('i18n');
 var ip_module = require('ip');
 var geoip = require('geoip-lite');
+const requestIp = require('request-ip');
 router.use(cookieParser());
 const publicIp = require('public-ip');
 var home_services = require('../services/home');
@@ -25,32 +26,51 @@ router.use(i18n.init);
 
 /* GET home page. */
 router.get('/', async(req, res, next)=>{
-  var lang = req.cookies.lang;
-  if(lang) i18n.setLocale(lang);
-  var lang = i18n.__('home');
+  var ip = requestIp.getClientIp(req);
+  var cookie_name = "lang"+ip;
+  console.log(cookie_name);
+  console.log(req.cookies);
+  var lang = req.cookies[cookie_name];
+  console.log(lang);
+  if(lang){
+    i18n.setLocale(lang);
+  } 
+  else{
+    i18n.setLocale("en");
+  }
+  var lang_ = i18n.__('home');
   res.render('index',
   {
     title: 'Shopiloc',
-    language : lang
+    language : lang_
   });
 });
 
 router.post('/lang' , (req, res, next) =>{
+  var ip = requestIp.getClientIp(req);
+  console.log(requestIp.getClientIp(req));
   var lang = req.body.lang;
-  res.cookie('lang',lang);
+  res.cookie('lang'+ip, lang, { maxAge: 900000 });
   res.send({language: lang});
 });
 /* Post home page. */
 router.post('/', async(req, res, next) =>{
   
   try{
-    var lang = req.cookies.lang;
-    if(lang) i18n.setLocale(lang);
-    var lang = i18n.__('home');
+    var ip = requestIp.getClientIp(req);
+    var cookie_name = "lang"+ip;
+    var lang = req.cookies[cookie_name];
+    if(lang){
+      i18n.setLocale(lang);
+    } 
+    else{
+      i18n.setLocale("en");
+    }
+    var lang_ = i18n.__('home');
     console.log(req.body);
     var code = req.body.postal_code.toLowerCase();
     console.log(code);
-    var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true"});
+    var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true", language : lang_ });
     
     let isExist = false;
     if(store.length > 0)
@@ -62,7 +82,7 @@ router.post('/', async(req, res, next) =>{
     console.log(store);
     //res.status(200).send(store);
     //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
-    res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang });
+    res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang_ });
   //res.redirect('/');
   }
   catch(err){
@@ -73,10 +93,13 @@ router.post('/', async(req, res, next) =>{
 router.get('/create', home_services.create_store);
 //about page
 router.get('/about', (req, res)=>{
-  var lang = req.cookies.lang;
+  var ip = requestIp.getClientIp(req);
+  var cookie_name = "lang"+ip;
+  console.log(cookie_name);
+  var lang = req.cookies[cookie_name];
   if(lang) i18n.setLocale(lang);
-  var lang = i18n.__('about');
-  res.render('about',{ language : lang});
+  var lang_ = i18n.__('about');
+  res.render('about',{ language : lang_});
 })
 //admon User 
 router.use('/admin', admin_Route);
