@@ -1,11 +1,11 @@
 {
 	"Hello": "Hello",
 	"home": {
-		"legend": "Trouvez des magasins indépendants qui vous livrent!",
-		"legend_placeholder": "Projet open source mondial pour sauver les magasins locaux!",
+		"legend": "Trouvez les magasins locaux qui livrent chez vous!",
+		"legend_placeholder": "Projet mondial 'open-source' pour sauver les magasins locaux!",
 		"placeholder": {
-			"postal": "Entrez le code postal ---- sans espacement",
-			"country_list": "Choisissez un pays"
+			"postal": "Entrez votre code postal --- sans espace",
+			"country_list": "Choisir le pays"
 		},
 		"button":{
 			"create_store" : "Ajouter ma boutique",
