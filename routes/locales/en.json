@@ -45,7 +45,9 @@
 			"description" : "Description.",
 			"upload_image" : "Upload Image",
 			"industry" : "Which industry are you in?",
-			"checkbox" : "Which one applies to you?"
+			"checkbox" : "Which one applies to you?",
+			"postal_ca" : ""
+
 		},
 		"placeholder" :{
 			"email": "Email",
@@ -59,7 +61,9 @@
 			"state" : "State",
 			"city" : "City",
 			"phone" : "Phone No",
-			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','"
+			
+			"postal" : "Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ','",
+			"postal_ca" : ""
 		},
 		"checkbox1" : "Independent Store",
 		"checkbox2" : "Local e-commerce site",

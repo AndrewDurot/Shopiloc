@@ -68,9 +68,19 @@ router.post('/', async(req, res, next) =>{
     }
     var lang_ = i18n.__('home');
     console.log(req.body);
-    var code = req.body.postal_code.toLowerCase();
-    code = code.replace(/\s/g, "")  
-    code = code.replace(/ /g,'');
+    var code;
+    if(req.body.country_list.toLowerCase() == "canada"){
+      code = req.body.postal_code.split(" ");
+      code = code[0].toLowerCase();
+      
+    }
+    else{
+      code = req.body.postal_code.toLowerCase();
+      code = code.replace(/\s/g, "")  
+      code = code.replace(/ /g,'');
+    }
+    console.log(code);
+    
     
     var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true" });
     

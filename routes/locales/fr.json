@@ -47,7 +47,8 @@
 			"description" : "Description",
 			"upload_image" : "Ajoutez une image",
 			"industry" : "Dans quelle industrie êtes vous?",
-			"checkbox" : "Quelle option s'appilque?"
+			"checkbox" : "Quelle option s'appilque?",
+			"postal_ca" : ""
 		},
 		"placeholder" :{
 			"email": "Email",
@@ -61,7 +62,9 @@
 			"state" : "Province",
 			"city" : "Ville",
 			"phone" : "Num de Tel",
-			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','"
+
+			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','",
+			"postal_ca" : ""
 		},
 		"checkbox1" : "Commerce indépendant",
 		"checkbox2" : "Boutique en-ligne locale",

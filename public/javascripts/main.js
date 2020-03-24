@@ -19,6 +19,17 @@ $(document).ready(function(){
         });
     }
    
+    $("#countries_list").on("change", function(){
+        var value = this.value.toLocaleLowerCase();
+        if(value = "canada" || value == "united states"){
+            $("#postal_label_us").show();
+            $("#postal_help_us").show();
+            $("#postal_label").hide();
+            $("#postal_help").hide();
+           
+        }
+        
+    })
     $('.custom-control-input').change(function(e) {
         e.preventDefault();
         $('.custom-control-input').not(this).prop('checked', false);

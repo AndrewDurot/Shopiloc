@@ -1,5 +1,6 @@
 var Store = require('../models/store');
 const { storeValidation, recordValidation } = require("../validation");
+var zipcodes = require('zipcodes');
 
 //Post Store 
 exports.create_store = async(req, res)=>
@@ -14,30 +15,48 @@ exports.create_store = async(req, res)=>
     var path_img = req.file.path;
     var res_path = path_img.replace("uploads", "");
     var postal_code;
-    if(req.body.postal_code.includes(","))
-    {
-        let array = [];
-        postal_code = req.body.postal_code.split(",");
-        postal_code.forEach(element => {
-            if(element != " "){
-                var elements = element.trim().split(/\s*,\s*/);
-                
-                elements = elements[0].replace(/ /g,'');
-                elements = elements.toLowerCase();
-                if(elements != ""){
-                    array.push(elements);
+    if(req.body.country.toLowerCase() == "canada" || req.body.country.toLowerCase() == "united states"){
+        
+        console.log(req.body.postal_code);
+        var rad = zipcodes.radius(req.body.postal_code, 5);
+        var post_Address = [];
+        rad.forEach(element => {
+            let ele = element.toLowerCase()
+            post_Address.push(ele)
+        });
+        postal_code = post_Address;
+        console.log(postal_code);
+    }
+    else{
+        if(req.body.postal_code.includes(","))
+        {
+            let array = [];
+            postal_code = req.body.postal_code.split(",");
+            postal_code.forEach(element => {
+                if(element != " "){
+                    var elements = element.trim().split(/\s*,\s*/);
+                    
+                    elements = elements[0].replace(/ /g,'');
+                    elements = elements.toLowerCase();
+                    if(elements != ""){
+                        array.push(elements);
+                    }
+                    
                 }
                 
-            }
-            
-        });
-        console.log(array);
-        postal_code = array;
+            });
+            console.log(array);
+            postal_code = array;
+        }
+        else
+        {
+            postal_code = req.body.postal_code.toLowerCase();
+        }
+
     }
-    else
-    {
-        postal_code = req.body.postal_code.toLowerCase();
-    }
+    
+    
+    
     const store = new Store({
         first_name : req.body.first_name,
         last_name : req.body.last_name,
