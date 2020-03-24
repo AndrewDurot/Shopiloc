@@ -32,7 +32,15 @@ exports.create_store = async(req, res)=>
             post_Address.push(code_);
         }
         else{
-            post_Address.push(req.body.postal_code.toLowerCase());
+            if(req.body.country.toLowerCase() == "canada"){
+                var code = req.body.postal_code.toLowerCase();
+                code = code.substr(0, 3);
+                post_Address.push(code.toLowerCase());
+            }
+            else{
+                post_Address.push(req.body.postal_code.toLowerCase());
+            }
+            
         }
         rad.forEach(element => {
             let ele = element.toLowerCase()

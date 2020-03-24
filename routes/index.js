@@ -69,7 +69,7 @@ router.post('/', async(req, res, next) =>{
     var lang_ = i18n.__('home');
     console.log(req.body);
     var code;
-    if(req.body.country_list.toLowerCase() == "canada"){
+    if(req.body.country_list.toLowerCase() == "canada" || req.body.country_list.toLowerCase().includes("canada")){
       if(req.body.postal_code.includes(" ")){
         code = req.body.postal_code.split(" ");
         code = code[0].toLowerCase();
