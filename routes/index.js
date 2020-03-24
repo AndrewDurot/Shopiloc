@@ -33,7 +33,7 @@ router.get('/',(req, res, next)=>{
   var ip = ip_module.address();
   console.log(ip);
 
-  var geo = geoip.lookup("173.244.55.80");
+  var geo = geoip.lookup(ip);
   
   console.log(geo);
   var lang = req.cookies.lang;
@@ -41,8 +41,8 @@ router.get('/',(req, res, next)=>{
   var lang = i18n.__('home');
   res.render('index',
   {
-      title: 'Shopiloc',
-      language : lang
+    title: 'Shopiloc',
+    language : lang
   });
 });
 
