@@ -31,11 +31,12 @@ router.use(i18n.init);
 router.get('/',(req, res, next)=>{
   //console.log(ip_module.address());
   var ip = ip_module.address();
-  console.log(ip);
+  console.log(ip.toString());
 
   var geo = geoip.lookup(ip.toString());
   
   console.log(geo);
+  console.log(geoip.lookup("172.18.171.66"));
   var lang = req.cookies.lang;
   if(lang) i18n.setLocale(lang);
   var lang = i18n.__('home');
