@@ -26,9 +26,16 @@ $(document).ready(function(){
             $("#postal_help_us").show();
             $("#postal_label").hide();
             $("#postal_help").hide();
+
             // $("#postal_label").html("What is the postal code of your store's address?");
             // $("#postal_help").html("Your store will show up for all searches made with in a 10km radius");
             
+        }
+        else{
+            $("#postal_label_us").hide();
+            $("#postal_help_us").hide();
+            $("#postal_label").show();
+            $("#postal_help").show();
         }
         
     })
