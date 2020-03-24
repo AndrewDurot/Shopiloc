@@ -12,9 +12,9 @@
 			"about_button" : "À propos de Shopiloc/Aide"
 		},
 		"result_success":{
-			"description1": "Voici tous les magasins ",
+			"description1": "Voici toutes les boutiques! ",
 			"description2": "livre à ",
-			"description3": "Veuillez informer autant de propriétaires de magasins et d'acheteurs de ce service afin que plus de magasins puissent survivre!"
+			"description3": "Veuillez informer aussi biens les commercants que les cliens de ce service pour que plus de monde l'utilise!"
 		},
 
 		"result_fail": "*Aucun magasin ne s'est encore inscrit pour livrer dans votre région! Aidez-nous à passer le mot et à mettre en ligne les magasins et les acheteurs locaux dès que possible! Partagez Partagez Partagez!"
@@ -56,49 +56,47 @@
 		}
 	},
 	"about":{
-		"heading" : "SHOPILOC IS A OPEN-SOURCE PROJECT WITH THE SIMPLE GOAL OF SHOPPERS FINDING LOCAL INDEPENDENT STORES THAT CAN DELIVER TO THEIR HOUSE IN THESE TIMES OF CRISIS.",
+		"heading" : "SHOPILOC EST UN PROJET COLLABORATIF POUR SAUVER LES MAGASINS LOCAUX EN CE TEMPS DE CRISE.",
 		"section1" :{
-			"heading" : "How you can help",
-			"item1" : "USE IT!",
-			"item2" : "Share it",
-			"item3" : "Get storeowners to add their stores",
-			"item4" : "If you are a marketer - copywriter - developer - designer or have any skill that can help save local businesses, let us know - we have a trello-board here where you can comment suggestions",
-			"item5" : "Donations are welcome - we don't need much - just enough to run the server - any extra donations will be used on adspend!"
+			"heading" : "Comment Aider?",
+			"item1" : "Utilisez le!",
+			"item2" : "Partagez le",
+			"item3" : "Aidez les proprios de commerce a s'inscrire",
+			"item4" : "Si vous etes un(e) desiner(euse), Developeur(/euse) ou si vous avez une idée comment sauver les commercans- faites nous savoir!",
+			"item5" : "Des dons financiers sont toujours bienvenu  car nous en avons besoins pour les servers!"
 		},
 		"section2" :{
-			"heading" : "Urgently looking for",
-			"item1" : "Designers",
-			"label" : "(all other pls refer to point 4!)"
+			"heading" : "On recherche",
+			"item1" : "Des Disigner(euse)",
+			"label" : "(Pour toues autres référez vers le point 4)"
 		},
 		"section3" : {
-			"heading" : "List of volunteers",
+			"heading" : "Liste des volontaires",
 			"item1" : "Mamadou Koné - Dev-Ops",
 			"item2" : "Lukas - Developer",
-			"item3" : "EcomExperts.io team - Project management, developers"
+			"item3" : "EcomExperts.io team - PM & dev"
 		},
 		"section4" :{
-			"heading" : "FAQ",
+			"heading" : "QFP",
 			"question" :{
-				"question1" : "Why should't I shop on Amazon",
-				"answer1" : "Amazon is great, but small independent shops in your area suddenly stopped getting traffic. This means unless we do an extra effort they will shut down.Your 'main' street will be filled with bankrupt shops.",
-				"question2" : "What's the difference between this and Google?",
-				"answer2" : "The shops you see are limited to the ones that can actually deliver personally in your area. Each shop on the list can only add a limited amount of postal codes as their delivery zone - this means you are really getting your local shops instead of the big e-com players that dominate Google",
-				"question3" : "I own a shop - but don't have a site, HELP!",
-				"answer3" : "We got you - click here - to have a step by step video tutorial on how to set up a Shopify store at the lowest price possible.",
-				"question4" : "Why is your 'set up a store' tutorial just for Shopify?",
-				"answer4" : "We don't think this is the time to debate which platform is better. We made the videos for Shopify because that's what we are fluent in - we are more then open to add tutorials on other platforms as well! The goal is to get as many independent shop owners online asap",
-				"question5" : "I added my store but I don't see it!",
-				"answer5" : "We manually accept new store entries - this might take a moment - we do this to limit the amount of span and because we kept the product basic",
-				"question6" : "Why isn't my country featured in the search list?",
-				"answer6" : "This means we don't have any stores in your country yet - and that's sad news :( - You need to help us get the word out!",
-				"question7" : "When I add my store - I can't add more then 6 postal codes as delivery zones",
-				"answer7" : "Yes we know - reason is that we want to keep it local. Amazon delivers everywhere, so does zara.com. This site is to give a lifeline to your local corner-store that never did any web marketing before and that stands no chance in ranking on google. That's why delivery-zones are limited.",
-				"question8" : "I made a mistake in my store listing - how do I change it?",
-				"answer8" : "Ow lord - we're not fancy enough yet! You need to send us an email andrew@ecomexperts.io",
-				"question9" : "Are you affiliated with someone?",
-				"answer9" : "We are in talks with multiple government organizations of different countries (3) and e-commerce platforms(2) but govs & multinationals take time so no official affiliation yet! :(",
-				"question10" : "Is this the latest version of an item",
-				"answer10" : "Each item in PrepBootstrap is maintained to its latest version. This ensures its smooth operation."
+				"question1" : "Pourqoi devrais je pas utiliser Amazon.ca",
+				"answer1" : " Amazon est fanastique, mais les petis commercants n'ont plus de traffic dans leurs commerce à cause du Covid-19. Si on ne prends pas de mesures au plus vite nous perderons beacoup de commerces!",
+				"question2" : "Quelle es la difference entre Shopiloc et Google?",
+				"answer2" : "Les commerce qu'on vous montre sont vraiment des boutiques locaux. Chaque boutique a une zone de livraison limitée, Ceci vous permets de découvrir les vrais bouique locale et non pas les gros jouers en ligne.",
+				"question3" : "J'ai un commerce mais je n'ai pas de boutique en ligne! A l'Aide!",
+				"answer3" : "Pas de problème! Cliquez ici pour toruver un uorial de comment commencer sa propre boutique en ligne en quelques clicks!",
+				"question4" : "Pourqoi es-ce que vore tutorial est just pour Shopify?",
+				"answer4" : "C'est la plafomre que nous conaisson le mieux",
+				"question5" : "J;ai rajouté ma boutique mais je ne la vois pas?",
+				"answer5" : "Nous acceptons manuellement chaque summision pour assurez qu'il n'y a pas de fausse sumissions - ce processus prend max. 24 heures.",
+				"question6" : "Mon pays n'est pas dans la liste",
+				"answer6" : "Cela veu dire que nous n'avons recu aucunne sumission de bouique dans votre pays - c'est triste! - paragez le service!",
+				"question7" : "Quand je rajoute mon commerce je ne peux pas rajouter plus de 7 code posal - pourqoi?",
+				"answer7" : "Oui- effectivement! C'est fait pour s'assurer que tout resulats restent des resultats locaux",
+				"question8" : "J'ai fais une faute dans ma summision comment je change?",
+				"answer8" : "Ow! Il faut nous envoyer un couriel! andrew@ecomexperts.io",
+				"question9" : "Etes vous affiliez avec quelqu'uns?",
+				"answer9" : "Nous sommes en discussions avec deux platformes e-commerces et deux gouvernemen mais encore rien de concret",
 				
 			}
 		}
