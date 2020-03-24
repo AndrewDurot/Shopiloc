@@ -1,4 +1,22 @@
 $(document).ready(function(){
+    $(document).on("click","#menu, fa",function(){
+        
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+    })
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    
     $.get("/country_List", function(data, status){
         var country_List = data.country;
         if(country_List.length > 0){
@@ -168,5 +186,6 @@ $(document).ready(function(){
             timer: 3000
         })
     }
+    
     
 });

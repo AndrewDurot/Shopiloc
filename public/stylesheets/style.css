@@ -793,6 +793,18 @@ a.btn-search.btn.btn-primary {
   border-color: #D79E6D;
   border-radius: 5px;
 }
+.s01 form .inner-form .input-field.third-wrap .btn-search
+{
+  background: #D79E6D;
+  border-color: #D79E6D;
+  border-radius: 5px;
+
+}
+.s01 form .inner-form .input-field.third-wrap .btn-search:hover
+{
+  background: #D7A371;
+
+}
 a.btn-search.btn.btn-primary:hover {
   
   background: #D7A371;
@@ -886,7 +898,71 @@ select#language {
   left: 30px;
   top: 12px;
 }
+.topnav{
+  display: none;
+}
 @media screen and (max-width: 767px){
+  select#language, a.btn-search.btn.btn-primary.create{
+    display: none;
+  }
+  .topnav {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    width: 50%;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+    background: black;
+  }
+  select.custom-select.language-select.menu-select {
+      position: relative;
+      background: none;
+  }
+  a.btn-search.btn.btn-primary.menu {
+    position: relative;
+    background: none;
+    /* margin: 0 auto; */
+    left: 0px;
+    margin-bottom: 21px;
+}
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    display: block;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: white;
+    color: black;
+  }
+
+
+
+  legend h6 {
+    font-size: 20px;
+  }
+  .s01 form legend {
+    font-size: 36px !important;
+  }
   select#language {
     width: 40%;
   }
@@ -937,4 +1013,50 @@ select#language {
   .s01 form legend {
     font-size: 44px;
   }
+  .topnav {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    width: 60%;
+  }
+
+  .topnav #myLinks {
+      background: black;
+      padding: 15px;
+  }
+
+  a.btn-search.btn.btn-primary.menu {
+      left: 0px;
+      margin-bottom: 21px;
+  }
+
+  select#language {
+      width: 100%;
+      background: #fff;
+      left: 0px;
+      top: 0px;
+  }
+
+
+}
+.s01 form {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 1290px;
+  padding: 29px 47px;
+}
+.s01 form legend {
+  font-size: 60px;
+  line-height: 1;
+  color: #fefefe;
+  margin-bottom: 60px;
+  background: unset;
+  text-shadow: 0 3px 0 black;
+}
+.s01 form .inner-form
+{
+  background: unset;
 }

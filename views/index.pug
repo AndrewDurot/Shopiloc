@@ -3,7 +3,24 @@ extends layout
 block content
   
   <div class="s01">
-    <a href="/create" class="btn-search btn btn-primary"> #{language.button.create_store} </a>
+    <div class="topnav">
+      <a  class="icon" class="toggle" id="menu" >
+        <i class="fa fa-bars"></i>
+      </a>
+      <div id="myLinks">
+        <a href="/create" class="btn-search btn btn-primary menu"> #{language.button.create_store} </a>
+        <select class="custom-select language-select menu-select" style="display:block; position: relative" name="Language" id="language" required>
+          <option value="">Select Language</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+        </select> 
+      </div>
+      
+    </div>
+
+
+
+    <a href="/create" class="btn-search btn btn-primary create"> #{language.button.create_store} </a>
     <select class="custom-select language-select" name="Language" id="language" required>
       <option value="">Select Language</option>
       <option value="en">English</option>

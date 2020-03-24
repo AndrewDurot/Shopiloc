@@ -9,6 +9,8 @@ const mongoose = require('mongoose');
 var Store = require('../models/store');
 var cookieParser = require('cookie-parser');
 var i18n = require('i18n');
+var ip_module = require('ip');
+var geoip = require('geoip-lite');
 router.use(cookieParser());
 var home_services = require('../services/home');
 
@@ -19,8 +21,21 @@ i18n.configure({
   directory: __dirname+'/locales'
 });
 router.use(i18n.init);
+// router.use('/', (req, res)=>{
+  
+//   //var ip = ip.address();
+//   //var geo = geoip.lookup(ip);
+  
+// })
 /* GET home page. */
 router.get('/',(req, res, next)=>{
+  //console.log(ip_module.address());
+  var ip = ip_module.address();
+  console.log(ip);
+
+  var geo = geoip.lookup("173.244.55.80");
+  
+  console.log(geo);
   var lang = req.cookies.lang;
   if(lang) i18n.setLocale(lang);
   var lang = i18n.__('home');
