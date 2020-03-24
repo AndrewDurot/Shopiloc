@@ -46,19 +46,19 @@ exports.create_store = async(req, res)=>
         phone_number: req.body.phone_number,
         store_logo : res_path
     });
-    try{
-        const savedStore = await store.save();
-        if(savedStore.status == "false")
-        {
-            res.redirect('/create?success=true');
-        }
-        res.redirect('/admin');
-        //res.send(savedStore);
-    }
-    catch(err){
-        res.status(400).send(err);
-    }
-    //res.send(store);
+    // try{
+    //     const savedStore = await store.save();
+    //     if(savedStore.status == "false")
+    //     {
+    //         res.redirect('/create?success=true');
+    //     }
+    //     res.redirect('/admin');
+    //     //res.send(savedStore);
+    // }
+    // catch(err){
+    //     res.status(400).send(err);
+    // }
+    res.send(store);
 }
 
 //Edit Store
