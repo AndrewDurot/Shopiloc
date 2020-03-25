@@ -14,7 +14,7 @@ exports.create_store = async(req, res)=>
     }
     var path_img = "";
     var res_path = "";
-    if(path_img){
+    if(req.file){
         path_img = req.file.path;
         res_path = path_img.replace("uploads", "");
     }
