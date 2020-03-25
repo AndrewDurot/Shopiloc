@@ -84,7 +84,7 @@ exports.create_store = async(req, res)=>
         last_name : req.body.last_name,
         email : req.body.email,
         industry : req.body.industry,
-        store_type: req.body.example1,
+        store_type: req.body.store_type,
         store_name : req.body.store_name,
         store_url : req.body.store_url,
         status : req.body.status,
@@ -126,7 +126,19 @@ exports.edit_store = async(req, res)=>
 
 }
 
-
+exports.delete_single_store = async(req, res)=>{
+    console.log(req.body);
+    
+    var store = await Store.findById(req.body._id);
+      try{
+        var record = await store.remove();
+        res.redirect('/admin');
+    }
+    catch(errr){
+        console.log(err);
+        res.redirect('/admin');
+    }
+}
 //Get Store
 exports.get_store = async(req, res)=>
 {

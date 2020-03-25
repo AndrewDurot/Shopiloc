@@ -41,7 +41,7 @@ block content
                                 <th>Status</th>
                                 <th>Action</th>
                                 //- <th>Edit</th>
-                                //- <th>Delete</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,9 +61,12 @@ block content
                                         input(type="hidden", name="status", value=val.status)
                                         button(type="submit").btn.btn-primary Update Status   
                                     //- <td><i class="far fa-edit"></i></td>
-                                    //- <td><i class="fas fa-trash-alt"></i></td>
-                                </tr>
-                                                        
+                                    td
+                                      form(action="/store/delete", method="post")
+                                        input(type="hidden", name="_id", value=val._id)
+                                        input(type="submit", name="submit",  class="submit hidden")
+                                        <a type="submit" class="delete_button"><i class="fas fa-trash-alt"></i></a>  
+                                </tr>                                
                         </tbody>
                     </table>
                 </div>

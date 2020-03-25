@@ -92,7 +92,7 @@ block content
                         <label for="phone">#{language.label.phone}</label>
                         <input type="text" name="phone_number" required class="form-control" >
                     </div>
-                   
+                
                     <div class="form-group col-md-12">
                         <label for="inputZip" style="display:none;" id="postal_label_us">#{language.label.postal_ca}</label>
                         <label for="inputZip" id="postal_label">#{language.label.postal}</label>
@@ -119,20 +119,24 @@ block content
                     </div>
                     <label for="inputZip"> #{language.label.checkbox}:</label>
                    
-                    <div class="custom-control custom-checkbox col-md-12">
-                        <input type="checkbox" class="custom-control-input"  value='#{language.checkbox1}' id="customChecks" name="example1">
-                        <label class="custom-control-label"  for="customChecks">#{language.checkbox1}</label>
+
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
                     </div>
-                    <br>
-                    <div class="custom-control custom-checkbox col-md-12">
-                        <input type="checkbox" class="custom-control-input"  value='#{language.checkbox2}' id="customChecks1" name="example1">
-                        <label class="custom-control-label" for="customChecks1">#{language.checkbox2}</label>
+
+                    <!-- Group of default radios - option 2 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='#{language.checkbox2}' name="store_type" >
+                        <label class="custom-control-label" for="defaultGroupExample2">#{language.checkbox2}</label>
                     </div>
-                    <br>
-                    <div class="custom-control custom-checkbox col-md-12">
-                        <input type="checkbox" class="custom-control-input"  value='#{language.checkbox3}' id="customCheck2" name="example1">
-                        <label class="custom-control-label" value='' for="customCheck2">#{language.checkbox3}</label>
+
+                    <!-- Group of default radios - option 3 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
                     </div>
+
                     <div class="form-group col-md-12">
                         
                     </div>

@@ -1,20 +1,16 @@
 $(document).ready(function(){
     if(!window.location.href.includes("create") && !window.location.href.includes("about")){
         if(localStorage.getItem("language") != "fr"){
-            debugger;
             $('#basic').flagStrap({
                 countries: {
-                    
                     "GB": "English",
                     "FR": "French",
                 }
             });
         }
         else{
-           
             $('#basic').flagStrap({
                 countries: {
-                    
                     "FR": "French",
                     "GB": "English",
                 }
@@ -325,8 +321,30 @@ $(document).ready(function(){
             showCancelButton: false,
             showConfirmButton: false,
             timer: 3000
-        })
+        });
     }
-    
+    $(".delete_button").on("click", function(e){
+       
+        var form = $(this).parents('form');
+        sweetAlert({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        },
+        function(isConfirm){
+            
+            if (isConfirm) {
+                $(form[0].children[1]).click();
+                //form.submit();
+                } else {
+              swal("Cancelled", "Store Record is safe :)", "error");
+              
+            }
+        });
+    })
     
 });

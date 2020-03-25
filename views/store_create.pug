@@ -33,61 +33,110 @@ block content
             <form method="post" action="/store" enctype="multipart/form-data" style="padding:  50px 20px;">
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="name">Store Name</label>
-                        <input type="hidden" name="status" value="true">
-                        <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="Store Name">
+                        <label for="name">#{language.label.first_name}</label>
+                        
+                        <input type="text" class="form-control" required name="first_name" id="inputname4" placeholder="#{language.placeholder.first_name}">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="url">Store Url</label>
-                        <input type="text" class="form-control" required name="store_url" id="store_url" placeholder="Store Url">
+                        <label for="name">#{language.label.last_name}</label>
+                        
+                        <input type="text" class="form-control" required name="last_name" id="inputname4" placeholder="#{language.placeholder.last_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.email}</label>
+                      
+                        <input type="email" class="form-control" required name="email" id="inputname4" placeholder="#{language.placeholder.email}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.store_name}</label>
+                        <input type="hidden" name="status" value="true">
+                        <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="#{language.placeholder.store_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.store_url}</label>
+                        <input type="text" class="form-control" required name="store_url" id="store_url" placeholder="#{language.label.store_url}">
                         <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
                     </div>
+
                     <div class="form-group col-md-12">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" required name="address1" placeholder="1234 Main St">
+                        <label for="inputAddress">#{language.label.address}</label>
+                        <input type="text" class="form-control" id="inputAddress" required name="address1" placeholder="#{language.placeholder.address}">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+                        <label for="inputAddress2">#{language.label.address2}</label>
+                        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="#{language.placeholder.address2}">
                     </div>
         
                     <div class="form-group col-md-12">
-                        <label for="inputState">Country</label>
+                        <label for="inputState">#{language.label.country}</label>
                         <select id="countries_list" name="country" required class="form-control">
-                            <option value="">Choose Country</option>
+                            <option value="">#{language.placeholder.country}</option>
                             
                         </select>
                     </div>
                    
                     <div class="form-group col-md-12">
-                        <label for="inputState">State</label>
-                        <input type="text" class="form-control" name="state" id="inputState">
+                        <label for="inputState">#{language.label.state}</label>
+                        <input type="text" class="form-control" required name="state" id="inputState">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" name="city" id="inputCity">
+                        <label for="inputCity">#{language.label.city}</label>
+                        <input type="text" class="form-control"  requiredname="city" id="inputCity">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="phone">Phone No.</label>
-                        <input type="text" name="phone_number" class="form-control" >
+                        <label for="phone">#{language.label.phone}</label>
+                        <input type="text" name="phone_number" required class="form-control" >
                     </div>
+                
                     <div class="form-group col-md-12">
-                        <label for="inputZip">Which postal codes can you deliver to?</label>
+                        <label for="inputZip" style="display:none;" id="postal_label_us">#{language.label.postal_ca}</label>
+                        <label for="inputZip" id="postal_label">#{language.label.postal}</label>
                         <input type="text" name="postal_code" required class="form-control" id="inputZip">
-                        <span class="help"> Add up to 10 postal codes where you can deliver - do no add spacing in your postal codes - sperate different postal codes with a comma ","</span>
+                        <span class="help" id="postal_help"> #{language.placeholder.postal}</span>
+                        <span class="help" style="display:none;" id="postal_help_us"> #{language.placeholder.postal_ca}</span>
+                    </div>
+                  
+                    <div class="form-group col-md-12">
+                        <label for="phone">#{language.label.description}</label>
+                        textarea(name="store_description", required, maxlength=570, cols="82", rows="10")
+                        
                     </div>
                     
                     <div class="form-group col-md-12">
-                        <label for="phone">Description.</label>
-                        textarea(name="store_description", required, rows="10", maxlength="570")
+                        <label for="exampleFormControlFile1">#{language.label.upload_image}</label>
+                        <input type="file" name="store_logo" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <div class="form-group col-md-12">
+                        
+                        <label for="inputZip">#{language.label.industry}</label>
+                        <input type="text" name="industry" name="industry" required class="form-control" id="inputZip">
+
+                    </div>
+                    <label for="inputZip"> #{language.label.checkbox}:</label>
+                   
+
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
+                    </div>
+
+                    <!-- Group of default radios - option 2 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='#{language.checkbox2}' name="store_type" >
+                        <label class="custom-control-label" for="defaultGroupExample2">#{language.checkbox2}</label>
+                    </div>
+
+                    <!-- Group of default radios - option 3 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
+                    </div>
+
+                    <div class="form-group col-md-12">
                         
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="exampleFormControlFile1">Upload Image</label>
-                        <input type="file" name="store_logo" required class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-                    <div class="form-group col-md-12">
-                       <button class="form-control submit" type="submit" > Create Store</button>
+                       <button class="form-control submit" type="submit">#{language.button.store_post_button}</button>
                     
                     </div>
                 </div>
