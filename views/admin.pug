@@ -40,7 +40,7 @@ block content
                                 <th>Country</th>
                                 <th>Status</th>
                                 <th>Action</th>
-                                //- <th>Edit</th>
+                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -61,6 +61,8 @@ block content
                                         input(type="hidden", name="status", value=val.status)
                                         button(type="submit").btn.btn-primary Update Status   
                                     //- <td><i class="far fa-edit"></i></td>
+                                    <td> <a><i class="far fa-edit"></i></a></td>
+                                    
                                     td
                                       form(action="/store/delete", method="post")
                                         input(type="hidden", name="_id", value=val._id)

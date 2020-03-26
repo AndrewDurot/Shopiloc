@@ -19,7 +19,6 @@ exports.create_store = async(req, res)=>
         res_path = path_img.replace("uploads", "");
     }
     
-    
     var postal_code;
     if(req.body.country.toLowerCase() == "canada" || req.body.country.toLowerCase() == "united states"){
         

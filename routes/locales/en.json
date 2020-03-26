@@ -118,6 +118,12 @@
 		}
 
 		
+	}, 
+	"meta":{
+		"description" : "Find Local stores that deliver to you!, We are a worldwide open source project to save local stores. Come help us and share this!",
+		"keywords" : "Local,Stores, Delivery,Local Stores, Worldwide",
+		"author" : "www.shopiloc.com"
 	}
+
 	
 }
