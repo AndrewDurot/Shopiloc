@@ -74,13 +74,13 @@ exports.Check_Url = async(req, res)=>{
     var req_url = req.query;
     var store_url = await Store.find({"store_url" : req.query.url});
     if(store_url.length > 0){
-        res.status(200).send({isExist : true});
+        res.status(200).send({isExist : true, url : req.query.url});
     }
     else{
-        res.status(200).send({isExist : false});
+        res.status(200).send({isExist : false, url : req.query.url});
     }
 
-    console.log(store_url);
+    //console.log(store_url);
 }
 exports.get_all_country = async (req, res) =>{
     var country_List = [];

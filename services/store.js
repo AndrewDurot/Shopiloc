@@ -78,7 +78,13 @@ exports.create_store = async(req, res)=>
     }
     
     
+    var url = req.body.store_url;
+    if(url.includes("https://") || url.includes("http://"))
+    {
+        url = url.split("://");
+        url = url[1];
     
+    }
     const store = new Store({
         first_name : req.body.first_name,
         last_name : req.body.last_name,
@@ -86,7 +92,7 @@ exports.create_store = async(req, res)=>
         industry : req.body.industry,
         store_type: req.body.store_type,
         store_name : req.body.store_name,
-        store_url : req.body.store_url,
+        store_url : url,
         status : req.body.status,
         store_description : req.body.store_description,
         country : req.body.country,
