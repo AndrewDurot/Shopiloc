@@ -3,6 +3,7 @@ const { registerValidation, loginValidation } = require('../validation');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const requestIp = require('request-ip');
+const i18n = require('i18n');
 //var cors = require('cors')
 //router.use(cors);
 
