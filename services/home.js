@@ -38,8 +38,9 @@ exports.create_store = async (req, res) =>{
     }
    
     var lang_ = i18n.__('create_store');
+    var meta_ = i18n.__('meta');
     //console.log(lang.heading);
-    res.render('user_create_store', { language : lang_});
+    res.render('user_create_store', { language : lang_, meta : meta_});
 }
 exports.get_Search = async (req, res)=>{
     try{

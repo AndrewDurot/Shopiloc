@@ -24,6 +24,23 @@ i18n.configure({
 });
 router.use(i18n.init);
 
+
+router.get('/fr', async(req, res, next)=>{
+  var ip = requestIp.getClientIp(req);
+  console.log(requestIp.getClientIp(req));
+  var lang = req.body.lang;
+  res.cookie('lang'+ip, lang, { maxAge: 900000 });
+  i18n.setLocale("fr");
+  var lang_ = i18n.__('home');
+  var meta_ = i18n.__('meta');
+  res.render('index',
+  {
+    title: 'Shopiloc',
+    language : lang_,
+    meta : meta_
+  });
+});
+
 /* GET home page. */
 router.get('/', async(req, res, next)=>{
   var ip = requestIp.getClientIp(req);
@@ -39,10 +56,12 @@ router.get('/', async(req, res, next)=>{
     i18n.setLocale("en");
   }
   var lang_ = i18n.__('home');
+  var meta_ = i18n.__('meta');
   res.render('index',
   {
     title: 'Shopiloc',
-    language : lang_
+    language : lang_,
+    meta : meta_
   });
 });
 
@@ -67,6 +86,7 @@ router.post('/', async(req, res, next) =>{
       i18n.setLocale("en");
     }
     var lang_ = i18n.__('home');
+    var meta_ = i18n.__('meta');
     console.log(req.body);
     var code;
     if(req.body.country_list.toLowerCase() == "canada" || req.body.country_list.toLowerCase().includes("canada")){
@@ -101,7 +121,7 @@ router.post('/', async(req, res, next) =>{
     console.log(store);
     //res.status(200).send(store);
     //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
-    res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang_ });
+    res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang_, meta : meta_ });
   //res.redirect('/');
   }
   catch(err){
@@ -118,7 +138,8 @@ router.get('/about', (req, res)=>{
   var lang = req.cookies[cookie_name];
   if(lang) i18n.setLocale(lang);
   var lang_ = i18n.__('about');
-  res.render('about',{ language : lang_});
+  var meta_ = i18n.__('meta');
+  res.render('about',{ language : lang_, meta : meta_});
 })
 //admon User 
 router.use('/admin', admin_Route);

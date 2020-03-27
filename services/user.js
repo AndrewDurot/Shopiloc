@@ -2,6 +2,7 @@ var User = require('../models/user');
 const { registerValidation, loginValidation } = require('../validation');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const requestIp = require('request-ip');
 //var cors = require('cors')
 //router.use(cors);
 
@@ -10,7 +11,18 @@ const jwt = require('jsonwebtoken');
 exports.get_sign_in = async (req, res)=>{
     var token = req.cookies.auth;
     if(token) return res.redirect('/admin');
-    res.render('signin', {success : true});
+   
+    var ip = requestIp.getClientIp(req);
+    var cookie_name = "lang"+ip;
+    var lang = req.cookies[cookie_name];
+    if(lang){
+      i18n.setLocale(lang);
+    } 
+    else{
+      i18n.setLocale("en");
+    }
+    var meta_ = i18n.__('meta');
+    res.render('signin', {success : true, meta :meta_});
 }
 
 
