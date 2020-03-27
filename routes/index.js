@@ -17,7 +17,7 @@ const publicIp = require('public-ip');
 var home_services = require('../services/home');
 
 i18n.configure({
-  locales: ['en', 'ur', 'ar', 'fr'],
+  locales: ['en', 'ur', 'ar', 'fr','nl'],
   cookie: 'lang',
   defaultLocale: 'en',
   directory: __dirname+'/locales'
@@ -31,6 +31,22 @@ router.get('/fr', async(req, res, next)=>{
   var lang = req.body.lang;
   res.cookie('lang'+ip, lang, { maxAge: 900000 });
   i18n.setLocale("fr");
+  var lang_ = i18n.__('home');
+  var meta_ = i18n.__('meta');
+  res.render('index',
+  {
+    title: 'Shopiloc',
+    language : lang_,
+    meta : meta_
+  });
+});
+
+router.get('/nl', async(req, res, next)=>{
+  var ip = requestIp.getClientIp(req);
+  console.log(requestIp.getClientIp(req));
+  var lang = req.body.lang;
+  res.cookie('lang'+ip, lang, { maxAge: 900000 });
+  i18n.setLocale("nl");
   var lang_ = i18n.__('home');
   var meta_ = i18n.__('meta');
   res.render('index',

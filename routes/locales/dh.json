@@ -1,0 +1,128 @@
+{
+	"Hello": "Allo",
+	"home": {
+		"legend": "Trouvez les magasins locaux qui livrent chez vous!",
+		"legend_placeholder": "Projet mondial 'open-source' pour sauver les magasins locaux!",
+		"placeholder": {
+			"postal": "Entrez votre code postal --- sans espace",
+			"country_list": "Choisir le pays"
+		},
+		"button":{
+			"create_store" : "Ajouter ma boutique",
+			"about_button" : "À propos de Shopiloc/Aide",
+			"search_button" : "Recherche"
+		},
+		"result_success":{
+			"description1": "Voici toutes les boutiques! ",
+			"description2": "qui livre au ",
+			"description3": "Veuillez partager ce service pour que plus de gens l'utilisent!"
+		},
+
+		"result_fail": "*Aucun magasin ne s'est encore inscrit pour livrer dans votre région! Aidez-nous à passer le mot et à mettre en ligne les magasins et les acheteurs locaux dès que possible! Partagez Partagez Partagez!"
+
+	},
+	"create_store" :{
+		"heading" : "Détails du magasin",
+		"subHeading" : "Ajouter un nouveau magasin",
+		"action" : "Actions",
+		"button" : {
+			"Home" : "Page d’Accueil",
+			"Create_Label_Action" : "Construire une boutique en ligne",
+			"About" : "À propos de Shopiloc",
+			"store_post_button" : "Ajouter ma boutique"
+		},
+		"label" :{
+			"email": "Adresse courriel",
+			"first_name" : "Prénom",
+			"last_name" : "Nom",
+			"store_name" : "Nom de la boutique",
+			"store_url" : "URL",
+			"address" : "Adresse",
+			"address2" : "Adresse 2",
+			"country" : "Pays",
+			"state" : "Province",
+			"city" : "Ville",
+			"phone" : "Num de téléphone",
+			"postal" : "Vore code postal",
+			"description" : "Description",
+			"upload_image" : "Ajouter une image",
+			"industry" : "Dans quelle industrie êtes vous?",
+			"checkbox" : "Quelle option s'applique?",
+			"postal_ca" : "Votre code postal"
+		},
+		"placeholder" :{
+			"email": "Adresse courriel",
+			"first_name" : "Prénom",
+			"last_name" : "Nom",
+			"store_name" : "Nom de la boutique",
+			"store_url" : "Url",
+			"address" : "1234 Rue principale",
+			"address2" : "Appartment, studio...",
+			"country" : "Pays",
+			"state" : "Province",
+			"city" : "Ville",
+			"phone" : "Num de Tel",
+
+			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','",
+			"postal_ca" : "Votre boutique apparaîtra dans toue recherche dans un rayon de 5km"
+		},
+		"checkbox1" : "Commerce indépendant",
+		"checkbox2" : "Boutique en-ligne locale",
+		"checkbox3" : "Franchise locale"
+	},
+	"about":{
+		"heading" : "SHOPILOC EST UN PROJET COLLABORATIF POUR SAUVER LES MAGASINS LOCAUX EN CE TEMPS DE CRISE.",
+		"section1" :{
+			"heading" : "Comment Aider?",
+			"item1" : "Utilisez le!",
+			"item2" : "Partagez le",
+			"item3" : "Aidez les propriétaires de commerces à s'inscrire",
+			"item4" : "Si vous êtes un(e) dessinateur(euse), Développeur(/euse) ou si vous avez une idée de comment sauver les commerçants, faites nous savoir!",
+			"item5" : "Des dons financiers sont toujours bienvenus,  car nous en avons besoin pour les serveurs!"
+		},
+		"section2" :{
+			"heading" : "On recherche",
+			"item1" : "Des designers(euses) graphique",
+			"label" : "Pour toute autre forme d’aide, référez-vous vers le point 4)"
+		},
+		"section3" : {
+			"heading" : "Liste des volontaires",
+			"item1" : "Mamadou Koné - Dev-Ops",
+			"item2" : "Lukas - Developer",
+			"item3" : "EcomExperts.io team - PM & dev"
+		},
+		"section4" :{
+			"heading" : "QFP",
+			"question" :{
+				"question1" : "Pourquoi je ne devrais pas utiliser Amazon.ca",
+				"answer1" : "Amazon est fantastique, mais les petits commerçants n'ont plus de traffic dans leurs commerces à cause du Covid-19. Si nous ne prenons pas de mesures au plus vite nous perderons beacoup de commerces",
+				"question2" : "Quelle est la différence entre Shopiloc et Google?",
+				"answer2" : "Les commerces que nous vous montrons ",
+				"question3" : "J'ai un commerce mais je n'ai pas de boutique en ligne!  À l'aide",
+				"answer3" : "Pas de problème! Cliquez ici pour trouver un tutoriel qui vous explique comment commencer sa propre boutique en ligne en quelques cliques",
+				"question4" : "Pourquoi est-ce que votre tutoriel est juste pour Shopify?",
+				"answer4" : "C'est la plateforme que nous connaissons le mieux",
+				"question5" : "J’ai ajouté ma boutique, mais je ne la vois pas",
+				"answer5" : "Nous acceptons manuellement chaque soumission pour assurer qu'il n'y ait pas de fausse soumission - ce processus prend maximum 24 heures.",
+				"question6" : "Mon pays n'est pas dans la liste",
+				
+				"answer6" : "Cela veut dire que nous n'avons reçu aucune soumission de boutique dans votre pays - c'est triste! - partagez le service",
+				"question7" : "Quand j’ajoute mon commerce, je ne peux pas ajouter plus de 7 codes postaux - pourquoi?",
+				"answer7" : "Oui- effectivement! C'est pour s'assurer du périmètre de livraison local",
+				"question8" : "'ai fait une faute dans ma soumission. Comment je peux le corriger?",
+				"answer8" : "Il faut nous envoyer un courriel à l’adresse suivante: andrew@ecomexperts.io",
+				"question9" : "Êtes-vous affilié avec des organizations?",
+				"answer9" : "Nous sommes en discussion avec deux plateformes de boutiques en ligne et deux organizations gouvernementales, mais il n’y a encore rien de concret."
+				
+			}
+		}
+
+		
+	},
+	"meta":{
+		"description" : "French Find Local stores that deliver to you!, We are a worldwide open source project to save local stores. Come help us and share this!",
+		"keywords" : "Local,Stores, Delivery,Local Stores, Worldwide",
+		"author" : "www.shopiloc.com"
+	}
+
+}

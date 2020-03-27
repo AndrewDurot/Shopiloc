@@ -1181,3 +1181,10 @@ select#language{
 input.submit.hidden{
   display: none;
 }
+div#language_modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+}

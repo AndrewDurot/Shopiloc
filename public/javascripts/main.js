@@ -1,21 +1,49 @@
 $(document).ready(function(){
     if(!window.location.href.includes("create") && !window.location.href.includes("about")){
-        if(localStorage.getItem("language") != "fr"){
+        
+        if(localStorage.getItem("language") == "fr"){
             $('#basic').flagStrap({
                 countries: {
+                    "FR": "French",
+                    "NL": "Dutch",
+                    "GB": "English",
+                    
+                }
+            });
+            $('#basic').flagStrap({
+                countries: {
+                    "FR": "French",
+                    "NL": "Dutch",
+                    "GB": "English",
+                    
+                }
+            });
+        }
+        else
+        if(localStorage.getItem("language") == "nl"){
+            $('#basic').flagStrap({
+                countries: {
+                    "NL": "Dutch",
                     "GB": "English",
                     "FR": "French",
+                   
                 }
             });
         }
         else{
             $('#basic').flagStrap({
                 countries: {
-                    "FR": "French",
+                    
                     "GB": "English",
+                    "NL": "Dutch",
+                    "FR": "French",
                 }
             });
         }
+        // $("#language_modal").modal({
+        //     //fadeDuration: 1000,
+        //     //fadeDelay: 1.75 // Will fade in 750ms after the overlay finishes.
+        // });
        
     }
     
@@ -45,12 +73,12 @@ $(document).ready(function(){
         $(this).prop('checked', true);
     });
     $("button.btn.btn-default.btn-md.dropdown-toggle").on("click", function(){
-        //debugger;
+        //
         $(".dropdown-menu").toggle();
     })
     if(localStorage.getItem("language") == null ){
         $.getJSON('https://ipapi.co/json/', function(data) {
-        
+            
             if(data.region.toLocaleLowerCase() == "quebec")
             {
                 
@@ -85,6 +113,7 @@ $(document).ready(function(){
             
         });
     }
+    
     let isActive = false;
     $(document).on("click","#menu, .fa,.icon",function(e){
         
@@ -101,7 +130,7 @@ $(document).ready(function(){
         window.location.href = $(this).attr("href");
     });
     $(document).on("click",".topnav, #myLinks",function(e){
-        //debugger;
+        //
         e.preventDefault()
         e.stopPropagation()
         
@@ -138,7 +167,7 @@ $(document).ready(function(){
             });
         }
     });
-    //debugger;
+    //
     if(localStorage.getItem("language") != undefined && localStorage.getItem("language") != "")
     {
         
@@ -163,6 +192,7 @@ $(document).ready(function(){
             success : function(data)
             {
                 //localStorage.setItem("ip",)
+                
                 localStorage.clear();
                 localStorage.setItem("language",data.language);
                 location.reload();
@@ -248,7 +278,7 @@ $(document).ready(function(){
             var valid = isUrlValid(this.value);
             if(valid){
                 $.get("/Check_Url?url="+this.value, function(data, status){
-                    debugger;
+                    
                     if(data.isExist){
                         $("#url-error").text("This Url already Exist");
                         $("#url-error").css("display", "block");
