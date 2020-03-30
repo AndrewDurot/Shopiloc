@@ -575,6 +575,12 @@ legend {
 }
 
 @media screen and (max-width: 767px) {
+  .modal .btn.btn-default.btn-md.dropdown-toggle {
+    display: block;
+  }
+  .modal .form-group.flag.popup {
+    margin-left: 80px;
+  }
   .s01 form legend {
     font-size: 40px;
     margin-bottom: 40px;
@@ -859,6 +865,7 @@ div.container {
   }
 }
 @media (min-width:480px)  {
+
   div#results {
     overflow: hidden;
   }
@@ -1185,6 +1192,28 @@ div#language_modal {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 50%;
+  height: 30%;
   transform: translate(-50%, -50%);
+}
+button i.flag-icon-background {
+  border-right: 1px dotted #FFFFFF;
+  display: inline-block;
+  float: left;
+  height: 24px;
+  width: 24px;
+}
+div#language_modal h2 {
+  text-align: center;
+}
+.form-group.flag.popup {
+  position: relative;
+  margin: 0px auto;
+  margin-left: 120px;
+}
+.jquery-modal.blocker.current {
+  z-index: 1000;
+}
+.modal a.close-modal{
+  top:0 !important;
+  right: 0 !important;
 }

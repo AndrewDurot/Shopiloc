@@ -60,6 +60,7 @@ router.get('/nl', async(req, res, next)=>{
 /* GET home page. */
 router.get('/', async(req, res, next)=>{
   var ip = requestIp.getClientIp(req);
+  console.log("ip" + requestIp.getClientIp(req));
   var cookie_name = "lang"+ip;
   console.log(cookie_name);
   console.log(req.cookies);

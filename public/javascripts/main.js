@@ -40,10 +40,15 @@ $(document).ready(function(){
                 }
             });
         }
-        // $("#language_modal").modal({
-        //     //fadeDuration: 1000,
-        //     //fadeDelay: 1.75 // Will fade in 750ms after the overlay finishes.
-        // });
+        $('#basic_popup').flagStrap({
+            countries: {
+                "FR": "French",
+                "NL": "Dutch",
+            }
+            
+           
+        });
+        
        
     }
     
@@ -75,7 +80,8 @@ $(document).ready(function(){
     $("button.btn.btn-default.btn-md.dropdown-toggle").on("click", function(){
         //
         $(".dropdown-menu").toggle();
-    })
+    });
+    //localStorage.clear();
     if(localStorage.getItem("language") == null ){
         $.getJSON('https://ipapi.co/json/', function(data) {
             
@@ -109,6 +115,33 @@ $(document).ready(function(){
                 
                 
             }
+            else 
+                if(data.country.toLocaleLowerCase() == "be")
+                {
+                    localStorage.setItem("ip",data.ip);
+                    $.ajax({
+                        url: '/lang',
+                        data: {lang:"nl",ip: localStorage.getItem("ip")},
+                        type: "post",
+                        success : function(data)
+                        {
+                            //localStorage.setItem("ip",)
+                            localStorage.clear();
+                            localStorage.setItem("language","nl");
+                            //location.reload();
+                            
+                        },
+                        error : function(jqXHR, textStatus, errorThrown)
+                        {
+                            console.log(textStatus);
+                        }
+                    });
+                    $("#language_modal").modal({
+                        //fadeDuration: 1000,
+                        //fadeDelay: 1.75 // Will fade in 750ms after the overlay finishes.
+                    });
+                   
+                }
             
             
         });
@@ -375,6 +408,24 @@ $(document).ready(function(){
               
             }
         });
-    })
+    });
+    // $('#language_modal').on('hidden.modal', function () {
+    //     // do something…
+    //     debugger;
+    // });
+    //Close modal triggers;
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutationRecord) {
+            if(mutationRecord.target.style.display == "none"){
+               
+                location.reload();
+                console.log('style changed!');
+            }
+            
+        });    
+    });
+    
+    var target = document.getElementById('language_modal');
+    observer.observe(target, { attributes : true, attributeFilter : ['style'] });
     
 });
