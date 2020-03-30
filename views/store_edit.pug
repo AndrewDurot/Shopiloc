@@ -1,0 +1,196 @@
+extends layout
+
+block content
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-4">
+                <div style="padding:  50px 20px;">
+                    <h3 >STORE DETAILS</h3>
+                    <p>Edit List</p>
+                    <div style="margin-top: 50px;" class="menu">
+                    <h5>Actions</h5>
+                    <div class="card" style="width: 18rem;">
+                
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
+                            <li class="list-group-item"><a href="/admin/create"><i class="fas fa-plus"></i>  Create Store</li></a>
+                            <li class="list-group-item"><i class="fas fa-minus"></i>  Delete All Stores</li>
+                        </ul>
+                    </div>
+                    <div class="form-group" style="width: 18rem; margin-top: 30px; display:none">
+                        <h5>View Options</h5>
+                        <select id="inputState" class="form-control">
+                            <option selected>View All</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f4f4f4;" class="col-md-7">
+            <select class="custom-select language-select" name="Language" id="language" required>
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+            </select> 
+            <form method="post" action="/admin/store" style="padding:  50px 20px;">
+                <div class="form-row">
+                    <label for="inputZip">Status:</label>
+                    <div class="form-group col-md-12">
+                    
+                    </div>
+
+                    if(store.status == 'true')
+                        <div class="custom-control custom-checkbox">
+                            <input type="hidden" id="status" name="status" value="true">
+                            <input type="checkbox" class=" checkbox" id="defaultChecked2" checked>
+                            <label class="" for="defaultChecked2">Active</label>
+                        </div>
+                        
+                    else
+                        <div class="custom-control custom-checkbox">
+                            <input type="hidden" id="status" name="status" value="false">
+                            <input type="checkbox" class="custom-control-input checkbox" id="defaultChecked" >
+                            <label class="custom-control-label" for="defaultChecked">InActive</label>
+                        </div>
+                        
+
+                    <div class="form-group col-md-12">
+                    
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.first_name}</label>
+                        <input type="hidden" id="id" name="_id" value=#{store._id}>
+                        <input type="text" class="form-control" required value='#{store.first_name}' name="first_name" id="inputname4" placeholder="#{language.placeholder.first_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.last_name}</label>
+                        
+                        <input type="text" class="form-control" required value='#{store.last_name}' name="last_name" id="inputname4" placeholder="#{language.placeholder.last_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.email}</label>
+                      
+                        <input type="email" class="form-control" required name="email" value='#{store.email}' id="inputname4" placeholder="#{language.placeholder.email}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.store_name}</label>
+                        
+                        <input type="text" class="form-control" required value='#{store.store_name}' name="store_name" id="inputEmail4" placeholder="#{language.placeholder.store_name}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.store_url}</label>
+                        <input type="text" class="form-control" required value='#{store.store_url}' name="store_url" id="store_url" placeholder="#{language.label.store_url}">
+                        <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress">#{language.label.address}</label>
+                        <input type="text" class="form-control" id="inputAddress" value='#{store.address1}' required name="address1" placeholder="#{language.placeholder.address}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress2">#{language.label.address2}</label>
+                        <input type="text" class="form-control" id="inputAddress2" value='#{store.address2}'  name="address2" placeholder="#{language.placeholder.address2}">
+                    </div>
+        
+                    <div class="form-group col-md-12">
+                        <label for="inputState">#{language.label.country}</label>
+                        <select id="countries_list" name="country" value='#{store.country}' required class="form-control">
+                            <option value="">#{language.placeholder.country}</option>
+                            
+                        </select>
+                    </div>
+                   
+                    <div class="form-group col-md-12">
+                        <label for="inputState">#{language.label.state}</label>
+                        <input type="text" class="form-control" value='#{store.state}' required name="state" id="inputState">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">#{language.label.city}</label>
+                        <input type="text" class="form-control" value='#{store.city}'  required name="city" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">#{language.label.phone}</label>
+                        <input type="text" name="phone_number" value='#{store.phone_number}' required class="form-control" >
+                    </div>
+                
+                    <div class="form-group col-md-12">
+                        <label for="inputZip" style="display:none;" id="postal_label_us">#{language.label.postal_ca}</label>
+                        <label for="inputZip" id="postal_label">#{language.label.postal}</label>
+                        <input type="text" name="postal_code" value='#{store.postal_code}' required class="form-control" id="inputZip">
+                        <span class="help" id="postal_help"> #{language.placeholder.postal}</span>
+                        <span class="help" style="display:none;" id="postal_help_us"> #{language.placeholder.postal_ca}</span>
+                    </div>
+                  
+                    <div class="form-group col-md-12">
+                        <label for="phone">#{language.label.description}</label>
+                        textarea(name="store_description", required, maxlength=570, value='#{store.store_description}', cols="82", rows="10") #{store.store_description}
+                        
+                    </div>
+                    
+                    //- <div class="form-group col-md-12">
+                    //-     <label for="exampleFormControlFile1">#{language.label.upload_image}</label>
+                    //-     <input type="file" name="store_logo" class="form-control-file" id="exampleFormControlFile1">
+                    //- </div>
+                    <div class="form-group col-md-12">
+                        
+                        <label for="inputZip">#{language.label.industry}</label>
+                        <input type="text" name="industry" name="industry" value='#{store.industry}' required class="form-control" id="inputZip">
+
+                    </div>
+                    <label for="inputZip"> #{language.label.checkbox}:</label>
+                   
+                    if(store.store_type =="Independent Store" || store.store_type == "Commerce indépendant")
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample1" checked required value='#{language.checkbox1}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='#{language.checkbox2}' name="store_type" >
+                            <label class="custom-control-label"  for="defaultGroupExample2">#{language.checkbox2}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
+                        </div>
+                    
+                    if(store.store_type =="Local e-commerce site" || store.store_type == "Boutique en-ligne locale")
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample2" checked value='#{language.checkbox2}' name="store_type" >
+                            <label class="custom-control-label"  for="defaultGroupExample2">#{language.checkbox2}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
+                        </div>
+                
+                    if(store.store_type =="Local Franchise" || store.store_type == "Franchise locale")
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" id="defaultGroupExample2"  value='#{language.checkbox2}' name="store_type" >
+                            <label class="custom-control-label"  for="defaultGroupExample2">#{language.checkbox2}</label>
+                        </div>
+                        <div class="custom-control custom-radio col-md-12">
+                            <input type="radio" class="custom-control-input" checked id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                            <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
+                        </div>
+                       
+                    <div class="form-group col-md-12">
+                         <input type="hidden" name="store_logo" value=#{store.store_logo}>
+                    </div>
+                    <div class="form-group col-md-12">
+                       <button class="form-control submit" type="submit">Update Store</button>
+                    
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </div>

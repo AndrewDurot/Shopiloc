@@ -1217,3 +1217,14 @@ div#language_modal h2 {
   top:0 !important;
   right: 0 !important;
 }
+.table-title {
+  height: 600px;
+}
+button.edit_button {
+  /* background: none; */
+  padding: unset;
+  height: 0;
+  width: 0;
+  border: 0;
+  background: transparent;
+}

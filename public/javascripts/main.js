@@ -258,7 +258,7 @@ $(document).ready(function(){
             }
         })
     })
-    if(window.location.href.includes("create")){
+    if(window.location.href.includes("create") || window.location.href.includes("admin/store")){
         $.get("/country", function(data, status){
             var country_List = data.country;
             if(country_List.length > 0){
@@ -414,18 +414,34 @@ $(document).ready(function(){
     //     debugger;
     // });
     //Close modal triggers;
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutationRecord) {
-            if(mutationRecord.target.style.display == "none"){
-               
-                location.reload();
-                console.log('style changed!');
-            }
-            
-        });    
-    });
-    
-    var target = document.getElementById('language_modal');
-    observer.observe(target, { attributes : true, attributeFilter : ['style'] });
+    if(!window.location.href.includes("create") && !window.location.href.includes("about") && !window.location.href.includes("admin") )
+    {   
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutationRecord) {
+                if(mutationRecord.target.style.display == "none"){
+                   
+                    location.reload();
+                    console.log('style changed!');
+                }
+                
+            });    
+        });
+        
+        var target = document.getElementById('language_modal');
+        observer.observe(target, { attributes : true, attributeFilter : ['style'] });
+
+    }
+    $(".checkbox").on("click", function(){
+        
+        if($(this).attr("checked") == "checked"){
+            $(this).removeAttr("checked");
+            $("#status").val("false");
+        }
+        else{
+            $(this).attr("checked", "checked");
+            $("#status").val("true");
+        }
+    })
+    //$('form input[type=checkbox]').change(function() { console.log('hello') });
     
 });

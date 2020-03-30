@@ -55,7 +55,9 @@ const storeSchema = new mongoose.Schema({
     store_logo:{
         type: String
     },
-    
+    city:{
+        type: String
+    },
     country:{
         type: String,
         required: true
