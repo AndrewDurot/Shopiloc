@@ -23,6 +23,8 @@ exports.getStore_Data = async(req, res) =>{
     res.render('admin',{store: store, meta : meta_});
 }
 exports.edit_form = async (req, res) =>{
+  var token = req.cookies.auth;
+  if(!token) return res.redirect('/users/signin');
   console.log(req.query);
   i18n.setLocale("en");
   var store = await Store.findById(req.query._id);
@@ -30,13 +32,13 @@ exports.edit_form = async (req, res) =>{
   var lang_ = i18n.__('create_store');
   var meta_ = i18n.__('meta');
   console.log(store);
-  res.render('store_edit', { store: store, language : lang_, meta : meta_});
+  if(store) return res.render('store_edit', { store: store, language : lang_, meta : meta_});
+  res.redirect('/admin');
 }
 exports.update_store = async (req, res) =>{
-  console.log(req.body);
+  var token = req.cookies.auth;
+  if(!token) return res.redirect('/users/signin');
   i18n.setLocale("en");
-
-  
   var store = await Store.findById(req.body._id);
   var path_img = "";
   var res_path = store.store_logo;
@@ -82,6 +84,8 @@ exports.update_store = async (req, res) =>{
   //res.render('store_edit', { store: store, language : lang_, meta : meta_});
 }
 exports.create_form = (req, res) =>{
+  var token = req.cookies.auth;
+  if(!token) return res.redirect('/users/signin');
     var ip = requestIp.getClientIp(req);
     var cookie_name = "lang"+ip;
     var lang = req.cookies[cookie_name];

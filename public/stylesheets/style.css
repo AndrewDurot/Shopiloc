@@ -1228,3 +1228,6 @@ button.edit_button {
   border: 0;
   background: transparent;
 }
+.img-thumbnail{
+  width: 250px;
+}

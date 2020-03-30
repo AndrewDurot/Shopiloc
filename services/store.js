@@ -1,7 +1,7 @@
 var Store = require('../models/store');
 const { storeValidation, recordValidation } = require("../validation");
 var zipcodes = require('zipcodes');
-
+var belgiumCodes = require('zipcodes-nearby');
 //Post Store 
 exports.create_store = async(req, res)=>
 {
@@ -48,6 +48,13 @@ exports.create_store = async(req, res)=>
         postal_code = post_Address;
         console.log(postal_code);
     }
+    else
+        if(req.body.country.toLowerCase() == "belgium"){
+            var nearby = await belgiumCodes.near(req.body.postal_code,5000);
+            console.log(nearby);
+            postal_code = nearby;
+
+        }
     else{
         if(req.body.postal_code.includes(","))
         {

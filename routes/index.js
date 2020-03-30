@@ -157,7 +157,7 @@ router.get('/about', (req, res)=>{
   var lang_ = i18n.__('about');
   var meta_ = i18n.__('meta');
   res.render('about',{ language : lang_, meta : meta_});
-})
+});
 //admon User 
 router.use('/admin', admin_Route);
 //Basic User 
