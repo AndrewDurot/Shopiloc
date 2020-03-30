@@ -1,118 +1,117 @@
 {
-	"Hello": "Allo",
+	"Hello": "Hallo",
 	"home": {
-		"legend": "Trouvez les magasins locaux qui livrent chez vous!",
-		"legend_placeholder": "Projet mondial 'open-source' pour sauver les magasins locaux!",
+		"legend": "Vind lokale winkels die bij u leveren",
+		"legend_placeholder": "Wereldwijd open-source project om lokale winkels te redden",
 		"placeholder": {
-			"postal": "Entrez votre code postal --- sans espace",
-			"country_list": "Choisir le pays"
+			"postal": "Vul uw postcode in – zonder spatie",
+			"country_list": "Kies het land"
 		},
 		"button":{
-			"create_store" : "Ajouter ma boutique",
-			"about_button" : "À propos de Shopiloc/Aide",
-			"search_button" : "Recherche"
+			"create_store" : "Voeg mijn winkel toe",
+			"about_button" : "Over Shopiloc/Help",
+			"search_button" : "Zoeken"
 		},
 		"result_success":{
-			"description1": "Voici toutes les boutiques! ",
-			"description2": "qui livre au ",
-			"description3": "Veuillez partager ce service pour que plus de gens l'utilisent!"
+			"description1": "Hier zijn alle winkels",
+			"description2": "die leveren aan ",
+			"description3": "Deel deze app zodat meer mensen er gebruik van kunnen maken!"
 		},
 
-		"result_fail": "*Aucun magasin ne s'est encore inscrit pour livrer dans votre région! Aidez-nous à passer le mot et à mettre en ligne les magasins et les acheteurs locaux dès que possible! Partagez Partagez Partagez!"
+		"result_fail": "Nog geen enkele winkel heeft zich geregistreed om bij u in de buurt te leveren! DELEN  DELEN DELEN aub"
 
 	},
 	"create_store" :{
-		"heading" : "Détails du magasin",
-		"subHeading" : "Ajouter un nouveau magasin",
-		"action" : "Actions",
+		"heading" : "Bijzonderheden van de winkel",
+		"subHeading" : "Voeg een nieuwe winkel toe",
+		"action" : "Acties",
 		"button" : {
-			"Home" : "Page d’Accueil",
-			"Create_Label_Action" : "Construire une boutique en ligne",
-			"About" : "À propos de Shopiloc",
-			"store_post_button" : "Ajouter ma boutique"
+			"Home" : "Home",
+			"Create_Label_Action" : "Bouw een on-line winkel",
+			"About" : "Over Shopiloc",
+			"store_post_button" : "Voeg mijn winkel toe"
 		},
 		"label" :{
-			"email": "Adresse courriel",
-			"first_name" : "Prénom",
-			"last_name" : "Nom",
-			"store_name" : "Nom de la boutique",
+			"email": "Email",
+			"first_name" : "Voornaam",
+			"last_name" : "Naam",
+			"store_name" : "Naam van de winkel",
 			"store_url" : "URL",
-			"address" : "Adresse",
-			"address2" : "Adresse 2",
-			"country" : "Pays",
-			"state" : "Province",
-			"city" : "Ville",
-			"phone" : "Num de téléphone",
-			"postal" : "Vore code postal",
-			"description" : "Description",
-			"upload_image" : "Ajouter une image",
-			"industry" : "Dans quelle industrie êtes vous?",
-			"checkbox" : "Quelle option s'applique?",
-			"postal_ca" : "Votre code postal"
+			"address" : "Adres",
+			"address2" : "Adres 2",
+			"country" : "Land",
+			"state" : "Provincie",
+			"city" : "Stad",
+			"phone" : "Telefoonnummer",
+			"postal" : "Postcode",
+			"description" : "Beschrijving",
+			"upload_image" : "Voeg een afbeelding toe",
+			"industry" : "In welk industrietak bent u ?",
+			"checkbox" : "Welke optie is van toepassing",
+			"postal_ca" : "Postcode"
 		},
 		"placeholder" :{
-			"email": "Adresse courriel",
-			"first_name" : "Prénom",
-			"last_name" : "Nom",
-			"store_name" : "Nom de la boutique",
-			"store_url" : "Url",
-			"address" : "1234 Rue principale",
-			"address2" : "Appartment, studio...",
-			"country" : "Pays",
-			"state" : "Province",
-			"city" : "Ville",
-			"phone" : "Num de Tel",
+			"email": "Email",
+			"first_name" : "Voornaam",
+			"last_name" : "Naam",
+			"store_name" : "Naam van de winkel",
+			"store_url" : "URL",
+			"address" : "Adres",
+			"address2" : "Adres 2",
+			"country" : "Land",
+			"state" : "Provincie",
+			"city" : "Stad",
+			"phone" : "Telefoonnummer",
 
-			"postal" : "Ajoutez jusqu'a 8 codes postales ou vous pouvez liver - séparer les codes postales avec une virgule ','",
-			"postal_ca" : "Votre boutique apparaîtra dans toue recherche dans un rayon de 5km"
+			"postal" : "Voeg tot 8 postcodes toe waar u levert, scheid postcodes met komma’s ','",
+			"postal_ca" : "Uw winkel zal verschijnen voor alle zoekopdrachten in a radius van 5km"
 		},
-		"checkbox1" : "Commerce indépendant",
-		"checkbox2" : "Boutique en-ligne locale",
-		"checkbox3" : "Franchise locale"
+		"checkbox1" : "Onafhankelijke handel",
+		"checkbox2" : "Lokale e-commerce",
+		"checkbox3" : "Lokale franchise"
 	},
 	"about":{
-		"heading" : "SHOPILOC EST UN PROJET COLLABORATIF POUR SAUVER LES MAGASINS LOCAUX EN CE TEMPS DE CRISE.",
+		"heading" : "Shopiloc is een samenwerkingsproject om lokale winkels te redden in deze tijd van crisis",
 		"section1" :{
-			"heading" : "Comment Aider?",
-			"item1" : "Utilisez le!",
-			"item2" : "Partagez le",
-			"item3" : "Aidez les propriétaires de commerces à s'inscrire",
-			"item4" : "Si vous êtes un(e) dessinateur(euse), Développeur(/euse) ou si vous avez une idée de comment sauver les commerçants, faites nous savoir!",
-			"item5" : "Des dons financiers sont toujours bienvenus,  car nous en avons besoin pour les serveurs!"
+			"heading" : "Hoe helpen?",
+			"item1" : "Gebruik het",
+			"item2" : "Deel het",
+			"item3" : "Help ondernemers bij het registreren",
+			"item4" : "Als u een ontwerper, ontwikkelaar bent of een idee heeft hoe u de handelaars kunt redden; laat het ons weten",
+			"item5" : "Financiele donaties zijn altijd welkom, we hebben ze nodig voor de servers"
 		},
 		"section2" :{
-			"heading" : "On recherche",
-			"item1" : "Des designers(euses) graphique",
-			"label" : "Pour toute autre forme d’aide, référez-vous vers le point 4)"
+			"heading" : "We zijn op zoek",
+			"item1" : "Van grafisch ontwerpers",
+			"label" : "Zie voor alle andere vormen van hulp punt 4"
 		},
 		"section3" : {
-			"heading" : "Liste des volontaires",
+			"heading" : "Lijst van vrijwilligers",
 			"item1" : "Mamadou Koné - Dev-Ops",
 			"item2" : "Lukas - Developer",
 			"item3" : "EcomExperts.io team - PM & dev"
 		},
 		"section4" :{
-			"heading" : "QFP",
+			"heading" : "VGV",
 			"question" :{
-				"question1" : "Pourquoi je ne devrais pas utiliser Amazon.ca",
-				"answer1" : "Amazon est fantastique, mais les petits commerçants n'ont plus de traffic dans leurs commerces à cause du Covid-19. Si nous ne prenons pas de mesures au plus vite nous perderons beacoup de commerces",
-				"question2" : "Quelle est la différence entre Shopiloc et Google?",
-				"answer2" : "Les commerces que nous vous montrons ",
-				"question3" : "J'ai un commerce mais je n'ai pas de boutique en ligne!  À l'aide",
-				"answer3" : "Pas de problème! Cliquez ici pour trouver un tutoriel qui vous explique comment commencer sa propre boutique en ligne en quelques cliques",
-				"question4" : "Pourquoi est-ce que votre tutoriel est juste pour Shopify?",
-				"answer4" : "C'est la plateforme que nous connaissons le mieux",
-				"question5" : "J’ai ajouté ma boutique, mais je ne la vois pas",
-				"answer5" : "Nous acceptons manuellement chaque soumission pour assurer qu'il n'y ait pas de fausse soumission - ce processus prend maximum 24 heures.",
-				"question6" : "Mon pays n'est pas dans la liste",
-				
-				"answer6" : "Cela veut dire que nous n'avons reçu aucune soumission de boutique dans votre pays - c'est triste! - partagez le service",
-				"question7" : "Quand j’ajoute mon commerce, je ne peux pas ajouter plus de 7 codes postaux - pourquoi?",
-				"answer7" : "Oui- effectivement! C'est pour s'assurer du périmètre de livraison local",
-				"question8" : "'ai fait une faute dans ma soumission. Comment je peux le corriger?",
-				"answer8" : "Il faut nous envoyer un courriel à l’adresse suivante: andrew@ecomexperts.io",
-				"question9" : "Êtes-vous affilié avec des organizations?",
-				"answer9" : "Nous sommes en discussion avec deux plateformes de boutiques en ligne et deux organizations gouvernementales, mais il n’y a encore rien de concret."
+				"question1" : "Waarom ik Amazon.com niet zou moeten gebruiken",
+				"answer1" : "Amazon is fantastisch, maar de kleine handelaren hebben géén klanten meer in hun winkels vanwege de Covid-19. Als we niet zo snel mogelijk actie pndernemen, verliezen we veel winkels.",
+				"question2" : "Wat is het verschil tussen Shopiloc en Google?",
+				"answer2" : "De winkels die we je laten zien zijn lokale winkels. Elke winkel heeft een beperkte leveringsomtrek ",
+				"question3" : "k heb een bedrijf, maar ik heb géén on-line winkel !  Help mij.",
+				"answer3" : "Géén probleem, klik hier, om een tutorial te vinden waarin wordt uitgelegd hoe u binnen enkele minuten uw eigen on-line winkel start",
+				"question4" : "Waarom is jouw tutorial de juiste voor Shopify?",
+				"answer4" : "Dit is het platform dat we het beste kennen",
+				"question5" : "Ik heb mijn winkel toegevoegd, maar ik zie hem niet",
+				"answer5" : "Wij accepteren elke inzending handmatig om ervoor te zorgen dat er géén valse inzendingen zijn – dit proces duurt maximaal 24 u.",
+				"question6" : "Mijn land staat niet in de lijst",
+				"answer6" : "Dat betekent dat we in uw land géén winkelinzending hebben ontvangen – het is triest -  deel de service ",
+				"question7" : "Wanneer ik mijn bedrijf toevoeg, kan ik niet meer dan 7 postcodes toevoegen – waarom",
+				"answer7" : "Ja inderdad, het is om de lokale leveringsperimeter te verzekeren en te limiteren",
+				"question8" : "Ik heb een fout gemaakt in mijn inzending, hoe kan ik die corrigeren ?",
+				"answer8" : "U dient ons een e-mail te sturen naar het volgende adres : andrew@ecomexperts.io",
+				"question9" : "Ben je aangesloten bij andere organisaties ?",
+				"answer9" : "We zijn in bespreking met twee andere platformen voor winkels on-line en twee overheidsorganisaties, maar er is nog niets concreets."
 				
 			}
 		}
@@ -120,8 +119,8 @@
 		
 	},
 	"meta":{
-		"description" : "French Find Local stores that deliver to you!, We are a worldwide open source project to save local stores. Come help us and share this!",
-		"keywords" : "Local,Stores, Delivery,Local Stores, Worldwide",
+		"description" : "Vind lokale winkels die bij u bezorgen!,Wij Zijn een wereldwijd open-source project om lokale winkels te redden. Kom ons helpen en deel dit!",
+		"keywords" : "Lokaal,Winkels, Levering,Lokale, wereldwijd",
 		"author" : "www.shopiloc.com"
 	}
 
