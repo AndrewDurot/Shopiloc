@@ -36,8 +36,14 @@ exports.update_store = async (req, res) =>{
   console.log(req.body);
   i18n.setLocale("en");
 
-  var store = await Store.findById(req.body._id);
   
+  var store = await Store.findById(req.body._id);
+  var path_img = "";
+  var res_path = store.store_logo;
+  if(req.file){
+    path_img = req.file.path;
+    res_path = path_img.replace("uploads", "");
+  }
   var lang_ = i18n.__('create_store');
   var meta_ = i18n.__('meta');
   var url = req.body.store_url;
@@ -57,13 +63,13 @@ exports.update_store = async (req, res) =>{
   store.status = req.body.status;
   store.store_description = req.body.store_description;
   store.country = req.body.country;
-  store.postal_code = req.body.postal_code;
+  //store.postal_code = store;
   store.city = req.body.city;
   store.address1 = req.body.address1;
   store.address2 = req.body.address2;
   store.state = req.body.state;
   store.phone_number = req.body.phone_number;
-  store.store_logo = req.body.store_logo;
+  store.store_logo = res_path;
 
   try{
     var save = await store.save();

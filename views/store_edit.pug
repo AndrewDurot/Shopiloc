@@ -33,28 +33,37 @@ block content
                 <option value="en">English</option>
                 <option value="fr">French</option>
             </select> 
-            <form method="post" action="/admin/store" style="padding:  50px 20px;">
+            <form method="post" action="/admin/store"  enctype="multipart/form-data" style="padding:  50px 20px;">
                 <div class="form-row">
                     <label for="inputZip">Status:</label>
                     <div class="form-group col-md-12">
                     
                     </div>
-
+                    <div class="col-md-12">
+                        
+                        if (store.store_logo != "")
+                            //img(src="C:\Users\faruk\Desktop\shopiloc\uploads\store_logo-1585067528228.jpg", class="img-thumbnail", alt="Store Logo") 
+                            <img src="#{store.store_logo}" alt="..." class="img-thumbnail">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="exampleFormControlFile1">Update Store Image</label>
+                        <input type="file" name="store_logo" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
                     if(store.status == 'true')
-                        <div class="custom-control custom-checkbox">
+                        <div class="custom-control custom-checkbox col-md-6">
                             <input type="hidden" id="status" name="status" value="true">
                             <input type="checkbox" class=" checkbox" id="defaultChecked2" checked>
                             <label class="" for="defaultChecked2">Active</label>
                         </div>
                         
                     else
-                        <div class="custom-control custom-checkbox">
+                        <div class="custom-control custom-checkbox col-md-6">
                             <input type="hidden" id="status" name="status" value="false">
                             <input type="checkbox" class="custom-control-input checkbox" id="defaultChecked" >
-                            <label class="custom-control-label" for="defaultChecked">InActive</label>
+                            <label class="custom-control-label" for="defaultChecked">Active</label>
                         </div>
                         
-
+                    
                     <div class="form-group col-md-12">
                     
                     </div>
@@ -117,7 +126,7 @@ block content
                     <div class="form-group col-md-12">
                         <label for="inputZip" style="display:none;" id="postal_label_us">#{language.label.postal_ca}</label>
                         <label for="inputZip" id="postal_label">#{language.label.postal}</label>
-                        <input type="text" name="postal_code" value='#{store.postal_code}' required class="form-control" id="inputZip">
+                        <input type="text" name="postal_code" value='#{store.postal_code}' disabled readonly class="form-control" id="inputZip">
                         <span class="help" id="postal_help"> #{language.placeholder.postal}</span>
                         <span class="help" style="display:none;" id="postal_help_us"> #{language.placeholder.postal_ca}</span>
                     </div>
@@ -128,10 +137,7 @@ block content
                         
                     </div>
                     
-                    //- <div class="form-group col-md-12">
-                    //-     <label for="exampleFormControlFile1">#{language.label.upload_image}</label>
-                    //-     <input type="file" name="store_logo" class="form-control-file" id="exampleFormControlFile1">
-                    //- </div>
+                    
                     <div class="form-group col-md-12">
                         
                         <label for="inputZip">#{language.label.industry}</label>
