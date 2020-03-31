@@ -39,7 +39,7 @@ block content
                         <ul class="list-group list-group-flush">
                             if (user.role == "admin")
                                 <li class="list-group-item"><a href="/user/create"><i class="fas fa-user"></i>  Create New Store Expert</li></a>
-                                <li class="list-group-item"><a href="/admin/users"><i class="fas fa-user"></i>   Stor Experts Detail</li></a>
+                                <li class="list-group-item"><a href="/admin/users"><i class="fas fa-user"></i>   Store Experts Details</li></a>
                             <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
                             <li class="list-group-item"><a href="/admin/create"><i class="fas fa-plus"></i>  Create Store</li></a>
                             
@@ -64,8 +64,10 @@ block content
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th>State</th>
                                     <th>Url</th>
                                     <th>Country</th>
+                                    
                                     <th>Status</th>
                                     <th>Action</th>
                                     <th>Edit</th>
@@ -76,9 +78,10 @@ block content
                                 each val in store
                                     <tr>
                                         td= val.store_name
-                                    
+                                        td= val.state
                                         td= val.store_url
                                         td= val.country
+                                        
                                         if(val.status == "true")
                                             td Active
                                         else
