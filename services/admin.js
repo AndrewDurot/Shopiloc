@@ -151,7 +151,7 @@ exports.states = async(req, res)=>{
   var store = await Store.find();
 
   store.forEach(element => {
-    let state =element.state.toLowerCase();
+    let state =element.state;
     state = state.replace(/ /g,'');
     state_List.push(state);
   });
