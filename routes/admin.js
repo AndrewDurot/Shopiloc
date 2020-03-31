@@ -31,7 +31,10 @@ var upload = multer({
 });
 //Get Admin
 router.get('/', admin_services.getStore_Data);
+router.get('/users', admin_services.get_users);
+router.post('/user/delete', admin_services.delete_users);
 router.get('/create', admin_services.create_form);
 router.get('/store', admin_services.edit_form);
+router.get('/states', admin_services.states);
 router.post('/store',  upload.single('store_logo'), admin_services.update_store);
 module.exports = router;

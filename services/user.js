@@ -7,6 +7,16 @@ const i18n = require('i18n');
 //var cors = require('cors')
 //router.use(cors);
 
+//Register Model
+exports.get_signup = async (req, res)=>{
+    i18n.setLocale("en");
+    var meta_ = i18n.__('meta');
+    var token = req.cookies.auth;
+    if(!token) return res.redirect('/user/signin');
+    var user_access = req.cookies.user;
+    if(user_access.role == "admin") return res.render('signup', {success : true, meta :meta_});
+    return res.redirect('/user/signin');   
+}
 
 //Login Get Method
 exports.get_sign_in = async (req, res)=>{
@@ -43,6 +53,8 @@ exports.sign_in = async (req, res)=>{
   //Create and assign a token.
     const token = jwt.sign({_id: user._id}, "configtestingtoken");
     res.cookie('auth',token);
+    res.cookie('user', user);
+    //res.cookie('access', user.access_state);
     res.header('auth-token', token).redirect('/admin');
     // res.header('auth-token',token).send({ success:true,message:"Successfully Login",
     //     token
@@ -50,6 +62,57 @@ exports.sign_in = async (req, res)=>{
 
     //res.send('NOT IMPLEMENTED: Genre list');
 }
+
+exports.signup = async (req, res)=>{
+
+    const { error } = registerValidation(req.body);
+ 
+    if ( error ) return res.status(400).send(error.details[0].message);
+
+    //Checking if user is already in the database.
+
+    const emailEsist = await User.findOne({email: req.body.email});
+    if(emailEsist) return res.status(400).send('Email already exists');
+    //Hash passwords
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(req.body.password, salt);
+    console.log(hashPassword);
+    console.log(req.body)
+    console.log(req.file);
+    var res_path = "";
+    if(req.file)
+    {
+        res_path = req.file.filename;
+    }
+    const user = new User({
+        last_name : req.body.last_name,
+        first_name: req.body.first_name,
+        email : req.body.email,
+        password : hashPassword,
+        role : req.body.role,
+        address1 : req.body.address1,
+        address2 : req.body.address2,
+        country: req.body.country,
+        state: req.body.state,
+        city: req.body.city,
+        phone_number: req.body.phone_number,
+        postal_code: req.body.postal_code,
+        access_state: req.body.access_state.toLowerCase(),
+        profile_picture : res_path
+    });
+    console.log(user);
+    try{
+        //console.log(user);
+        const savedUser = await user.save();
+        //console.log(savedUser);
+        res.redirect("/admin");
+    }
+    catch(err){
+        res.status(400).send(err);
+    }
+}
+
+
 exports.register = async (req, res)=>{
 
     const { error } = registerValidation(req.body);

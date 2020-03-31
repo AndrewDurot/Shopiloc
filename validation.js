@@ -6,7 +6,19 @@ const registerValidation = data =>{
         first_name: Joi.string().min(6).required(),
         last_name: Joi.string().min(3).required(),
         email: Joi.string().min(6).required().email(),
-        password: Joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required()
+        //password: Joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required()
+        password: Joi.string().required(),
+        phone_number: Joi.string().required(),
+        country: Joi.string().required(),
+        state: Joi.string().required(),
+        address1: Joi.string().required(),
+        address2: Joi.string().allow(null, ''),
+        phone_number: Joi.string().required(),
+        city: Joi.string().required(),
+        profile_picture: Joi.string().allow(null, ''),
+        postal_code: Joi.required(),
+        role: Joi.required(),
+        access_state: Joi.required()
     });
     return schema.validate(data);
     
@@ -17,7 +29,8 @@ const loginValidation = data =>{
     const schema = Joi.object({
         //name: Joi.string().min(6).required(),
         email: Joi.string().min(6).email().required(),
-        password: Joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required()
+        password: Joi.string().required()
+        //password: Joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required()
     });
     return schema.validate(data);
 };

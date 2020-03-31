@@ -12,10 +12,15 @@ var i18n = require('i18n');
 var ip_module = require('ip');
 var geoip = require('geoip-lite');
 const requestIp = require('request-ip');
+const dotenv = require('dotenv');
 router.use(cookieParser());
 const publicIp = require('public-ip');
 var home_services = require('../services/home');
+const verify = require('../JWT/varifyToken');
 
+
+
+dotenv.config();
 i18n.configure({
   locales: ['en', 'ur', 'ar', 'fr','nl'],
   cookie: 'lang',
@@ -60,12 +65,8 @@ router.get('/nl', async(req, res, next)=>{
 /* GET home page. */
 router.get('/', async(req, res, next)=>{
   var ip = requestIp.getClientIp(req);
-  console.log("ip" + requestIp.getClientIp(req));
   var cookie_name = "lang"+ip;
-  console.log(cookie_name);
-  console.log(req.cookies);
   var lang = req.cookies[cookie_name];
-  console.log(lang);
   if(lang){
     i18n.setLocale(lang);
   } 
@@ -84,7 +85,6 @@ router.get('/', async(req, res, next)=>{
 
 router.post('/lang' , (req, res, next) =>{
   var ip = requestIp.getClientIp(req);
-  console.log(requestIp.getClientIp(req));
   var lang = req.body.lang;
   res.cookie('lang'+ip, lang, { maxAge: 900000 });
   res.send({language: lang});
@@ -104,7 +104,6 @@ router.post('/', async(req, res, next) =>{
     }
     var lang_ = i18n.__('home');
     var meta_ = i18n.__('meta');
-    console.log(req.body);
     var code;
     if(req.body.country_list.toLowerCase() == "canada" || req.body.country_list.toLowerCase().includes("canada")){
       if(req.body.postal_code.includes(" ")){
@@ -157,9 +156,10 @@ router.get('/about', (req, res)=>{
   var lang_ = i18n.__('about');
   var meta_ = i18n.__('meta');
   res.render('about',{ language : lang_, meta : meta_});
+  
 });
 //admon User 
-router.use('/admin', admin_Route);
+router.use('/admin',  admin_Route);
 //Basic User 
 router.use('/user', user_Route);
 router.use('/store', store_Route);
@@ -174,7 +174,7 @@ router.get('/state', home_services.get_all_state);
 //Url List
 router.get('/Check_Url', home_services.Check_Url);
 mongoose.connect(
-  'mongodb+srv://shopiloc:ltsWrDCsJ4ueAvmK@rest-6ss50.mongodb.net/test?retryWrites=true&w=majority',
+  process.env.DB_CONNECT,
   { useNewUrlParser: true, useUnifiedTopology: true },
   ()=> console.log("Connected to db!")
 );

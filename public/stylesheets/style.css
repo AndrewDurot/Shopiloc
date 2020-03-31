@@ -1231,3 +1231,6 @@ button.edit_button {
 .img-thumbnail{
   width: 250px;
 }
+option {
+  text-transform: capitalize;
+}

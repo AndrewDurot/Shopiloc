@@ -1,0 +1,134 @@
+extends layout
+
+block content
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-5">
+                <div style="padding:  0px 20px;">
+                    <h3 >STORE DETAILS</h3>
+                    <p>New Store Expert</p>
+                    <div style="margin-top: 50px;" class="menu">
+                    <h5>Actions</h5>
+                    <div class="card" style="width: 18rem;">
+                
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/admin"><i class="fas fa-home"></i>   Home</li></a>
+                            <li class="list-group-item"><a href="/admin/users"><i class="fas fa-user"></i>   Store Experts Detail</li></a>
+                            <li class="list-group-item"><a href="/"><i class="fas fa-search"></i>  Search</li></a>
+                           
+                        </ul>
+                    </div>
+                    <div class="form-group" style="width: 18rem; margin-top: 30px; display:none">
+                        <h5>View Options</h5>
+                        <select id="inputState" class="form-control">
+                            <option selected>View All</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f4f4f4;" class="col-md-7">
+            <select class="custom-select language-select" name="Language" id="language" required>
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+            </select> 
+            <form method="post" action="/user/create" enctype="multipart/form-data" style="padding:  50px 20px;">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputState">Role</label>
+                        <select id="" name="role" required disabled class="form-control">
+                            <option value="">Choose Role</option>
+                            //- <option value="admin">Admin</option>
+                            <option value="store_expert" selected>Store Expert</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        
+                        <label for="inputZip">Access State</label>
+                        //- <input type="text" name="access_state" required placeholder="Access State" class="form-control" id="inputZip">
+                        <select id="states" name="access_state" required class="form-control">
+                            <option value="">Choose State</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">First Name</label>
+                        
+                        <input type="text" class="form-control" required name="first_name" id="inputname4" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">Last Name</label>
+                        
+                        <input type="text" class="form-control" required name="last_name" id="inputname4" placeholder="Last Name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">Email</label>
+                      
+                        <input type="email" class="form-control" required name="email" id="inputname4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">Password</label>
+                      
+                        <input type="password" class="form-control" required name="password" id="inputname4" placeholder="Password">
+                    </div>
+                    
+
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress">Address1</label>
+                        <input type="text" class="form-control" id="inputAddress" required name="address1" placeholder="Address1">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress2">Address2</label>
+                        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Address2">
+                    </div>
+        
+                    <div class="form-group col-md-12">
+                        <label for="inputState">Country</label>
+                        <select id="countries_list" name="country" required class="form-control">
+                            <option value="">Choose Country</option>
+                            
+                        </select>
+                    </div>
+                   
+                    <div class="form-group col-md-12">
+                        <label for="inputState">State</label>
+                        <input type="text" class="form-control" required name="state" placeholder="State" id="inputState">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control"  required name="city" placeholder="City" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone_number" placeholder="Phone Number" required class="form-control" >
+                    </div>
+                
+                    <div class="form-group col-md-12">
+                        <label for="inputZip">Postal Code</label>
+                        <input type="text" name="postal_code" placeholder="Postal Code" required class="form-control" id="inputZip">
+                        
+                    </div>
+                  
+                    
+                    
+                    <div class="form-group col-md-12">
+                        <label for="exampleFormControlFile1">User Photo</label>
+                        <input type="file" name="profile_picture" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    
+                    
+
+                    <div class="form-group col-md-12">
+                        
+                    </div>
+                    <div class="form-group col-md-12">
+                       <button class="form-control submit" type="submit">Crate User</button>
+                    
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </div>

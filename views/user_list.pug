@@ -1,9 +1,8 @@
 extends layout
-
+    
 block content
     link(rel='stylesheet', href='/stylesheets/table.css')
     link(rel='stylesheet', href='/stylesheets/admin-custom.css')
-    
     <div class="container">
         
         <div class="row">
@@ -58,43 +57,36 @@ block content
         </div>
         <div style="background: #f4f4f4; padding:  50px 20px;" class="col-md-8">
             <div class="table-wrapper">
-                if(store.length > 0)
+                if(users.length > 0)
                     <div class="table-title" style="overflow:scroll">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Url</th>
+                                    <th>Role</th>
                                     <th>Country</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Access State</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                each val in store
+                                each val in users
                                     <tr>
-                                        td= val.store_name
-                                    
-                                        td= val.store_url
-                                        td= val.country
-                                        if(val.status == "true")
-                                            td Active
+
+                                        td= val.first_name + " "+ val.last_name
+                                        if(val.role == "admin")
+                                            <td> Admin</td>
                                         else
-                                            td Inactive  
+                                            <td>Store Expert</td>
+                                        td= val.country
+                                        td= val.access_state
                                         td
-                                            form(action="/store/update", method="post")
-                                                input(type="hidden", name="_id", value=val._id)
-                                                input(type="hidden", name="status", value=val.status)
-                                                button(type="submit").btn.btn-primary Update Status   
-                                        //- <td><i class="far fa-edit"></i></td>
-                                        td 
                                             form(action="/admin/store", method="get")
                                                 input(type="hidden" name="_id", value=val._id)
-                                                <button type="submit" class="edit_button"><i class="far fa-edit"></i></button>
+                                                <button type="submit" class="edit_button" disabled><i class="far fa-edit"></i></button>
                                         td
-                                            form(action="/store/delete", method="post")
+                                            form(action="user/delete", method="post")
                                                 input(type="hidden", name="_id", value=val._id)
                                                 input(type="submit", name="submit",  class="submit hidden")
                                                 <a type="submit" class="delete_button"><i class="fas fa-trash-alt"></i></a>  
@@ -103,7 +95,7 @@ block content
                         </table>
                     </div>
                 else
-                    <h2>No Store Found</h2>
+                    <h2>No User Found</h2>
             </div>
         </div>
     </div>

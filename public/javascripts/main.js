@@ -189,17 +189,7 @@ $(document).ready(function(){
         }
       }
     
-    $.get("/country_List", function(data, status){
-        var country_List = data.country;
-        if(country_List.length > 0){
-            country_List.forEach(element => {
-                $("#countries").append($('<option>', {
-                    value: element,
-                    text: element
-                }));
-            });
-        }
-    });
+    
     //
     if(localStorage.getItem("language") != undefined && localStorage.getItem("language") != "")
     {
@@ -443,5 +433,45 @@ $(document).ready(function(){
         }
     })
     //$('form input[type=checkbox]').change(function() { console.log('hello') });
+
+    
+    if(window.location.href.includes("user/create")){
+        
+        $.ajax({
+            url: '/admin/states',
+            type: "get",
+            success : function(data)
+            {
+                var state_List = data.states;
+                if(state_List.length > 0){
+                    state_List.forEach(element => {
+                        $("#states").append($('<option>', {
+                            value: element,
+                            text: element
+                        }));
+                    });
+                }
+                
+            },
+            error : function(jqXHR, textStatus, errorThrown)
+            {
+                console.log(textStatus);
+            }
+        });
+    }
+    if(window.location.href.includes("user/create")){
+        $.get("/country_List", function(data, status){
+            var country_List = data.country;
+            if(country_List.length > 0){
+                country_List.forEach(element => {
+                    $("#countries").append($('<option>', {
+                        value: element,
+                        text: element
+                    }));
+                });
+            }
+        });
+    }
+    
     
 });
