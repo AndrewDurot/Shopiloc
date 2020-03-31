@@ -422,7 +422,7 @@ $(document).ready(function(){
 
     }
     $(".checkbox").on("click", function(){
-        
+        debugger;
         if($(this).attr("checked") == "checked"){
             $(this).removeAttr("checked");
             $("#status").val("false");
@@ -474,6 +474,30 @@ $(document).ready(function(){
             }
         });
     }
-    
+    $(".options").on("change", function(){
+        
+        var value = $(this).val();
+        var length = $(".col-lg-6").length;
+        var element =  $(".col-lg-6");
+        if($(".col-lg-6").length > 0)
+        {
+            debugger;
+            for(var i =0; i < element.length; i++){
+                if(value.toLocaleLowerCase() == "all"){
+                    $(element[i]).show();
+                }
+                else
+                    if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase())
+                    {
+                        $(element[i]).hide();
+                    }
+                    else{
+                        $(element[i]).show();
+                    }
+            }
+            
+        }
+        //debugger;
+    });
     
 });

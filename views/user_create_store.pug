@@ -114,8 +114,20 @@ block content
                     <div class="form-group col-md-12">
                         
                         <label for="inputZip">#{language.label.industry}</label>
-                        <input type="text" name="industry" name="industry" required class="form-control" id="inputZip">
-
+                        //- <input type="text" name="industry" name="industry" required class="form-control" id="inputZip">
+                        <select id="industry_list" name="industry" required class="form-control">
+                            <option value="">Choose Industry</option>
+                            <option value="Arts & Crafts">Arts & Crafts</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Health & Beauty">Health & Beauty</option>
+                            <option value="Jewelry">Jewelry</option>
+                            <option value="Sports & Fitness">Sports & Fitness</option>
+                            <option value="Home Goods">Home Goods</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Food & Beverage">Food & Beverage</option>
+                            <option value="Other">Other</option>
+    
+                        </select>
                     </div>
                     <label for="inputZip"> #{language.label.checkbox}:</label>
                    

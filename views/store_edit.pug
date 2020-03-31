@@ -104,10 +104,8 @@ block content
         
                     <div class="form-group col-md-12">
                         <label for="inputState">#{language.label.country}</label>
-                        <select id="countries_list" name="country" value='#{store.country}' required class="form-control">
-                            <option value="">#{language.placeholder.country}</option>
-                            
-                        </select>
+                        <input type="text" class="form-control" value='#{store.country}' readonly name="country" id="inputState">
+                        
                     </div>
                    
                     <div class="form-group col-md-12">
@@ -116,7 +114,7 @@ block content
                     </div>
                     <div class="form-group col-md-12">
                         <label for="inputCity">#{language.label.city}</label>
-                        <input type="text" class="form-control" value='#{store.city}'  required name="city" id="inputCity">
+                        <input type="text" class="form-control" value='#{store.city}'  readonly name="city" id="inputCity">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="phone">#{language.label.phone}</label>

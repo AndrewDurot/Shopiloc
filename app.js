@@ -15,7 +15,7 @@ app.listen(3000, '0.0.0.0');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.disable('etag');
+//app.disable('etag');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

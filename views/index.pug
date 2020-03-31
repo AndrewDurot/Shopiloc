@@ -74,8 +74,41 @@ block content
             span= postal_code 
             <span>- #{language.result_success.description3}</span>
           </p>
+          <div class="form-group col-md-3">
+            //- <label for="inputZip">#{language.label.industry}</label>
+            <select id="industry_list" name="industry" required class="form-control options">
+              <option value="all">All Industry</option>
+              <option value="Arts & Crafts">Arts & Crafts</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Health & Beauty">Health & Beauty</option>
+              <option value="Jewelry">Jewelry</option>
+              <option value="Sports & Fitness">Sports & Fitness</option>
+              <option value="Home Goods">Home Goods</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Food & Beverage">Food & Beverage</option>
+              <option value="Other">Other</option>
+            </select>    
+          </div>
+
+          <div class="custom-control custom-radio col-md-3">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample1"  value='Independent Store' name="store_type">
+              <label class="custom-control-label" for="defaultGroupExample1">Independent Store</label>
+          </div>
+
+          <!-- Group of default radios - option 2 -->
+          <div class="custom-control custom-radio col-md-3">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='Local e-commerce site' name="store_type" >
+              <label class="custom-control-label" for="defaultGroupExample2">Local e-commerce site</label>
+          </div>
+
+          <!-- Group of default radios - option 3 -->
+          <div class="custom-control custom-radio col-md-3">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='Local Franchise' name="store_type">
+              <label class="custom-control-label" for="defaultGroupExample3">Local Franchise</label>
+          </div>
+          
           each val in data        
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-src-industry="#{val.industry}" data-src-type="#{val.store_type}">
               
               <div class="row border">
                 a(href=val.store_url, class="store_url") 
