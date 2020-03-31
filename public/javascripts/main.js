@@ -475,29 +475,90 @@ $(document).ready(function(){
         });
     }
     $(".options").on("change", function(){
-        
+        var radio_button = $('input[name="store_type"]:checked').val();
+
         var value = $(this).val();
         var length = $(".col-lg-6").length;
         var element =  $(".col-lg-6");
         if($(".col-lg-6").length > 0)
         {
-            debugger;
+            
+           
             for(var i =0; i < element.length; i++){
-                if(value.toLocaleLowerCase() == "all"){
-                    $(element[i]).show();
+                if(radio_button == undefined)
+                {
+                    if(value.toLocaleLowerCase() == "all"){
+                        $(element[i]).show();
+                    }
+                    else
+                        if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase())
+                        {
+                            $(element[i]).hide();
+                        }
+                        else{
+                            $(element[i]).show();
+                        }
                 }
-                else
-                    if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase())
+                else{
+                    if(value.toLocaleLowerCase() == "all" && radio_button.toLowerCase() == $(element[i]).attr("data-src-type").toLowerCase()){
+                        $(element[i]).show();
+                    }
+                    else
+                        if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase() && radio_button.toLowerCase() == $(element[i]).attr("data-src-type").toLowerCase())
+                        {
+                            $(element[i]).hide();
+                        }
+                        else{
+                            $(element[i]).show();
+                        }
+                }
+                
+            }
+            
+        }
+        //debugger;
+    });
+    $(".custom-radio input:radio").click(function() {
+
+        //alert("clicked");
+        var radio_button = $('input[name="store_type"]:checked').val();
+
+        var value = $(this).val();
+        var length = $(".col-lg-6").length;
+        var element =  $(".col-lg-6");
+        if($(".col-lg-6").length > 0)
+        {
+            
+           
+            for(var i =0; i < element.length; i++){
+                if(radio_button == undefined)
+                {
+                    // if(value.toLocaleLowerCase() == "all"){
+                    //     $(element[i]).show();
+                    // }
+                    // else
+                    //     if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase())
+                    //     {
+                    //         $(element[i]).hide();
+                    //     }
+                    //     else{
+                    //         $(element[i]).show();
+                    //     }
+                }
+                else{
+                    
+                    if(radio_button.toLowerCase() == $(element[i]).attr("data-src-type").toLowerCase())
                     {
                         $(element[i]).hide();
                     }
                     else{
                         $(element[i]).show();
                     }
+                }
+                
             }
             
         }
-        //debugger;
-    });
     
+       });
 });
