@@ -1234,3 +1234,10 @@ button.edit_button {
 option {
   text-transform: capitalize;
 }
+.fa, .fas {
+  font-weight: 900;
+  padding-right: 10px;
+}
+.list-group-item a:hover {
+  text-decoration: unset;
+}
