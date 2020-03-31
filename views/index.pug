@@ -89,23 +89,36 @@ block content
               <option value="Other">Other</option>
             </select>    
           </div>
+          <div class="col-md-3">
+            <input type="checkbox" name="checkbox1" class="checkbox" id="checkbox1" value="Independent Store">
+            <label  for="checkbox1">Independent Store</label>
 
-          <div class="custom-control custom-radio col-md-3">
-              <input type="radio" class="custom-control-input" id="defaultGroupExample1"  value='Independent Store' name="store_type">
-              <label class="custom-control-label" for="defaultGroupExample1">Independent Store</label>
           </div>
+          <div class="col-md-3">
+            <input type="checkbox" name="checkbox2" class="checkbox" id="checkbox2" value="Local e-commerce site">
+            <label  for="checkbox2">Local e-commerce site</label>
 
-          <!-- Group of default radios - option 2 -->
-          <div class="custom-control custom-radio col-md-3">
-              <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='Local e-commerce site' name="store_type" >
-              <label class="custom-control-label" for="defaultGroupExample2">Local e-commerce site</label>
           </div>
+          <div class="col-md-3">
+            <input type="checkbox" name="checkbox3" class="checkbox" id="checkbox3" value="Local Franchise">
+            <label  for="checkbox3">Local Franchise</label>
+          </div>
+          //- <div class="custom-control custom-radio col-md-3">
+          //-     <input type="radio" class="custom-control-input" id="defaultGroupExample1"  value='Independent Store' name="custom_store_type1">
+          //-     <label class="custom-control-label" for="defaultGroupExample1">Independent Store</label>
+          //- </div>
 
-          <!-- Group of default radios - option 3 -->
-          <div class="custom-control custom-radio col-md-3">
-              <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='Local Franchise' name="store_type">
-              <label class="custom-control-label" for="defaultGroupExample3">Local Franchise</label>
-          </div>
+          //- <!-- Group of default radios - option 2 -->
+          //- <div class="custom-control custom-radio col-md-3">
+          //-     <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='Local e-commerce site' name="custom_store_type2" >
+          //-     <label class="custom-control-label" for="defaultGroupExample2">Local e-commerce site</label>
+          //- </div>
+
+          //- <!-- Group of default radios - option 3 -->
+          //- <div class="custom-control custom-radio col-md-3">
+          //-     <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='Local Franchise' name="custom_store_type3">
+          //-     <label class="custom-control-label" for="defaultGroupExample3">Local Franchise</label>
+          //- </div>
           
           each val in data        
             <div class="col-lg-6" data-src-industry="#{val.industry}" data-src-type="#{val.store_type}">

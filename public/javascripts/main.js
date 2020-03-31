@@ -518,11 +518,22 @@ $(document).ready(function(){
         }
         //debugger;
     });
-    $(".custom-radio input:radio").click(function() {
+    $(".checkbox").on("click",function() {
 
         //alert("clicked");
-        var radio_button = $('input[name="store_type"]:checked').val();
-
+        var radio_button1;
+        var radio_button2 = $('input[name="checkbox2"]:checked').val();
+        var radio_button3 = $('input[name="checkbox3"]:checked').val();
+        if($('#checkbox1').attr("checked") != undefined){
+            radio_button1 = $('#checkbox1').val();
+        }
+        if($('#checkbox2').attr("checked") != undefined){
+            radio_button2 = $('#checkbox2').val();
+        }
+        if($('#checkbox3').attr("checked") != undefined){
+            radio_button2 = $('#checkbox3').val();
+        }
+        debugger;
         var value = $(this).val();
         var length = $(".col-lg-6").length;
         var element =  $(".col-lg-6");
@@ -531,30 +542,75 @@ $(document).ready(function(){
             
            
             for(var i =0; i < element.length; i++){
-                if(radio_button == undefined)
+                if(radio_button1 != undefined && radio_button2 == undefined && radio_button3 == undefined)
                 {
-                    // if(value.toLocaleLowerCase() == "all"){
-                    //     $(element[i]).show();
-                    // }
-                    // else
-                    //     if($(element[i]).attr("data-src-industry").toLowerCase() != value.toLocaleLowerCase())
-                    //     {
-                    //         $(element[i]).hide();
-                    //     }
-                    //     else{
-                    //         $(element[i]).show();
-                    //     }
-                }
-                else{
-                    
-                    if(radio_button.toLowerCase() == $(element[i]).attr("data-src-type").toLowerCase())
+                    if(radio_button1.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
                     {
                         $(element[i]).hide();
                     }
                     else{
                         $(element[i]).show();
                     }
-                }
+
+                }else
+                    if(radio_button1 != undefined && radio_button2 != undefined  && radio_button3 == undefined)
+                    {
+                        if(radio_button1.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase() && radio_button2.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
+                        {
+                            $(element[i]).hide();
+                        }
+                        else{
+                            $(element[i]).show();
+                        }
+
+                    }
+                    else
+                        if(radio_button1 != undefined && radio_button2  != undefined  && radio_button3 == undefined)
+                        {
+                            if(radio_button2.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
+                            {
+                                $(element[i]).hide();
+                            }
+                            else{
+                                $(element[i]).show();
+                            }
+                        }
+                        else
+                            if(radio_button1 == undefined && radio_button2 != undefined  && radio_button3 != undefined)
+                            {
+                                if(radio_button2.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase() && radio_button3.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
+                                {
+                                    $(element[i]).hide();
+                                }
+                                else{
+                                    $(element[i]).show();
+                                }
+                            }
+                            else
+                                if(radio_button1 == undefined && radio_button2 == undefined  && radio_button3 != undefined){
+                                    if(radio_button3.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
+                                    {
+                                        $(element[i]).hide();
+                                    }
+                                    else{
+                                        $(element[i]).show();
+                                    }
+                                }
+                                else 
+                                if(radio_button1 != undefined && radio_button2 != undefined  && radio_button3 != undefined){
+                                    if(radio_button3.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase() && radio_button2.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase() && radio_button1.toLowerCase() != $(element[i]).attr("data-src-type").toLowerCase())
+                                    {
+                                        $(element[i]).hide();
+                                    }
+                                    else{
+                                        $(element[i]).show();
+                                    }
+                                }
+                                else 
+                                if(radio_button1 == undefined && radio_button2 == undefined  && radio_button3 == undefined){
+                                    $(element[i]).show();
+                                }
+                
                 
             }
             
