@@ -459,7 +459,9 @@ $(document).ready(function(){
             }
         });
     }
-    if(window.location.href.includes("user/create")){
+    
+    if(window.location.pathname == ("/")){
+        
         $.get("/country_List", function(data, status){
             var country_List = data.country;
             if(country_List.length > 0){
