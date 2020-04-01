@@ -21,7 +21,8 @@ exports.get_signup = async (req, res)=>{
 //Login Get Method
 exports.get_sign_in = async (req, res)=>{
     var token = req.cookies.auth;
-    if(token) return res.redirect('/admin');
+    var user = req.cookies.user;
+    if(token && user) return res.redirect('/admin');
    
     var ip = requestIp.getClientIp(req);
     var cookie_name = "lang"+ip;
