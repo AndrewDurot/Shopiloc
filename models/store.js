@@ -66,7 +66,10 @@ const storeSchema = new mongoose.Schema({
         type: [],
         required: true
     },
-
+    isVarified:{
+        type:Boolean,
+        required: true
+    },
     date:{
         type: Date,
         default: Date.now

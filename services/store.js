@@ -107,6 +107,7 @@ exports.create_store = async(req, res)=>
         address1: req.body.address1,
         address2: req.body.address2,
         state: req.body.state,
+        isVarified: true,
         phone_number: req.body.phone_number,
         store_logo : res_path
     });

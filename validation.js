@@ -55,6 +55,7 @@ const storeValidation = data =>{
         status: Joi.string(),
         industry : Joi.string(),
         store_type : Joi.string(),
+        //isVarified: Joi.boolean(),
         store_description: Joi.string().required()
     });
     return schema.validate(data);

@@ -9,6 +9,7 @@ exports.getStore_Data = async(req, res) =>{
   var token = req.cookies.auth;
   if(!token) return res.redirect('/users/signin');
   let user = req.cookies.user;
+  if(!token) return res.redirect('/users/signin');
   var store = await Store.find();
   var store_array = [];
   if(user.role == "store_expert"){
