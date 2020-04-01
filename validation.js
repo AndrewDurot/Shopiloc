@@ -18,6 +18,8 @@ const registerValidation = data =>{
         profile_picture: Joi.string().allow(null, ''),
         postal_code: Joi.required(),
         role: Joi.required(),
+        description: Joi.string().required(),
+        url: Joi.string().required(),
         access_state: Joi.required()
     });
     return schema.validate(data);

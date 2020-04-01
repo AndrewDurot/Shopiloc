@@ -85,6 +85,13 @@ exports.signup = async (req, res)=>{
     {
         res_path = req.file.filename;
     }
+    var url = req.body.store_url;
+    if(url.includes("https://") || url.includes("http://"))
+    {
+        url = url.split("://");
+        url = url[1];
+    
+    }
     const user = new User({
         last_name : req.body.last_name,
         first_name: req.body.first_name,
@@ -96,6 +103,8 @@ exports.signup = async (req, res)=>{
         country: req.body.country,
         state: req.body.state,
         city: req.body.city,
+        url: url,
+        description: req.body.description,
         phone_number: req.body.phone_number,
         postal_code: req.body.postal_code,
         access_state: req.body.access_state.toLowerCase(),

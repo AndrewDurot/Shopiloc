@@ -49,6 +49,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required : true,
     },
+    description:{
+        type: String,
+        required: true
+    },
+    url:{
+        type: String,
+        required: true
+    },
+    
     access_state :{
         type: String,
         required : true,
