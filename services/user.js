@@ -37,7 +37,20 @@ exports.get_sign_in = async (req, res)=>{
     res.render('signin', {success : true, meta :meta_});
 }
 
-
+exports.recover = (req, res)=>{
+    //var ip = requestIp.getClientIp(req);
+    // var cookie_name = "lang"+ip;
+    // var lang = req.cookies[cookie_name];
+    // if(lang){
+    //   i18n.setLocale(lang);
+    // } 
+    // else{
+    //   i18n.setLocale("en");
+    // }
+    i18n.setLocale("en");
+    var meta_ = i18n.__('meta');
+  res.render('recovery',{success: true, meta :meta_});
+}
 //Login Post Method
 exports.sign_in = async (req, res)=>{
     const { error } = loginValidation(req.body);

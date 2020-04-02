@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    <div class="s01">
+
+        form(method='POST')
+            <fieldset>
+                <legend>Reset Password</legend>
+            </fieldset>
+            <div class="error">
+                - var success = success;
+                if success != true
+                p= message
+            </div>
+            if (!finish)
+                <div class="inner-form" >
+                    
+                    <div class="input-field first-wrap">
+                        <input id="password" name="password" type="password" required placeholder="Password" />
+                    </div>
+                    <div class="input-field second-wrap">
+                        <input id="password" name="confirmPassword" type="password" required placeholder="Confirm Password" />
+                    </div>
+                    
+                    <div class="input-field third-wrap">
+                    <button class="btn-search" type="submit">Update Password</button>
+                    </div>
+                </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+

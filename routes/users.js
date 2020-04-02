@@ -3,6 +3,8 @@ var router = express.Router();
 var user_services = require('../services/user');
 var multer  = require('multer');
 var path = require('path');
+const Password = require('../services/password');
+
 
 router.use(express.static(__dirname));
 var storage = multer.diskStorage({
@@ -48,4 +50,18 @@ router.get('/logout', async(req, res, next)=>{
   //res.clearCookie('access');
   res.redirect('/users/signin');
 });
+
+//Password RESET
+router.get('/recover', user_services.recover);
+router.post('/recover', Password.recover);
+
+router.get('/reset/:token', Password.reset);
+
+router.post('/reset/:token', Password.resetPassword);
+
+
+
+
+
+
 module.exports = router;

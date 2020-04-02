@@ -1262,3 +1262,18 @@ option {
 .container-experts .card.grid p.omahap {
   text-align: center;
 }
+p.reset {
+  cursor: pointer;
+  float: right;
+  color: white;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-top: 12px;
+}
+p.reset a {
+  color: white !important;
+  text-decoration: underline;
+}
+.error {
+  color: white;
+}

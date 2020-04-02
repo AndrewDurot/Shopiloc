@@ -3,9 +3,9 @@ extends layout
 block content
     <div class="s01">
 
-        <form action="/user/signin" method="post">
+        <form action="/user/recover" method="post">
         <fieldset>
-            <legend>Admin Login</legend>
+            <legend>Enter Your Email To Recover Password</legend>
         </fieldset>
         <div class="error">
             - var success = success;
@@ -17,14 +17,10 @@ block content
             <div class="input-field first-wrap">
                 <input id="search" name="email" type="text" required placeholder="Email" />
             </div>
-            <div class="input-field second-wrap">
-                <input id="password" name="password" type="password" required placeholder="Password" />
-            </div>
             
             <div class="input-field third-wrap">
-            <button class="btn-search" type="submit">Login</button>
+            <button class="btn-search" type="submit">Recover Password</button>
             </div>
         </div>
-        <p class="reset"><a href="recover">Reset Password</a></p>
         </form>
     </div>
