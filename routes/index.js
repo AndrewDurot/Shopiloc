@@ -179,7 +179,7 @@ router.get('/state', home_services.get_all_state);
 //Url List
 router.get('/Check_Url', home_services.Check_Url);
 mongoose.connect(
-  process.env.DB_CONNECT,
+  'mongodb+srv://shopiloc:ltsWrDCsJ4ueAvmK@rest-6ss50.mongodb.net/test?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },
   ()=> console.log("Connected to db!")
 );
