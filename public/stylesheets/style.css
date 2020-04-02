@@ -575,6 +575,9 @@ legend {
 }
 
 @media screen and (max-width: 767px) {
+  .container-experts {
+    padding: 0px 20px;
+  }
   .modal .btn.btn-default.btn-md.dropdown-toggle {
     display: block;
   }
@@ -865,6 +868,9 @@ div.container {
   }
 }
 @media (min-width:480px)  {
+  .container-experts {
+    padding: 0px 20px;
+  }
 
   div#results {
     overflow: hidden;
