@@ -1,5 +1,6 @@
 var Store = require('../models/store');
 var i18n = require('i18n');
+var User = require('../models/user');
 var cookieParser = require('cookie-parser');
 var requestIp = require('request-ip');
 exports.get_store = async (req, res)=>{
@@ -37,10 +38,13 @@ exports.create_store = async (req, res) =>{
       i18n.setLocale("en");
     }
    
+    
+    let cookie_name_region = "region"+ip;
+    var region = req.cookies[cookie_name_region];
+    var experts = await User.find({role: "store_expert", access_state: region},{ first_name: 1, last_name: 1,  profile_picture:1, access_state:1,description:1, url:1, _id:0  });
     var lang_ = i18n.__('create_store');
     var meta_ = i18n.__('meta');
-    //console.log(lang.heading);
-    res.render('user_create_store', { language : lang_, meta : meta_});
+    res.render('user_create_store', {experts, experts, language : lang_, meta : meta_});
 }
 exports.get_Search = async (req, res)=>{
     try{
@@ -83,6 +87,22 @@ exports.Check_Url = async(req, res)=>{
 
     //console.log(store_url);
 }
+
+
+exports.experts = async (req, res) =>{
+    var ip = requestIp.getClientIp(req);
+    let cookie_name = "region"+ip;
+    console.log(cookie_name);
+    console.log(req.cookies);
+    var region = req.cookies[cookie_name];
+    //role
+    console.log(region);
+    var user = await User.find({role: "store_expert", access_state: region},{ first_name: 1, first_name: 1,  profile_picture:1, access_state:1,description:1, url:1, _id:0  })
+    console.log(user);
+
+    res.send(user);
+}
+
 exports.get_all_country = async (req, res) =>{
     var country_List = [];
     var country = 

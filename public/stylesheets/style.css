@@ -1241,3 +1241,18 @@ option {
 .list-group-item a:hover {
   text-decoration: unset;
 }
+.container-experts .card.grid {
+
+  margin-bottom: 20px;
+}
+
+.container-experts{
+  display: block;
+}
+.container-experts .card.grid h3.omahah3 {
+  text-align: center;
+  font-size: small;
+}
+.container-experts .card.grid p.omahap {
+  text-align: center;
+}

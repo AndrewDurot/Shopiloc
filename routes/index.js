@@ -48,7 +48,7 @@ router.get('/fr', async(req, res, next)=>{
 
 router.get('/nl', async(req, res, next)=>{
   var ip = requestIp.getClientIp(req);
-  console.log(requestIp.getClientIp(req));
+  //console.log(requestIp.getClientIp(req));
   var lang = req.body.lang;
   res.cookie('lang'+ip, lang, { maxAge: 900000 });
   i18n.setLocale("nl");
@@ -86,6 +86,7 @@ router.get('/', async(req, res, next)=>{
 router.post('/lang' , (req, res, next) =>{
   var ip = requestIp.getClientIp(req);
   var lang = req.body.lang;
+  //res.cookie('region'+ip, req.body.region, { maxAge: 900000 })
   res.cookie('lang'+ip, lang, { maxAge: 900000 });
   res.send({language: lang});
 });
@@ -115,14 +116,14 @@ router.post('/', async(req, res, next) =>{
         code = code.toLowerCase();
         
       }
-      console.log(code);
+      //console.log(code);
     }
     else{
       code = req.body.postal_code.toLowerCase();
       code = code.replace(/\s/g, "")  
       code = code.replace(/ /g,'');
     }
-    console.log(code);
+    //console.log(code);
     
     
     var store = await Store.find({postal_code: code, country : req.body.country_list, status : "true" });
@@ -133,8 +134,6 @@ router.post('/', async(req, res, next) =>{
         isExist = true;
 
     }
-    console.log("Here");
-    console.log(store);
     //res.status(200).send(store);
     //res.render('index', { title: 'Express', data: store, isSearch: true, isExist : isExist, country_List : country_List  });
     res.render('index', { title: 'Express', data: store, isSearch: true, result_count: store.length, postal_code: req.body.postal_code, isExist : isExist, country_List : "",  language : lang_, meta : meta_ });
@@ -150,7 +149,7 @@ router.get('/create', home_services.create_store);
 router.get('/about', (req, res)=>{
   var ip = requestIp.getClientIp(req);
   var cookie_name = "lang"+ip;
-  console.log(cookie_name);
+  //console.log(cookie_name);
   var lang = req.cookies[cookie_name];
   if(lang) i18n.setLocale(lang);
   var lang_ = i18n.__('about');
@@ -158,6 +157,12 @@ router.get('/about', (req, res)=>{
   res.render('about',{ language : lang_, meta : meta_});
   
 });
+router.post('/region', (req, res)=>{
+  var ip = requestIp.getClientIp(req);
+  res.cookie('region'+ip, req.body.region, { maxAge: 900000 });
+  res.send({region: req.body.region});
+})
+router.get('/experts', home_services.experts)
 //admon User 
 router.use('/admin',  admin_Route);
 //Basic User 

@@ -81,22 +81,24 @@ $(document).ready(function(){
         //
         $(".dropdown-menu").toggle();
     });
-    //localStorage.clear();
+    
     if(localStorage.getItem("language") == null ){
+        
         $.getJSON('https://ipapi.co/json/', function(data) {
             
             if(data.region.toLocaleLowerCase() == "quebec")
             {
                 
                 localStorage.setItem("ip",data.ip);
+                
                 $.ajax({
                     url: '/lang',
-                    data: {lang:"fr",ip: localStorage.getItem("ip")},
+                    data: {lang:"fr",ip: localStorage.getItem("ip"), region: data.region},
                     type: "post",
                     success : function(data)
                     {
                         //localStorage.setItem("ip",)
-                        localStorage.clear();
+                        //localStorage.clear();
                         localStorage.setItem("language","fr");
                         location.reload();
                         
@@ -121,12 +123,12 @@ $(document).ready(function(){
                     localStorage.setItem("ip",data.ip);
                     $.ajax({
                         url: '/lang',
-                        data: {lang:"nl",ip: localStorage.getItem("ip")},
+                        data: {lang:"nl",ip: localStorage.getItem("ip"), region: data.region},
                         type: "post",
                         success : function(data)
                         {
                             //localStorage.setItem("ip",)
-                            localStorage.clear();
+                            //localStorage.clear();
                             localStorage.setItem("language","nl");
                             //location.reload();
                             
@@ -142,8 +144,53 @@ $(document).ready(function(){
                     });
                    
                 }
+                else 
+                {
+                    
+                    localStorage.setItem("ip",data.ip);
+                    $.ajax({
+                        url: '/lang',
+                        data: {lang:"en",ip: localStorage.getItem("ip"), region: data.region},
+                        type: "post",
+                        success : function(data)
+                        {
+                            //localStorage.setItem("ip",)
+                            //localStorage.clear();
+                            localStorage.setItem("language","nl");
+                            //location.reload();
+                            
+                        },
+                        error : function(jqXHR, textStatus, errorThrown)
+                        {
+                            console.log(textStatus);
+                        }
+                    });
+                    $("#language_modal").modal({
+                        //fadeDuration: 1000,
+                        //fadeDelay: 1.75 // Will fade in 750ms after the overlay finishes.
+                    });
+                }
             
             
+        });
+    }
+    if(localStorage.getItem("region") == null){
+        $.getJSON('https://ipapi.co/json/', function(data) {
+            localStorage.setItem("region",data.region);
+            $.ajax({
+                url: '/region',
+                data: {ip: localStorage.getItem("ip"), region: data.region},
+                type: "post",
+                success : function(data)
+                {
+                    debugger;
+                    
+                },
+                error : function(jqXHR, textStatus, errorThrown)
+                {
+                    console.log(textStatus);
+                }
+            });
         });
     }
     
@@ -216,7 +263,7 @@ $(document).ready(function(){
             {
                 //localStorage.setItem("ip",)
                 
-                localStorage.clear();
+                //localStorage.clear();
                 localStorage.setItem("language",data.language);
                 location.reload();
                 
@@ -237,7 +284,7 @@ $(document).ready(function(){
             type: "post",
             success : function(data)
             {
-                localStorage.clear();
+                //localStorage.clear();
                 localStorage.setItem("language",data.language);
                 location.reload();
                 
