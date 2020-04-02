@@ -171,7 +171,9 @@ $(document).ready(function(){
             
         });
     }
-    if(localStorage.getItem("region") == null){
+    if(window.location.pathname == ("/create"))
+    {
+    
         $.getJSON('https://ipapi.co/json/', function(data) {
             localStorage.setItem("region",data.region);
             $.ajax({
@@ -180,7 +182,7 @@ $(document).ready(function(){
                 type: "post",
                 success : function(data)
                 {
-                    debugger;
+                   
                     
                 },
                 error : function(jqXHR, textStatus, errorThrown)
