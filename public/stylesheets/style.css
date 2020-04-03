@@ -1280,3 +1280,15 @@ p.reset a {
 .custom-control.custom-radio.col-md-12 {
   left: 25px;
 }
+.container-experts h6 {
+  font-weight: 100;
+  text-align: justify;
+}
+button.btn.btn-primary {
+  background: #D79E6D;
+  border-color: #D79E6D;
+}
+.card.grid a.btn-search.btn.btn-primary {
+  position: relative;
+  right: 0;
+}

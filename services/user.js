@@ -8,6 +8,18 @@ const i18n = require('i18n');
 //router.use(cors);
 
 //Register Model
+
+exports.get_user_signup = async (req, res)=>{
+    i18n.setLocale("en");
+    var meta_ = i18n.__('meta');
+    res.render('signup', {success : true, meta :meta_});
+    // var token = req.cookies.auth;
+    // if(!token) return res.redirect('/user/signin');
+    // var user_access = req.cookies.user;
+    // if(user_access.role == "admin") return res.render('signup', {success : true, meta :meta_});
+    // return res.redirect('/user/signin');   
+}
+
 exports.get_signup = async (req, res)=>{
     i18n.setLocale("en");
     var meta_ = i18n.__('meta');
@@ -123,7 +135,7 @@ exports.signup = async (req, res)=>{
         access_state: req.body.access_state.toLowerCase(),
         profile_picture : res_path
     });
-    console.log(user);
+    //console.log(user);
     try{
         //console.log(user);
         const savedUser = await user.save();

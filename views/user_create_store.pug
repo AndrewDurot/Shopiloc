@@ -13,7 +13,7 @@ block content
                 
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item button"><a href="/">  #{language.button.Home}</li></a>
-                            <li class="list-group-item button"><a href="">  #{language.button.Create_Label_Action}</li></a>
+                            <li class="list-group-item button" style="display:none;"><a href="">  #{language.button.Create_Label_Action}</li></a>
                             <li class="list-group-item button"> <a href="/about"> #{language.button.About}</li></a>
                         </ul>
                     </div>
@@ -30,7 +30,8 @@ block content
             </div>
             if (experts.length > 0)
                 <div class="container-experts">
-                    <h3>Store Experts</h3>
+                    <h3>Your Local Expert</h3>
+                    <h6>Local Experts are usually local independent agencies that are ready to help you get online asap at minimal cost, so that your business can survive.</h6>
                     each val in experts
 
                         <div class="card grid" style="width: 16rem;">
@@ -41,15 +42,29 @@ block content
                                 <p class="omahap">
                                     a(href=val.url, class="store_url")= val.url
                                 </p> 
-                                //- <ul>
-                                //- //- <li class="omahali">
-                                //- //-     a(href=val.url, class="store_url")= val.url
-                                //- //- </li> 
-                                //- </ul>
                                 <p class="omahap">Description: #{val.description}</p> 
                             </div>
                         </div> 
-                </div>   
+                </div>
+            else
+                <div class="container-experts">
+                    <h3>Your Local Expert</h3>
+                    <h6>Local Experts are usually local independent agencies that are ready to help you get online asap at minimal cost, so that your business can survive.</h6>
+                    
+                    <div class="card grid" style="width: 16rem;">
+                        <img src="/images/placeholder.jpg" style="height:200px" alt="">
+                        <div class="backwoods">
+                            <h3 class="omahah3" style="font-size:16px; margin-top: 10px;"> No local volunteers yet </h3>
+                           
+                            <p class="omahap">
+                                <a href="/user/expert/create" class="btn-search btn btn-primary create">Create Local Expert Profile</a>
+                            </p> 
+                            <p class="omahap">If you are a local expert in the field of e-commerce and want to help your local stores get and succeed online by volunteering out some time. Please let us know (100% free of cost).</p> 
+                        </div>
+                        
+                        
+                    </div>
+                </div>    
         </div>
         
         <div style="background: #f4f4f4;" class="col-md-7">

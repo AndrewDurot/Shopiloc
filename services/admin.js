@@ -145,8 +145,8 @@ exports.delete_users = async(req, res) =>{
 
 }
 exports.states = async(req, res)=>{
-  var token = req.cookies.auth;
-  if(!token) return res.redirect('/users/signin');
+  // var token = req.cookies.auth;
+  // if(!token) return res.redirect('/users/signin');
   var state_List = [];
   var store = await Store.find();
 

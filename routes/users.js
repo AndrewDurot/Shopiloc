@@ -41,6 +41,8 @@ router.get('/signin', user_services.get_sign_in);
 router.post('/signin', user_services.sign_in);
 //Register Route
 router.get('/create', user_services.get_signup);
+router.get('/expert/create', user_services.get_user_signup);
+
 router.post('/create', upload.single('profile_picture'), user_services.signup);
 
 router.post('/signup', user_services.register);

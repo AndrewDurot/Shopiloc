@@ -487,7 +487,7 @@ $(document).ready(function(){
     //$('form input[type=checkbox]').change(function() { console.log('hello') });
 
     
-    if(window.location.href.includes("user/create")){
+    if(window.location.href.includes("user/create") || window.location.href.includes("user/expert/create")){
         
         $.ajax({
             url: '/admin/states',
