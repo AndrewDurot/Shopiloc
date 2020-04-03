@@ -126,7 +126,7 @@
 	},
 	"create_user" :{
 		"heading" : "STORE DETAILS",
-		"subHeading" : "Create New Store",
+		"subHeading" : "Create New Expert Profile",
 		"action" : "Action",
 		"button" : {
 			"Home" : "Home",
