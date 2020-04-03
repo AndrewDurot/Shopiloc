@@ -1277,3 +1277,6 @@ p.reset a {
 .error {
   color: white;
 }
+.custom-control.custom-radio.col-md-12 {
+  left: 25px;
+}

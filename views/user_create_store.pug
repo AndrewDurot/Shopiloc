@@ -60,6 +60,7 @@ block content
             </select> 
             <form method="post" action="/store" enctype="multipart/form-data" style="padding:  50px 20px;">
                 <div class="form-row">
+                    
                     <div class="form-group col-md-12">
                         <label for="name">#{language.label.first_name}</label>
                         
@@ -79,6 +80,28 @@ block content
                         <label for="name">#{language.label.store_name}</label>
                         <input type="hidden" name="status" value="false">
                         <input type="text" class="form-control" required name="store_name" id="inputEmail4" placeholder="#{language.placeholder.store_name}">
+                    </div>
+                    <label for="inputZip"> #{language.label.checkbox}</label>
+                   
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
+                    </div>
+
+                    <!-- Group of default radios - option 2 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='#{language.checkbox2}' name="store_type" >
+                        <label class="custom-control-label" for="defaultGroupExample2">#{language.checkbox2}</label>
+                    </div>
+
+                    <!-- Group of default radios - option 3 -->
+                    <div class="custom-control custom-radio col-md-12">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
+                        <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        
                     </div>
                     <div class="form-group col-md-12">
                         <label for="name">#{language.label.store_url}</label>
@@ -152,29 +175,7 @@ block content
     
                         </select>
                     </div>
-                    <label for="inputZip"> #{language.label.checkbox}:</label>
-                   
-
-                    <div class="custom-control custom-radio col-md-12">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" required value='#{language.checkbox1}' name="store_type">
-                        <label class="custom-control-label" for="defaultGroupExample1">#{language.checkbox1}</label>
-                    </div>
-
-                    <!-- Group of default radios - option 2 -->
-                    <div class="custom-control custom-radio col-md-12">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" value='#{language.checkbox2}' name="store_type" >
-                        <label class="custom-control-label" for="defaultGroupExample2">#{language.checkbox2}</label>
-                    </div>
-
-                    <!-- Group of default radios - option 3 -->
-                    <div class="custom-control custom-radio col-md-12">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" value='#{language.checkbox3}' name="store_type">
-                        <label class="custom-control-label" for="defaultGroupExample3">#{language.checkbox3}</label>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        
-                    </div>
+                    
                     <div class="form-group col-md-12">
                        <button class="form-control submit" type="submit">#{language.button.store_post_button}</button>
                     

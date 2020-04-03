@@ -347,11 +347,13 @@ $(document).ready(function(){
             var valid = isUrlValid(this.value);
             if(valid){
                 $.get("/Check_Url?url="+this.value, function(data, status){
-                    
                     if(data.isExist){
-                        $("#url-error").text("This Url already Exist");
-                        $("#url-error").css("display", "block");
-                        $(".submit").attr("disabled","disabled");
+                        if($('input[name="store_type"]:checked').val() != "Local Franchise")
+                        {
+                            $("#url-error").text("This Url already Exist");
+                            $("#url-error").css("display", "block");
+                            $(".submit").attr("disabled","disabled");
+                        }
                     }
                     else{
                         $(".submit").removeAttr("disabled");
@@ -370,9 +372,13 @@ $(document).ready(function(){
             if(valid){
                 $.get("/Check_Url?url="+this.value, function(data, status){
                     if(data.isExist){
-                        $("#url-error").text("This Url already Exist");
-                        $("#url-error").css("display", "block");
-                        $(".submit").attr("disabled","disabled");
+                        if($('input[name="store_type"]:checked').val() != "Local Franchise")
+                        {
+                            $("#url-error").text("This Url already Exist");
+                            $("#url-error").css("display", "block");
+                            $(".submit").attr("disabled","disabled");
+                        }
+                       
                     }
                     else{
                         $(".submit").removeAttr("disabled");
@@ -468,7 +474,7 @@ $(document).ready(function(){
 
     }
     $(".checkbox").on("click", function(){
-        debugger;
+        //debugger;
         if($(this).attr("checked") == "checked"){
             $(this).removeAttr("checked");
             $("#status").val("false");
@@ -894,5 +900,69 @@ $(document).ready(function(){
             
         }
     
-       });
+    });
+    $('input[name="store_type"]').on('click', function(){
+        //debugger;
+        if($("#store_url").val() != ""){
+            let value = $("#store_url").val();
+            if($('input[name="store_type"]:checked').val() == "Local Franchise"){
+                
+                $("#url-error").css("display", "none");
+                $(".submit").removeAttr("disabled");
+            }
+            else{
+                if(value.includes("https:") || value.includes("http:"))
+                {
+                    var valid = isUrlValid(value);
+                    if(valid){
+                        $.get("/Check_Url?url="+value, function(data, status){
+                            if(data.isExist){
+                                if($('input[name="store_type"]:checked').val() != "Local Franchise")
+                                {
+                                    $("#url-error").text("This Url already Exist");
+                                    $("#url-error").css("display", "block");
+                                    $(".submit").attr("disabled","disabled");
+                                }
+                            }
+                            else{
+                                $(".submit").removeAttr("disabled");
+                                $("#url-error").css("display", "none");
+                            }
+                            
+                        });
+                    }
+                    else{
+                        $("#url-error").text("Invalid Url");
+                        $("#url-error").css("display", "block");
+                    }
+                }
+                else{
+                    var valid = isUrlValid("https://"+value);
+                    if(valid){
+                        $.get("/Check_Url?url="+value, function(data, status){
+                            if(data.isExist){
+                                if($('input[name="store_type"]:checked').val() != "Local Franchise")
+                                {
+                                    $("#url-error").text("This Url already Exist");
+                                    $("#url-error").css("display", "block");
+                                    $(".submit").attr("disabled","disabled");
+                                }
+                            
+                            }
+                            else{
+                                $(".submit").removeAttr("disabled");
+                                $("#url-error").css("display", "none");
+                            }
+                            
+                        });
+                    }
+                    else{
+                        $("#url-error").text("Invalid Url");
+                        $("#url-error").css("display", "block");
+                    }
+                }
+            }
+        }
+        
+    });
 });
