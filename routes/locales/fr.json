@@ -135,27 +135,27 @@
 			"store_post_button" : "Create Store"
 		},
 		"label" :{
-			"email": "Email",
-			"first_name" : "First Name",
-			"last_name" : "Last Name",
-			"country_option" : "Choose Country",
-			"access_state" : "Access State",
+			"email": "Mail",
+			"first_name" : "Prénom",
+			"last_name" : "Nom",
+			"country_option" : "Pays",
+			"access_state" : "Province",
 			"role_option1" : "Store Expert",
 			"role_option" : "Select Role",
 			"role" : "Select Role",
 			"password" : "Password",
-			"access_state_option" : "Select State",
-			"address" : "Address",
-			"address2" : "Address2",
-			"country" : "Country",
-			"state" : "State",
-			"city" : "City",
-			"phone" : "Phone No",
-			"postal" : "Which postal codes can you deliver to?",
+			"access_state_option" : "Province",
+			"address" : "Addresse",
+			"address2" : "Addresse2",
+			"country" : "Pays",
+			"state" : "Province",
+			"city" : "Ville",
+			"phone" : "Num de Tel",
+			"postal" : "Code Postal",
 			"description" : "Description.",
-			"photo" : "Upload Image",
-			"industry" : "Which industry are you in?",
-			"checkbox" : "Which one applies to you?"
+			"photo" : "Ajoutez votre logo",
+			"industry" : "Specialiste en?",
+			"checkbox" : "Quelle s'applique a vous"
 			
 
 		}
