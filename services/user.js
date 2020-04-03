@@ -10,9 +10,19 @@ const i18n = require('i18n');
 //Register Model
 
 exports.get_user_signup = async (req, res)=>{
-    i18n.setLocale("en");
+    var ip = requestIp.getClientIp(req);
+    var cookie_name = "lang"+ip;
+    var lang = req.cookies[cookie_name];
+    if(lang){
+      i18n.setLocale(lang);
+    } 
+    else{
+      i18n.setLocale("en");
+    }
+    //i18n.setLocale("en");
+    var lang_ = i18n.__('create_user');
     var meta_ = i18n.__('meta');
-    res.render('signup', {success : true, meta :meta_});
+    res.render('signup', {success : true,  language : lang_, meta :meta_});
     // var token = req.cookies.auth;
     // if(!token) return res.redirect('/user/signin');
     // var user_access = req.cookies.user;
@@ -23,10 +33,11 @@ exports.get_user_signup = async (req, res)=>{
 exports.get_signup = async (req, res)=>{
     i18n.setLocale("en");
     var meta_ = i18n.__('meta');
+    var lang_ = i18n.__('create_user');
     var token = req.cookies.auth;
     if(!token) return res.redirect('/user/signin');
     var user_access = req.cookies.user;
-    if(user_access.role == "admin") return res.render('signup', {success : true, meta :meta_});
+    if(user_access.role == "admin") return res.render('signup', {success : true,language : lang_, meta :meta_});
     return res.redirect('/user/signin');   
 }
 

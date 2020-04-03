@@ -122,6 +122,42 @@
 		"description" : "Vind lokale winkels die bij u leveren!,Wij Zijn een wereldwijd open-source project om lokale winkels te redden. Kom ons helpen en deel dit!",
 		"keywords" : "Lokaal,Winkels, Levering,Lokale, wereldwijd",
 		"author" : "www.shopiloc.com"
+	},
+	"create_user" :{
+		"heading" : "STORE DETAILS",
+		"subHeading" : "Create New Store",
+		"action" : "Action",
+		"button" : {
+			"Home" : "Home",
+			"Create_Label_Action" : "Build an online store asap",
+			"About" : "About Shopiloc",
+			"store_post_button" : "Create Store"
+		},
+		"label" :{
+			"email": "Email",
+			"first_name" : "First Name",
+			"last_name" : "Last Name",
+			"country_option" : "Choose Country",
+			"access_state" : "Access State",
+			"role_option1" : "Store Expert",
+			"role_option" : "Select Role",
+			"role" : "Select Role",
+			"password" : "Password",
+			"access_state_option" : "Select State",
+			"address" : "Address",
+			"address2" : "Address2",
+			"country" : "Country",
+			"state" : "State",
+			"city" : "City",
+			"phone" : "Phone No",
+			"postal" : "Which postal codes can you deliver to?",
+			"description" : "Description.",
+			"photo" : "Upload Image",
+			"industry" : "Which industry are you in?",
+			"checkbox" : "Which one applies to you?"
+			
+
+		}
 	}
 
 }
