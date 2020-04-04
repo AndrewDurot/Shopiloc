@@ -159,7 +159,7 @@ router.get('/about', (req, res)=>{
 });
 router.post('/region', (req, res)=>{
   var ip = requestIp.getClientIp(req);
-  res.cookie('region'+ip, req.body.region, { maxAge: 900000 });
+  res.cookie('region'+ip, req.body.region);
   console.log(req.body.region);
   res.send({region: req.body.region});
 })

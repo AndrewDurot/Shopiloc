@@ -1,4 +1,25 @@
 $(document).ready(function(){
+    if(window.location.pathname == ("/create") || window.location.pathname == ("/"))
+    {
+    
+        $.getJSON('https://ipapi.co/json/', function(data) {
+            localStorage.setItem("region",data.region);
+            $.ajax({
+                url: '/region',
+                data: {ip: localStorage.getItem("ip"), region: data.region},
+                type: "post",
+                success : function(data)
+                {
+                   
+                    
+                },
+                error : function(jqXHR, textStatus, errorThrown)
+                {
+                    console.log(textStatus);
+                }
+            });
+        });
+    }
     if(!window.location.href.includes("create") && !window.location.href.includes("about")){
         
         if(localStorage.getItem("language") == "fr"){
@@ -171,27 +192,7 @@ $(document).ready(function(){
             
         });
     }
-    if(window.location.pathname == ("/create"))
-    {
     
-        $.getJSON('https://ipapi.co/json/', function(data) {
-            localStorage.setItem("region",data.region);
-            $.ajax({
-                url: '/region',
-                data: {ip: localStorage.getItem("ip"), region: data.region},
-                type: "post",
-                success : function(data)
-                {
-                   
-                    
-                },
-                error : function(jqXHR, textStatus, errorThrown)
-                {
-                    console.log(textStatus);
-                }
-            });
-        });
-    }
     
     let isActive = false;
     $(document).on("click","#menu, .fa,.icon",function(e){
