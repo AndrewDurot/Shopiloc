@@ -125,14 +125,14 @@
 		"author" : "www.shopiloc.com"
 	},
 	"create_user" :{
-		"heading" : "STORE DETAILS",
-		"subHeading" : "Create New Store",
-		"action" : "Action",
+		"heading" : "Détails du magasin",
+		"subHeading" : "Ajouter un nouveau magasin",
+		"action" : "Actions",
 		"button" : {
-			"Home" : "Home",
-			"Create_Label_Action" : "Build an online store asap",
-			"About" : "About Shopiloc",
-			"store_post_button" : "Create Store"
+			"Home" : "Page d’Accueil",
+			"Create_Label_Action" : "Construire une boutique en ligne",
+			"About" : "À propos de Shopiloc",
+			"store_post_button" : "Ajouter ma boutique"
 		},
 		"label" :{
 			"email": "Mail",
