@@ -113,22 +113,27 @@ exports.signup = async (req, res)=>{
     //Hash passwords
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.password, salt);
-    console.log(hashPassword);
-    console.log(req.body)
-    console.log(req.file);
     var res_path = "";
     if(req.file)
     {
         res_path = req.file.filename;
     }
-    var url = req.body.store_url;
-    if(url.includes("https://") || url.includes("http://"))
+    var url = req.body.url;
+    if(url && url.includes("https://") || url.includes("http://"))
     {
         url = url.split("://");
         url = url[1];
     
     }
+    let access_state = "";
+    if(req.body.access_state == ""){
+        access_state = req.body.state.toLowerCase()
+    }
+    else{
+        access_state = req.body.access_state.toLowerCase();
+    }
     const user = new User({
+        company_name: req.body.company_name,
         last_name : req.body.last_name,
         first_name: req.body.first_name,
         email : req.body.email,
@@ -143,7 +148,7 @@ exports.signup = async (req, res)=>{
         description: req.body.description,
         phone_number: req.body.phone_number,
         postal_code: req.body.postal_code,
-        access_state: req.body.access_state.toLowerCase(),
+        access_state: access_state,
         profile_picture : res_path
     });
     //console.log(user);

@@ -3,6 +3,7 @@ const Joi = require('@hapi/joi');
 //Register Model Validation 
 const registerValidation = data =>{
     const schema = Joi.object({
+        company_name: Joi.string(),
         first_name: Joi.string().min(6).required(),
         last_name: Joi.string().min(3).required(),
         email: Joi.string().min(6).required().email(),

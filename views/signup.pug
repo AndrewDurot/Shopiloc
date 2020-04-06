@@ -36,29 +36,38 @@ block content
             </select> 
             <form method="post" action="/user/create" enctype="multipart/form-data" style="padding:  50px 20px;">
                 <div class="form-row">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-12" style="display:none">
                         <label for="inputState">#{language.label.role}</label>
-                        <select id="" name="role" required class="form-control">
-                            <option value="">#{language.label.role_option}</option>
-                            //- <option value="admin">Admin</option>
-                            <option value="store_expert" selected>#{language.label.role_option1}</option>
-                        </select>
+                        <input type="hidden" class="form-control"  name="role" value="store_expert" placeholder="#{language.label.role_option1}">
+                        <input type="hidden" class="form-control"  name="access_state" id="access_state" >                              
                     </div>
                    
                     <div class="form-group col-md-12">
                         <label for="Company Name">#{language.label.first_name}</label>
                         
-                        <input type="text" class="form-control" required name="Company_name" id="inputname4" placeholder="#{language.label.first_name}">
+                        <input type="text" class="form-control" required name="first_name" id="inputname4" placeholder="#{language.label.first_name}">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="name">#{language.label.last_name}</label>
-                        
-                        <input type="text" class="form-control" required name="name" id="inputname4" placeholder="#{language.label.last_name}">
+    
+                        <input type="text" class="form-control" required name="last_name" id="inputname4" placeholder="#{language.label.last_name}">
+                    </div>
+                     <div class="form-group col-md-12">
+                        <label for="Company Name">#{language.label.company_name}</label>
+                        <input type="text" class="form-control" required name="company_name" id="inputname4" placeholder="#{language.label.company_name}">
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="name">#{language.label.email}</label>
-                      
+                        <label for="name">Website Url</label>
+                        <input type="text" class="form-control" required name="url" id="store_url" placeholder="Web Url">
+                        <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="name">#{language.label.email}</label>                      
                         <input type="email" class="form-control" required name="email" id="inputname4" placeholder="#{language.label.email}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="phone">#{language.label.phone}</label>
+                        <input type="text" name="phone_number" placeholder="#{language.label.phone}" required class="form-control" >
                     </div>
                     <div class="form-group col-md-12">
                         <label for="name">#{language.label.password}</label>
@@ -85,37 +94,30 @@ block content
                    
                     <div class="form-group col-md-12">
                         <label for="inputState">#{language.label.state}</label>
-                        <input type="text" class="form-control" required name="state" placeholder="#{language.label.state}" id="inputState">
+                        <input type="text" class="form-control" required name="state" placeholder="#{language.label.state}" id="states">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="inputCity">#{language.label.city}</label>
                         <input type="text" class="form-control"  required name="city" placeholder="#{language.label.city}" id="inputCity">
                     </div>
-                    <div class="form-group col-md-12">
-                        <label for="phone">#{language.label.phone}</label>
-                        <input type="text" name="phone_number" placeholder="#{language.label.phone}" required class="form-control" >
-                    </div>
+                    
                 
                     <div class="form-group col-md-12">
                         <label for="inputZip">#{language.label.postal}</label>
                         <input type="text" name="postal_code" placeholder="#{language.label.postal}" required class="form-control" id="inputZip">
                         
                     </div>
-                  
                     <div class="form-group col-md-12">
-                        <label for="name">Website Url</label>
-                        <input type="text" class="form-control" required name="url" id="store_url" placeholder="Web Url">
-                        <span id="url-error" style="color:red; font-size:11px; display:none;"></span>
+                        <label for="exampleFormControlFile1">#{language.label.photo}</label>
+                        <input type="file" name="profile_picture" class="form-control-file" id="exampleFormControlFile1">
                     </div>
+                    
                     <div class="form-group col-md-12">
                         <label for="phone">#{language.label.description}</label>
                         textarea(name="description", required, maxlength=570, cols="82", rows="10")
                         
                     </div>
-                    <div class="form-group col-md-12">
-                        <label for="exampleFormControlFile1">#{language.label.photo}</label>
-                        <input type="file" name="profile_picture" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
+                    
                     
                     
 

@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+    if(window.location.pathname == ("/user/expert/create")){
+        $.getJSON('https://ipapi.co/json/', function(data) {
+            $("#access_state").val(data.region);
+            $("#states").val(data.region);
+        });
+    }
     if(window.location.pathname == ("/create") || window.location.pathname == ("/"))
     {
     

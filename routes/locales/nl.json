@@ -154,7 +154,8 @@
 			"description" : "Description.",
 			"photo" : "Upload Image",
 			"industry" : "Which industry are you in?",
-			"checkbox" : "Which one applies to you?"
+			"checkbox" : "Which one applies to you?",
+			"company_name" : "Agency Name"
 			
 
 		}
